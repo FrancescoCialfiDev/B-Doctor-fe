@@ -17,7 +17,7 @@ bash: ni .env
 
 5 attribuzione alias al main sript aggiungendo a quest'ultimo gli attributi necesssaai per il refresh automatico e la possibilità di importare variabili d'ambiente dal file .env
 pakage.json:
-package-json.js 
+package.json 
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "node --watch --env-file=.env App.js" 👈👈👈👈👈👈[ERRORE]-[Vite] 
@@ -25,21 +25,27 @@ package-json.js
 
 6 settaggio documento al fine di utilizzare la sintassi ES6 di js
     package.json:
-        -"type" :"module" (sotto "main": "App.js",)
+        -{
+            "name": "b-doctor-fe",
+            "private": true,
+            "version": "0.0.0",
+            "type": "module", 👈
+            ...
 
 7 permesso per la ricezione di dati da piu server
-    rules: {
-        ...js.configs.recommended.rules,
-        ...react.configs.recommended.rules,
-        ...react.configs["jsx-runtime"].rules,
-        ..reactHooks.configs.recommended.rules,
-        "react/prop-types": 0, 👈
-        "react/jsx-no-target-blank": "off",
-        "react-refresh/only-export-components": [
-            "warn",
-            { allowConstantExport: true },
-        ],
-    },
+    eslint.config.js:
+        rules: {
+            ...js.configs.recommended.rules,
+            ...react.configs.recommended.rules,
+            ...react.configs["jsx-runtime"].rules,
+            ..reactHooks.configs.recommended.rules,
+            "react/prop-types": 0, 👈
+            "react/jsx-no-target-blank": "off",
+            "react-refresh/only-export-components": [
+                "warn",
+                { allowConstantExport: true },
+            ],
+        },
 
 
 8 aggiungo al .gitignore i file da non pushare
