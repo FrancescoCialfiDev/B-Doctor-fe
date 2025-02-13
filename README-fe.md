@@ -20,7 +20,7 @@ pakage.json:
 package-json.js 
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "node --watch --env-file=.env App.js"
+        "dev": "node --watch --env-file=.env App.js" 👈👈👈👈👈👈[ERRORE]-[Vite] 
     },
 
 6 settaggio documento al fine di utilizzare la sintassi ES6 di js
@@ -112,10 +112,7 @@ bash:
                         <FooterComponent />
                     </div>
   						
-					
-
-				
-
+		
       
 12 organiziamo il rooting tra le pagine
     App.jsx
