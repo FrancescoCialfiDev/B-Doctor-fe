@@ -86,7 +86,7 @@ bash:
                         .catch((error) => console.log(error))
                         .finally("Data fetch completed")
                     }
-                useEffect(()=>{getServerData()}, [])
+                -useEffect(()=>{getServerData()}, [])
             10.2.5 definizione variabili globali (GlobalProvider({ children })  {return (<qui>);})
                 -<GlobalContext.Provider value={{ serverData, altreEventualiVariabiliDiStato }}>
                     {children}
