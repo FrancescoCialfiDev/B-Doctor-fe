@@ -81,7 +81,7 @@ bash:
                     axios
                         .get("http://localhost:3000/people")
                         .then((response) => {
-                            setServerData(response.data.items)
+                            setServerData(response.data)
                         })
                         .catch((error) => console.log(error))
                         .finally("Data fetch completed")
