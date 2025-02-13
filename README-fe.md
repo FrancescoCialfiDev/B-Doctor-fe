@@ -67,7 +67,7 @@ bash:
             10.2.3 creazione variabile di stato per salvare i dati che saranno presi dal db (GlobalProvider({ children }) <qui> {return ();})
                 const [serverData, setServerData ] = useState([]);
             10.2.4 creazione funzione di stato per salvare i dati che saranno presi dal db (GlobalProvider({ children }) <qui> {return ();})
-                function getBooksList() {
+                function getServerData() {
                     axios
                         .get("http://localhost:3000/people")
                         .then((response) => {
@@ -76,7 +76,7 @@ bash:
                         .catch((error) => console.log(error))
                         .finally("Data fetch completed")
                     }
-                useEffect(getBooksList, [])
+                useEffect(getServerData, [])
             10.2.5 definizione variabili globali (GlobalProvider({ children })  {return (<qui>);})
                 -<GlobalContext.Provider value={{ serverData, altreEventualiVariabiliDiStato }}>
                     {children}
@@ -87,11 +87,10 @@ bash:
 
 11 definiamo il Layout tramite il file Defaultlayout.jsx:
     >component:
-        11.1 creo 4 cartelle
+        11.1 creo 3 cartelle
             ->layout
             ->page
             ->common
-            ->unique
         11.2 nella cartella layout creo il file DefaultLayout.jsx
         11.3 definiamo il layout delle pagine:
             DefaultLayout.jsx:
