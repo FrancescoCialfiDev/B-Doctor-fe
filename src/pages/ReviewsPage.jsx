@@ -2,7 +2,7 @@
 export default function ReviewsPage() {
     return (
         <>
-            <h1>Sono l'ReviewsPage</h1>
+            <h1>Sono lReviewsPage</h1>
         </>
     )
 }
