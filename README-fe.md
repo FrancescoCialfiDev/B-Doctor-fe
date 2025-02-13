@@ -75,18 +75,18 @@ bash:
             10.2.2 creo la funzione GlobalProvider 
                 -export default GlobalProvider({ children }) {return ();};
             10.2.3 creazione variabile di stato per salvare i dati che saranno presi dal db (GlobalProvider({ children }) <qui> {return ();})
-                const [serverData, setServerData ] = useState([]);
+                -const [serverData, setServerData ] = useState([]);
             10.2.4 creazione funzione di stato per salvare i dati che saranno presi dal db (GlobalProvider({ children }) <qui> {return ();})
-                function getServerData() {
+                -function getServerData() {
                     axios
                         .get("http://localhost:3000/people")
                         .then((response) => {
-                            setServerData(response.data.items)
+                            setServerData(response.data)
                         })
                         .catch((error) => console.log(error))
                         .finally("Data fetch completed")
                     }
-                useEffect(()=>{getServerData()}, [])
+                -useEffect(()=>{getServerData()}, [])
             10.2.5 definizione variabili globali (GlobalProvider({ children })  {return (<qui>);})
                 -<GlobalContext.Provider value={{ serverData, altreEventualiVariabiliDiStato }}>
                     {children}

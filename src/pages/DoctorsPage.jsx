@@ -1,7 +1,7 @@
 export default function DoctorsPage() {
     return (
         <>
-            <h1>Sono l'DoctorsPage</h1>
+            <h1>Sono lDoctorsPage</h1>
         </>
     )
 }
