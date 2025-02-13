@@ -24,8 +24,7 @@ bash: ni .env
 pakage.json:
 package.json 
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "node --watch --env-file=.env App.js" 👈👈👈👈👈👈[ERRORE]-[Vite] 
+        "dev": "Vite"
     },
 
 6 settaggio documento al fine di utilizzare la sintassi ES6 di js

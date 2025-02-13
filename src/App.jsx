@@ -20,7 +20,6 @@ export default function App() {
               <Route path="contacts" element={<ContactsPage />} />
             </Route>
           </Route>
-
         </Route>
       </Routes>
     </BrowserRouter>
