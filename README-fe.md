@@ -14,6 +14,11 @@ bash: npm install
 
 4 creazione .env e inizializziamo le variabili d'ambiente
 bash: ni .env 
+    -PORT = 3000
+    -DB_HOST=localhost
+    -DB_USER=root
+    -DB_PASSWORD=<password>
+    -DB_NAME=<nome-database>
 
 5 attribuzione alias al main sript aggiungendo a quest'ultimo gli attributi necesssaai per il refresh automatico e la possibilità di importare variabili d'ambiente dal file .env
 pakage.json:
