@@ -3,8 +3,8 @@ import DefaultLayout from "./components/layout/DefaultLayout.jsx"
 import HomePage from "./pages/HomePage.jsx"
 import DoctorsPage from "./pages/DoctorsPage.jsx"
 import DoctorDetailsPage from "./pages/DoctorDetailsPage.jsx"
-import ReviewsPage from "./pages/ReviewsPage.jsx"
-import ContactsPage from "./pages/ContactsPage.jsx"
+import ReviewsComponent from "./components/common/ReviewsComponent.jsx"
+import ContactsComponent from "./components/common/ContactsComponent.jsx"
 import { GlobalProvider } from "./contexts/GlobalContext.jsx"
 
 export default function App() {
@@ -18,8 +18,8 @@ export default function App() {
             <Route path="/doctors">
               <Route index element={<DoctorsPage />} />
               <Route path=":id" element={<DoctorDetailsPage />}>
-                <Route path="reviews" element={<ReviewsPage />} />
-                <Route path="contacts" element={<ContactsPage />} />
+                <Route path="reviews" element={<ReviewsComponent />} />
+                <Route path="contacts" element={<ContactsComponent />} />
               </Route>
             </Route>
           </Route>

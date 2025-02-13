@@ -1,4 +1,4 @@
-export default function ReviewsCard() {
+export default function ReviewCard() {
 
     return (
         <>
