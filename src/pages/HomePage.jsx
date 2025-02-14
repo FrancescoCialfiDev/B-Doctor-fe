@@ -1,12 +1,11 @@
 import { GlobalContext } from "../contexts/GlobalContext.jsx"
 import { useContext } from "react"
+import CarouselTopFiveDocComponent from "../components/common/CarouselTopFiveDocComponent.jsx"
 
-export default function HomePage() {
-    const { doctors, setDoctors } = useContext(GlobalContext)
-    console.log(doctors)
+export default function HomePage() {    
     return (
         <>
-            <h1>{doctors[4]?.name}</h1>
+            <CarouselTopFiveDocComponent/>
         </>
     )
 }

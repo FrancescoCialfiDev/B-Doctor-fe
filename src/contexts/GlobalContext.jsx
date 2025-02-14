@@ -12,6 +12,7 @@ const GlobalProvider = ({ children }) => {
         axios
             .get("http://localhost:3000/doctors")
             .then((response) => {
+                console.log(response);                
                 setDoctors(response.data.doctors)
             })
             .catch((err) => {
