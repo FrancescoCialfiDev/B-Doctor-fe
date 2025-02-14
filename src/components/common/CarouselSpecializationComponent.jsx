@@ -4,7 +4,9 @@ import CarouselSpecialization from "../unique/CarouselContent";
 
 export default function CarouselSpecializationComponent({ }) {
     const { specializations } = useContext(GlobalContext)
-
+    if (!doctors || doctors.length === 0) {
+        return <p>No doctors available</p>;
+    }
     return (
         <div className="overflow-auto my-5">
             <div className="d-flex w-100">
