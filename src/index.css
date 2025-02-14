@@ -7,6 +7,27 @@ body {
 
 .content {
     flex: 1;
+    padding-top: 60px;
+    /* Per evitare che il contenuto venga coperto dalla navbar */
+}
+
+.navbar {
+    font-size: 20px;
+    background: rgb(44, 183, 203);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: none;
+    color: rgb(169, 216, 255);
 }
 
 .footer {
@@ -26,5 +47,6 @@ body {
 }
 
 .footer a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: rgb(169, 216, 255);
 }
