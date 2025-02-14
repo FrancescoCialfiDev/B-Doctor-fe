@@ -1,107 +1,73 @@
-/* Contenitore per tutte le card */
+
 .cardContainer {
     margin-bottom: 1.5rem;
-    /* Allinea le card in una riga */
     width: 100%;
 }
 
-/* Card principale */
 .card {
-    width: 27vh;
+    width: 180px;
     aspect-ratio: 18/22;
     margin-right: 15px;
-   background-color: rgba(0, 0, 0, 0.129);
-    /* Larghezza fissa per uniformare */
-    /* Impostiamo un'altezza fissa per tutte le card */
+    background-color: rgba(0, 0, 0, 0.06);
     max-width: 500px;
-    /* Puoi personalizzare la larghezza massima */
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    
     padding: 15px;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
-    /* Transizione per ingrandire */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
-/* Corpo della card */
 .cardBody {
     text-align: left;
     flex-grow: 1;
-    /* Rende il corpo della card espandibile */
 }
 
-/* Titolo della card */
 .cardTitle {
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: bold;
     margin-top: 10px;
     text-align: left;
 }
 
-/* Specializzazione del medico */
 .cardSpecialization {
-    font-size: 0.6em;
-    color: #777;
+    font-size: 0.7em;
+    color: #413e3e;
     margin-bottom: 10px;
     text-align: left;
     height: 20px;
 }
 
-/* Voto del medico */
 .cardVote {
     text-align: left;
-    
+    font-size: 0.9em;
+    padding-top: 5px;   
 }
 
-/* Wrapper dell'immagine, mantiene la posizione relativa e l'allineamento a sinistra */
 .imageWrapper {
     width: 40px;
-    /* Piccola dimensione per il cerchio */
     height: 40px;
-    /* Stessa altezza per mantenere il cerchio */
     border-radius: 50%;
-    /* Rende il div circolare */
     overflow: hidden;
-    /* Nasconde la parte dell'immagine che fuoriesce dal cerchio */
     margin-right: 15px;
-    /* Allinea l'immagine a sinistra */
-    border: 1px solid rgba(0, 0, 0, 0.263);
+    border: 1px solid rgba(128, 128, 128, 0.123);
 }
 
-/* Immagine della card */
 .cardImage {
     width: 100%;
-    /* Fa sì che l'immagine riempia tutto il contenitore */
     height: 100%;
-    /* Mantiene l'immagine all'interno del cerchio */
     object-fit: cover;
-    /* Ritaglia l'immagine per riempire il cerchio senza distorcerla */
 }
 
-/* Bottone Details */
 .detailsButton {
-    padding: 4px 20px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
+    padding: 5px 30px;
+    background-color: rgba(0, 0, 0, 0.06);
+    color: rgb(0, 110, 255);
+    font-size: 1.1em;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Effetto hover per il bottone */
-.detailsButton:hover {
-    background-color: #0056b3;
-}
-
-/* Effetto focus per il bottone */
-.detailsButton:focus {
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }

@@ -1,7 +1,7 @@
 import style from "./CarouselTopFiveDoc.module.css";
 
 export default function CarouselTopFiveDoc({ id, name, surname, specialization, image, vote }) {
-    
+
     return (
         <div className={style.cardContainer} key={id}>
             <div className={style.card}>
@@ -16,14 +16,18 @@ export default function CarouselTopFiveDoc({ id, name, surname, specialization, 
                 <div className={style.cardBody}>
                     <h5 className={style.cardTitle}>Dr: {name} {surname}</h5>
                     <h6 className={style.cardSpecialization}>{specialization}</h6>
-                    <p className={style.cardVote}>Vote: {vote}</p>
+                    <div className="d-flex justify-content-between">
+                        <p className={style.cardVote}><strong>⭐{vote}</strong></p>
+                        {/* <p className={style.reviews}><strong>⭐{reviws}</strong></p> */}
+                    </div>
+
                     <div className="d-flex align-items-center justify-content-center">
                         <button className={style.detailsButton}>Details</button>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-       
+
     );
 }
