@@ -2,7 +2,7 @@ import { IoStarSharp } from "react-icons/io5";
 import { RiStarSLine } from "react-icons/ri";
 
 export default function StarsComponent({ vote }) {
-    const voteUser = vote
+    const voteUser = vote / 2
     const starsUser = []
     for (let index = 0; index < 5; index++) {
         if (starsUser.length < voteUser) {
