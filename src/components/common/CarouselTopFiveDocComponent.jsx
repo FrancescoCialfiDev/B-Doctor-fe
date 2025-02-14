@@ -1,24 +1,21 @@
+import { GlobalProvider, GlobalContext } from "../../contexts/GlobalContext";
 import { useContext } from "react";
-import { GlobalContext } from "../../contexts/GlobalContext";
 import CarouselTopFiveDoc from "../unique/CarouselTopFiveDoc";
-import style from "./CarouselTopFiveDocComponent.module.css"
 
-export default function CarouselTopFiveDocComponent() {
-    const { doctors } = useContext(GlobalContext);
-
-    if (!doctors || doctors.length === 0) {
-        return <p>No doctors available</p>;
+export default function CarouselTopFiveDocComponent({ }) {
+    const { doctors } = useContext(GlobalContext)
+    let topFiveDoc = []
+    for (let i = 0; i < 5; i++) {
+        topFiveDoc.push(doctors[i])
     }
 
-    let topFiveDoc = doctors.slice(0, 5);
-
-    return (<>
-        <h1>Racomended Doctors</h1>
-        <div className={style.carouel_scroll}>
-
-            <div className={style.carouel_row}>
+    return (
+        <>
+        <h2>Raccomanded Doctors</h2>
+        <div className="overflow-auto my-5">
+            <div className="d-flex w-100">
                 {topFiveDoc.map((doctor) => {
-                    if (!doctor?.id) return null;
+                    console.log(doctor?.id)
                     return (
                         <CarouselTopFiveDoc
                             key={doctor?.id}
@@ -26,11 +23,16 @@ export default function CarouselTopFiveDocComponent() {
                             name={doctor?.name}
                             surname={doctor?.surname}
                             specialization={doctor?.specializations}
+                            // image={doctor.img}
                             vote={doctor?.vote_average}
                         />
                     );
                 })}
             </div>
-        </div></>
+        </div>
+        </>
     );
 }
+
+
+
