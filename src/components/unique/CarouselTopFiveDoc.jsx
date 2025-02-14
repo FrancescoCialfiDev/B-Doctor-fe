@@ -1,4 +1,4 @@
-export default function CarouselTopFiveDoc({ name, surname, specialization, image }) {
+export default function CarouselTopFiveDoc({ name, surname, specialization, image, vote }) {
 
     return (
         <div className="p-4 w-100 shadow text-center bg-light">
