@@ -12,8 +12,9 @@ export default function CarouselTopFiveDocComponent() {
     let topFiveDoc = doctors.slice(0, 5);
 
     return (
-        <div className="overflow-auto my-5">
-            <div className="d-flex w-100">
+        <div className="overflow-scroll my-5">
+            <h1>Racomended Doctors</h1>
+            <div className="d-flex my-5">
                 {topFiveDoc.map((doctor) => {
                     if (!doctor?.id) return null;
                     return (
@@ -23,7 +24,7 @@ export default function CarouselTopFiveDocComponent() {
                             name={doctor?.name}
                             surname={doctor?.surname}
                             specialization={doctor?.specializations}
-                            vote={doctor?.vote}
+                            vote={doctor?.vote_average}
                         />
                     );
                 })}
