@@ -3,7 +3,7 @@ import DefaultLayout from "./components/layout/DefaultLayout.jsx"
 import HomePage from "./pages/HomePage.jsx"
 import DoctorsPage from "./pages/DoctorsPage.jsx"
 import DoctorDetailsPage from "./pages/DoctorDetailsPage.jsx"
-import ReviewsComponent from "./components/common/ReviewsComponent.jsx"
+import ReviewsComponent from "./components/common/reviews/ReviewsComponent.jsx"
 import ContactsComponent from "./components/common/ContactsComponent.jsx"
 import { GlobalProvider } from "./contexts/GlobalContext.jsx"
 
@@ -22,6 +22,7 @@ export default function App() {
                 <Route path="contacts" element={<ContactsComponent />} />
               </Route>
             </Route>
+
           </Route>
         </Routes>
       </BrowserRouter>

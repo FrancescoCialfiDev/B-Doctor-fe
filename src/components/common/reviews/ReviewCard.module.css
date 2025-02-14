@@ -1,0 +1,28 @@
+.review_card {
+    width: 90%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+}
+
+.review_header {
+    font-size: 20px;
+    background: #32a9dc;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars {
+    font-size: 25px;
+    color: gold;
+}
+
+.review_body {
+    font-size: 25px;
+    padding: 10px;
+    color: #333;
+}
