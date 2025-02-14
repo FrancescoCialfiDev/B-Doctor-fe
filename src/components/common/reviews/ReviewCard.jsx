@@ -1,5 +1,5 @@
 import styles from "./ReviewCard.module.css";
-
+import StarsComponent from "../StarsComponent";
 
 export default function ReviewCard({ review }) {
 
@@ -9,7 +9,9 @@ export default function ReviewCard({ review }) {
                 <div className={styles.review_card}>
                     <div className={styles.review_header}>
                         <span>{review?.name_patient}</span>
-                        <span className={styles.stars}>★★★★★</span>
+                        <span className={styles.stars}>
+                            <StarsComponent vote={review?.vote} />
+                        </span>
                     </div>
                     <div className={styles.review_body}>
                         <p>{review?.description}</p>
