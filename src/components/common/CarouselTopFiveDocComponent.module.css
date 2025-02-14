@@ -1,0 +1,13 @@
+.carouel_scroll {
+    width: auto;
+    overflow-x: scroll;
+}
+
+.carouel_row {
+    display: flex;
+    width: 300vw;
+    gap: 10px;
+}
+
+
+/* calc(100vw / 5); */

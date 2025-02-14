@@ -1,0 +1,10 @@
+.carousel_card {
+    padding: 40px;
+    width: 100px;
+    text-align: center;
+    background: grey;
+}
+
+/* calc(100vw / 5);
+p-4 w-100 shadow text-center bg-light
+*/
