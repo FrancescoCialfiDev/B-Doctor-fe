@@ -1,19 +1,25 @@
 import { GlobalProvider, GlobalContext } from "../../contexts/GlobalContext";
 import { useContext } from "react";
-import CarouselSpecialization from "../unique/CarouselContent";
+import CarouselSpecialization from "../unique/CarouselSpecialization";
+import style from "./CarouselSpecializationComponent.module.css"
 
 export default function CarouselSpecializationComponent({ }) {
     const { specializations } = useContext(GlobalContext)
-    if (!doctors || doctors.length === 0) {
-        return <p>No doctors available</p>;
+    if (!specializations || specializations.length === 0) {
+        return <p>No specialization available</p>;
     }
-    return (
-        <div className="overflow-auto my-5">
-            <div className="d-flex w-100">
+    console.log(specializations)
+    return (<>
+        <h1>Specializations</h1>
+        <div className={style.carouel_scroll}>
+            <div className={style.carouel_row}>
                 {specializations.map((specialization) => {
-                    return <CarouselSpecialization key={specialization.id} title={specialization.title} image={specialization.img} />;
+                    return <CarouselSpecialization
+                        key={specialization?.id}
+                        name={specialization?.name} />;
                 })}
             </div>
         </div>
+    </>
     );
 }

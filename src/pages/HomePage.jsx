@@ -1,4 +1,5 @@
 import CarouselTopFiveDocComponent from "../components/common/CarouselTopFiveDocComponent.jsx"
+import CarouselSpecializationComponent from "../components/common/CarouselSpecializationComponent.jsx";
 import style from "./HomePage.module.css";
 
 
@@ -21,6 +22,7 @@ export default function HomePage() {
                 </div>
             </div>
 
+            <CarouselSpecializationComponent />
 
             <CarouselTopFiveDocComponent />
         </section>
