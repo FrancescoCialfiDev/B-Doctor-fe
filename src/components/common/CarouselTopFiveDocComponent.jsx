@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import CarouselTopFiveDoc from "../unique/CarouselTopFiveDoc";
+import style from "./CarouselTopFiveDocComponent.module.css"
 
 export default function CarouselTopFiveDocComponent() {
     const { doctors } = useContext(GlobalContext);
@@ -11,10 +12,11 @@ export default function CarouselTopFiveDocComponent() {
 
     let topFiveDoc = doctors.slice(0, 5);
 
-    return (
-        <div className="overflow-scroll my-5">
-            <h1>Racomended Doctors</h1>
-            <div className="d-flex my-5">
+    return (<>
+        <h1>Racomended Doctors</h1>
+        <div className={style.carouel_scroll}>
+
+            <div className={style.carouel_row}>
                 {topFiveDoc.map((doctor) => {
                     if (!doctor?.id) return null;
                     return (
@@ -29,6 +31,6 @@ export default function CarouselTopFiveDocComponent() {
                     );
                 })}
             </div>
-        </div>
+        </div></>
     );
 }
