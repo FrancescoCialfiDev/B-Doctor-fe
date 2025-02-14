@@ -9,12 +9,21 @@ export default function CarouselTopFiveDocComponent({ }) {
         topFiveDoc.push(doctors[i])
     }
     return (
-        <div className="overflow-x-scroll my-20" >
-            <div className="flex w-610">
+        <div className="overflow-auto my-5">
+            <div className="d-flex w-100">
                 {topFiveDoc.map((doctor) => {
-                    return <CarouselTopFiveDoc key={doctor.id} name={doctor.name} surname={doctor.surname} specialization={doctor.specialization} image={doctor.img} vote={doctor.vote} />
+                    return (
+                        <CarouselTopFiveDoc
+                            key={doctor.id}
+                            name={doctor.name}
+                            surname={doctor.surname}
+                            specialization={doctor.specialization}
+                            image={doctor.img}
+                            vote={doctor.vote}
+                        />
+                    );
                 })}
             </div>
         </div>
     );
-}
+}    

@@ -6,10 +6,10 @@ export default function CarouselSpecializationComponent({ }) {
     const { specializations } = useContext(GlobalContext)
 
     return (
-        <div className="overflow-x-scroll my-20" >
-            <div className="flex w-610">
+        <div className="overflow-auto my-5">
+            <div className="d-flex w-100">
                 {specializations.map((specialization) => {
-                    return <CarouselSpecialization key={specialization.id} title={specialization.title} image={specialization.img} />
+                    return <CarouselSpecialization key={specialization.id} title={specialization.title} image={specialization.img} />;
                 })}
             </div>
         </div>

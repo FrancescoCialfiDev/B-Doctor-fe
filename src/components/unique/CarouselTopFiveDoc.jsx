@@ -1,9 +1,9 @@
 export default function CarouselTopFiveDoc({ name, surname, specialization, image }) {
 
     return (
-        <div className="p-8 w-500 shadow-md text-center">
-            <img src={image} className="carousel-img fa-solid fa-user-large h-auto rounded-md mx-auto mb-4 " alt="carousel-post-img" />
-            <h2 className="text-3xl font-bold text-center my-6">{title}</h2>
+        <div className="p-4 w-100 shadow text-center bg-light">
+            <img src={image} className="img-fluid rounded mx-auto d-block mb-3" alt="carousel-post-img" />
+            <h2 className="fs-3 fw-bold text-center my-4">{title}</h2>
         </div>
     );
 }
