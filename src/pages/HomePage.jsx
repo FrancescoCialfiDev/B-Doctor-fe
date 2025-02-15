@@ -14,7 +14,7 @@ export default function HomePage() {
 
                     <div className="col-6">
                         <div>
-                            <h2 className="card-title pt-2">Yout Healt is our Priority</h2>
+                            <h2 className="card-title pt-2">Your Healt is our Priority</h2>
                             <h6 className="card-text">Dr: Antony</h6>
                             <p className={style.textSmall}>Ortophedic | Specialist</p>
                         </div>
