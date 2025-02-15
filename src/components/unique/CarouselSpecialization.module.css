@@ -19,13 +19,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    background-color: #6cd9d427;
+    box-shadow: 5px 5px 5px #88888838
 }
 
 .image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 15px;
+
 }
 
 .specialization {
