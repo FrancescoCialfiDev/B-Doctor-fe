@@ -2,9 +2,9 @@ import React from "react";
 import styles from "../unique/CarouselSpecialization.module.css";
 import { Link } from "react-router-dom";
 
-const ProfileCard = ({ name, icon }) => {
+const ProfileCard = ({ name, icon, id_spec }) => {
     return (
-        <Link to="">
+        <Link key={id_spec} to="">
             <div className={styles.card}>
                 <div className={styles.imageContainer}>
                     <img

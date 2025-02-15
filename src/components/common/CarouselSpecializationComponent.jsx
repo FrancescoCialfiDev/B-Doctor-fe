@@ -17,6 +17,7 @@ export default function CarouselSpecializationComponent({ }) {
                 {specializations.map((specialization) => {
                     return <CarouselSpecialization
                         key={specialization?.id}
+                        id_spec={specialization?.id}
                         name={specialization?.name}
                         icon={specialization?.icon_url} />;
                 })}
