@@ -45,3 +45,7 @@
     white-space: wrap;
     text-overflow: ellipsis;
 }
+
+.links {
+    text-decoration: none;
+}
