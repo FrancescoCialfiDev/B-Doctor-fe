@@ -5,11 +5,11 @@ import style from "./HomePage.module.css";
 
 export default function HomePage() {
     return (
-        <section className="px-3">
-            <div className="card pt-3" style={{ width: '100%', borderRadius: '25px' }}>
+        <section className="px-3 container">
+            <div className={`card pt-3 ${style.cardBackground}`}>
                 <div className="row">
-                    <div className="col-6">
-                        <img src="https://pngimg.com/d/doctor_PNG15964.png" className="card-img-top ps-2" alt="..." />
+                    <div className="col-6 d-flex justify-content-center">
+                        <img src="https://pngimg.com/d/doctor_PNG15964.png" className={style.img} alt="..." />
                     </div>
 
                     <div className="col-6">

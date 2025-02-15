@@ -1,9 +1,19 @@
-export default function CarouselSpecialization({ name, image }) {
+import React from "react";
+import styles from "../unique/CarouselSpecialization.module.css";
 
+const ProfileCard = ({ name }) => {
     return (
-        <div className="position-relative gup-5 p-4 w-100 shadow rounded-circle text-center">
-            <img src="https://static.thenounproject.com/png/761552-200.png" className="img-fluid mx-auto d-block" alt="carousel-post-img" />
-            <p className="position-absolute top-50 start-50 translate-middle fs-4 fw-bold bg-white text-center text-dark">{name}</p>
+        <div className={styles.card}>
+            <div className={styles.imageContainer}>
+                <img
+                    src="https://static.thenounproject.com/png/761552-200.png"
+                    alt="profile-img"
+                    className={styles.image}
+                />
+            </div>
+            <p className={styles.specialization}>{name}</p>
         </div>
     );
-}
+};
+
+export default ProfileCard;

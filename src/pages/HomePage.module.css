@@ -1,8 +1,16 @@
-.textSmall{
+.textSmall {
     font-size: 0.6em;
 }
 
-img{
+.img {
+    height: 150px;
+}
+
+.cardBackground {
     width: 100%;
-    
+    border-radius: 25px;
+    background-image: url("https://img.freepik.com/vetores-premium/abstrato-base-medico-com-padrao-de-hexagonos_120542-355.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

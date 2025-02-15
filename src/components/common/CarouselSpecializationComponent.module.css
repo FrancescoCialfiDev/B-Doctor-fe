@@ -5,6 +5,6 @@
 
 .carouel_row {
     display: flex;
-    width: 300vw;
+    width: auto;
     gap: 10px;
 }

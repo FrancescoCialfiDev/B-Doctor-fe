@@ -18,7 +18,7 @@ export default function CarouselTopFiveDoc({ id, name, surname, specialization, 
                     <h6 className={style.cardSpecialization}>{specialization}</h6>
                     <div className="d-flex justify-content-between">
                         <p className={style.cardVote}><strong>⭐{vote}</strong></p>
-                        {/* <p className={style.reviews}><strong>⭐{reviws}</strong></p> */}
+                        {/* <p className={style.reviews}><strong>{reviws}</strong></p> */}
                     </div>
 
                     <div className="d-flex align-items-center justify-content-center">
