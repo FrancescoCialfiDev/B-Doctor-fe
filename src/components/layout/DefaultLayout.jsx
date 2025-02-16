@@ -7,7 +7,7 @@ export default function DefaultLayout() {
         <>
             <HeaderComponent />
             <main>
-                <section>
+                <section className="container">
                     <Outlet />
                 </section>
             </main>
