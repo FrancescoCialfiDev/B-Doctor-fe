@@ -10,7 +10,7 @@ export default function CarouselSpecializationComponent({ }) {
     }
     console.log(specializations)
     return (<>
-        <h2 className="mb- mt-5">Specialists</h2>
+        <h2 className="mb-3 mt-5">Specialists</h2>
 
         <div className={style.carouel_scroll}>
             <div className={style.carouel_row}>

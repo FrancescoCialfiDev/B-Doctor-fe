@@ -1,10 +1,12 @@
 .carouel_scroll {
     width: auto;
     overflow-x: scroll;
+    margin-bottom: 10px;
+
 }
 
 .carouel_row {
     display: flex;
     width: auto;
-    gap: 10px;
+    gap: 10px
 }

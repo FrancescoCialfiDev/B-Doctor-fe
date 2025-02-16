@@ -4,8 +4,6 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 20px;
-    width: 150px;
     text-align: center;
     text-decoration: none;
 }
@@ -18,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: #91d8e31a;
     box-shadow: 5px 5px 5px #88888838
 }
 
@@ -31,7 +29,7 @@
 }
 
 .specialization {
-    height: 48px;
+    height: 70px;
     font-size: 1em;
     font-weight: bold;
     color: #333;
