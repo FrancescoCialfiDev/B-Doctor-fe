@@ -50,3 +50,9 @@ body {
     text-decoration: none;
     color: rgb(169, 216, 255);
 }
+
+/* for home page */
+
+section {
+    padding: 70px 10px;
+}

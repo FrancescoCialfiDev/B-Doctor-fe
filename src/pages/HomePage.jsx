@@ -5,7 +5,7 @@ import style from "./HomePage.module.css";
 
 export default function HomePage() {
     return (
-        <section className="px-3 container">
+        <section className="container">
             <div className={`card pt-3 ${style.cardBackground}`}>
                 <div className="row">
                     <div className="col-6 d-flex justify-content-center">

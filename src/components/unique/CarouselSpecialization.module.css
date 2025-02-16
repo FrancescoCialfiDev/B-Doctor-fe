@@ -5,8 +5,6 @@
     justify-content: center;
     gap: 10px;
     padding: 20px;
-    background: white;
-    border-radius: 10px;
     width: 150px;
     text-align: center;
     text-decoration: none;
@@ -20,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #6cd9d427;
+    background-color: white;
     box-shadow: 5px 5px 5px #88888838
 }
 
