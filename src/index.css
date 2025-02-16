@@ -51,14 +51,14 @@ section {
 }
 
 .footer a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin: 0 10px;
 }
 
 .footer a:hover {
     text-decoration: none;
-    color: rgb(169, 216, 255);
+    color: rgb(61, 167, 253);
 }
 
 .form-label {
