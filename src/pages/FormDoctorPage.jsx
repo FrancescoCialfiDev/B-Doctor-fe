@@ -16,7 +16,6 @@ const initialDoctor = {
 export default function FormDoctorPage({ overlay }) {
     const { doctors, setDoctors } = useContext(GlobalContext);
     const [newDoctor, setNewDoctor] = useState(initialDoctor);
-
     const { id } = useParams();
 
     function sendData() {
@@ -89,7 +88,7 @@ export default function FormDoctorPage({ overlay }) {
                         className="form-control "
                         id="email"
                         name="email"
-                        placeholder="Enter your E-mail Address"
+                        placeholder="jhon@doe.com"
                         value={newDoctor.email}
                         onChange={handleChange}
                     />
@@ -99,11 +98,11 @@ export default function FormDoctorPage({ overlay }) {
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Insert your <strong> Mobile Number</strong></label>
                     <input
-                        pattern="[0-9]{3}-[0-9]{7}" required
+                        pattern="[0-9]{3}[0-9]{7}" required
                         className="form-control"
                         id="phone"
                         name="phone"
-                        placeholder="123-4567890"
+                        placeholder="1234567890"
                         value={newDoctor.phone}
                         onChange={handleChange}
                     />
@@ -117,7 +116,7 @@ export default function FormDoctorPage({ overlay }) {
                         className="form-control"
                         id="office_addres"
                         name="office_addres"
-                        placeholder="Enter your Office Addres"
+                        placeholder="OfficeAddres ST. 1500"
                         value={newDoctor.office_addres}
                         onChange={handleChange}
                     />
@@ -125,16 +124,16 @@ export default function FormDoctorPage({ overlay }) {
 
                 {/* serial_number */}
                 <div className="mb-3">
-                    <label htmlFor="name" className="form-label">Insert your <strong>Serial Number</strong> (do not include <strong>SN</strong>)</label>
+                    <label htmlFor="name" className="form-label">Insert your <strong>Serial Number</strong> </label>
                     <input
                         min="100000"
                         max="999999"
                         type="text"
                         className="form-control"
-                        id="username"
-                        name="name"
-                        placeholder="123456"
-                        value={`SN${newDoctor.serial_number}`}
+                        id="serial_number"
+                        name="serial_number"
+                        placeholder="SN123456"
+                        value={newDoctor.serial_number}
                         onChange={handleChange}
                     />
                 </div>

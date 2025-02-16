@@ -66,5 +66,6 @@ section {
 }
 
 form {
-    padding: 20px
+    padding: 20px;
+    background-color: #f5fbfc;
 }
