@@ -61,6 +61,10 @@ section {
     color: rgb(169, 216, 255);
 }
 
-.form-control {
-    margin-bottom: 20px;
+.form-label {
+    margin-top: 20px;
+}
+
+form {
+    padding: 20px
 }

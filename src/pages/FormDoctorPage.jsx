@@ -47,9 +47,9 @@ export default function FormDoctorPage({ overlay }) {
     }
 
     return (
-        <div className="overlayForm t-0 l-0 w-100 h-100 bg-white d-flex justify-content-center flex-column align-items-center" >
+        <div className="bg-white d-flex justify-content-center flex-column align-items-center" >
             <h1>Registration Precess</h1>
-            <form onSubmit={handleSubmit} className="w-50 bg-light p-5 rounded-3">
+            <form onSubmit={handleSubmit} className="bg-light rounded-3">
 
                 {/* name */}
                 <div className="mb-3">
@@ -67,7 +67,7 @@ export default function FormDoctorPage({ overlay }) {
 
                 {/* surname */}
                 <div className="mb-3">
-                    <label htmlFor="surname" className="form-label">Insert your <strong>Serial Number</strong></label>
+                    <label htmlFor="surname" className="form-label">Insert your <strong>Surname</strong></label>
                     <input
                         className="form-control"
                         id="surname"
@@ -139,7 +139,7 @@ export default function FormDoctorPage({ overlay }) {
                     />
                 </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary mt-4">Submit</button>
             </form>
         </div >
 
