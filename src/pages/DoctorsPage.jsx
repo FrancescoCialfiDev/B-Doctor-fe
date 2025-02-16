@@ -12,7 +12,7 @@ export default function DoctorsPage() {
             {doctors
                 .map((doctor) => (
                     <div key={doctor.id} className={style.doctorCard}>
-                        <img className={style.image} src={`/${doctor.image}`} alt={`${doctor.name} ${doctor.surname}`} />
+                        <img className={style.image} src={doctor.img_url} alt={`${doctor.name} ${doctor.surname}`} />
                         <div className={style.details}>
                             <h3>{doctor.name} {doctor.surname}</h3>
                             <p className={style.stars}><StarsComponent vote={doctor.vote_average} /></p>
