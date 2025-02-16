@@ -9,7 +9,7 @@ export default function HeaderComponent() {
                         <img src="logo.png" alt="Logo" width="50" height="50" />
                     </Link>
                     <div className="ms-auto">
-                        <Link to="/doctors" className="nav-link">Lista dottori</Link>
+                        <Link to="/doctors" className="nav-link">Doctor List</Link>
                     </div>
                 </div>
             </nav>
