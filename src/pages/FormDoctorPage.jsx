@@ -20,7 +20,7 @@ export default function FormDoctorPage({ overlay }) {
     const { id } = useParams();
 
     function sendData() {
-        axios.post(`http://localhost:3000/books/reviews/${id}`, newDoctor)
+        axios.post(`http://localhost:3000/doctors/${id}`, newDoctor)
             .then((res) => {
                 console.log(res.data);
                 setNewDoctor([...doctors, newDoctor]);
@@ -47,8 +47,9 @@ export default function FormDoctorPage({ overlay }) {
     }
 
     return (
-        <div className={`${overlay} overlayForm  position-absolute t-0 l-0 w-100 h-100 d-flex justify-content-center flex-column align-items-center`}>
-            <form onSubmit={handleSubmit} className="w-50 bg-white p-5 rounded-3">
+        <div className="overlayForm t-0 l-0 w-100 h-100 bg-white d-flex justify-content-center flex-column align-items-center" >
+            <h1>Registration Precess</h1>
+            <form onSubmit={handleSubmit} className="w-50 bg-light p-5 rounded-3">
 
                 {/* name */}
                 <div className="mb-3">
@@ -66,27 +67,26 @@ export default function FormDoctorPage({ overlay }) {
 
                 {/* surname */}
                 <div className="mb-3">
-                    <label htmlFor="text" className="form-label">Insert your <strong>Serial Number</strong></label>
-                    <textarea
+                    <label htmlFor="surname" className="form-label">Insert your <strong>Serial Number</strong></label>
+                    <input
                         className="form-control"
-                        id="text"
+                        id="surname"
                         name="surname"
-                        rows="3"
                         placeholder="Doe"
                         value={newDoctor.surname}
                         onChange={handleChange}
-                    ></textarea>
+                    ></input>
                 </div>
 
                 {/* email */}
                 <div className="mb-3">
-                    <label htmlFor="vote" className="form-label">Insert your <strong>E-mail Address</strong></label>
+                    <label htmlFor="vote" className="form-label">Insert your <strong>Email Address</strong></label>
                     <input
                         type="email"
                         min="0"
                         max="5"
                         step="1"
-                        className="form-control"
+                        className="form-control "
                         id="email"
                         name="email"
                         placeholder="Enter your E-mail Address"
@@ -129,7 +129,7 @@ export default function FormDoctorPage({ overlay }) {
                     <input
                         min="100000"
                         max="999999"
-                        type="number"
+                        type="text"
                         className="form-control"
                         id="username"
                         name="name"
@@ -141,7 +141,7 @@ export default function FormDoctorPage({ overlay }) {
 
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
-        </div>
+        </div >
 
     );
 }

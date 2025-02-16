@@ -3,11 +3,16 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    background-color: white !important;
 
 }
 
 main {
     background-color: white;
+}
+
+section {
+    padding: 70px 10px;
 }
 
 .content {
@@ -56,8 +61,6 @@ main {
     color: rgb(169, 216, 255);
 }
 
-/* for home page */
-
-section {
-    padding: 70px 10px;
+.form-control {
+    margin-bottom: 20px;
 }
