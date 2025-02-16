@@ -28,21 +28,22 @@ export default function DoctorDetailsPage() {
     return (
         <>
             {detailsDoc ? (
-                <>
-                    <div className={style.container}>
-                        <div className={style.doctorCard}>
-                            <div className={style.nameSurname}>
-                                <h2>{detailsDoc?.name}</h2>
-                                <h2>{detailsDoc?.surname}</h2>
-                            </div>
-                            <div className={style.details}>
-                                <p>{detailsDoc?.email}</p>
-                                <p>{detailsDoc?.office_address}</p>
-                                <p>{detailsDoc?.phone}</p>
-                                <p>{detailsDoc?.serial_number}</p>
-                            </div>
+                <><div className={style.container}>
+                    <img className={style.image} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
+
+                    <div className={style.doctorCard}>
+                        <div className={style.nameSurname}>
+                            <h2>{detailsDoc?.name}</h2>
+                            <h2>{detailsDoc?.surname}</h2>
+                        </div>
+                        <div className={style.details}>
+                            <p>{detailsDoc?.email}</p>
+                            <p>{detailsDoc?.office_address}</p>
+                            <p>{detailsDoc?.phone}</p>
+                            <p>{detailsDoc?.serial_number}</p>
                         </div>
                     </div>
+                </div>
                 </>
 
             ) : (

@@ -8,7 +8,7 @@ export default function DoctorsPage() {
     const { doctors } = useContext(GlobalContext);
 
     return (
-        <>
+        <><h1 className="text-center">Doctor List</h1>
             <div className={style.container}>
                 {doctors
                     .map((doctor) => (
@@ -26,7 +26,8 @@ export default function DoctorsPage() {
                     ))}
 
             </div>
-            <Link to="/formDoctor" className="nav-link">Sing in Now</Link>
+            <Link id="singin-button" to="/formDoctor" className="nav-link">Sing In Now</Link>
         </>
     );
 }
+
