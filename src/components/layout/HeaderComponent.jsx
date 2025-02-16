@@ -8,8 +8,13 @@ export default function HeaderComponent() {
                     <Link to="/" className="navbar-brand">
                         <img src="logo.png" alt="Logo" width="50" height="50" />
                     </Link>
-                    <div className="ms-auto">
-                        <Link to="/doctors" className="nav-link">Doctor List</Link>
+                    <div className='d-flex'>
+                        <div className="ms-auto me-4">
+                            <Link to="/doctors" className="nav-link">Sing In</Link>
+                        </div>
+                        <div className="ms-auto">
+                            <Link to="/form" className="nav-link">Doctor List</Link>
+                        </div>
                     </div>
                 </div>
             </nav>

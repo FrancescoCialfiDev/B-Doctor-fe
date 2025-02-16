@@ -13,7 +13,7 @@ const initialDoctor = {
     serial_number: "",
 };
 
-export default function FormComponent({ overlay }) {
+export default function FormDoctorPage({ overlay }) {
     const { doctors, setDoctors } = useContext(GlobalContext);
     const [newDoctor, setNewDoctor] = useState(initialDoctor);
 

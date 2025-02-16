@@ -23,6 +23,7 @@ export default function DoctorsPage() {
                         </div>
                     </div>
                 ))}
+            <Link to="/formDoctor" className="nav-link">Sing in Now</Link>
         </div>
     );
 }
