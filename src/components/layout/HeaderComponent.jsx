@@ -17,9 +17,9 @@ export default function HeaderComponent() {
                     </div>
 
                     <div className='d-flex'>
-                        {/* <div className="ms-auto me-4">
-                            <Link to="/formDoctors" className="nav-link">Sing In</Link>
-                        </div> */}
+                        <div className="ms-auto me-4">
+                            <Link to="/formDoctor" className="nav-link">Sing In</Link>
+                        </div>
                         <div className="ms-auto d-flex align-items-center m-4 gap-3">
                             <GiHamburgerMenu />
                         </div>
