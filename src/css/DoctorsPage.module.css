@@ -1,65 +1,147 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    /* background: rgb(44, 183, 203);
-    background: linear-gradient(180deg, rgba(44, 183, 203, 1) 15%, rgba(255, 255, 255, 1) 45%, rgba(167, 225, 234, 1) 70%, rgba(37, 153, 191, 1) 85%); */
-}
-
-.container {
+.badgeContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
-
 }
 
-.doctorCard {
-    display: flex;
-    align-items: center;
+.badge {
     width: 500px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 8px;
-    justify-content: start;
+    background: rgb(238, 238, 238);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
+    margin: 10px;
+}
+.doctorName{
+    padding-left: 85px;
 }
 
-.image {
-    width: 100px;
-    margin: 0 25px
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
 }
 
-.details {
+.profileContainer {
     display: flex;
-    flex-direction: column;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
+    margin-top: -45px;
+    margin-left: -310px;
 }
 
-.details h3 {
-    margin-bottom: 5px;
+.profileImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 3px solid white;
+    background: #007bff;
 }
 
-.stars {
-    margin-bottom: 10px;
+.vote {
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+    margin-bottom: 45px;
 }
 
-.specializations {
-    margin-top: 10px;
+.detailsSection {
+    height: 40px;
+    padding: 10px;
 }
 
-.specializations h4 {
-    margin-bottom: 5px;
+.detailsSection p {
+    font-size: 16px;
 }
 
-.specializations a {
+.signatureSection {
+    margin-top: 20px;
+}
+
+.viewProfileLink {
+    font-weight: bold;
     color: #007bff;
     text-decoration: none;
 }
 
-.specializations a:hover {
+.viewProfileLink:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+    .badge {
+        width: 300px;
+    }
+
+    .profileImage {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header {
+        font-size: 1.3em;
+    }
+
+    .detailsSection p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 992px) {
+    .badge {
+        width: 300px;
+    }
+
+    .profileImage {
+        width: 70%;
+    }
+    .vote {
+        display: flex;
+        justify-content: center;
+        margin-top: -20px;
+        margin-bottom: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .badge {
+        width: 270px;
+    }
+
+    .profileImage {
+        width: 70%;
+    }
+    .vote {
+        display: flex;
+        justify-content: center;
+        margin-top: -20px;
+        margin-bottom: 45px;
+    }
+}
+
+@media (max-width: 576px) {
+    .badge {
+        width: 220px;
+    }
+
+    .profileImage {
+        width: 60%;
+    }
+
+    .header {
+        font-size: 1em;
+    }
+
+    .detailsSection p {
+        font-size: 12px;
+    }
 }
