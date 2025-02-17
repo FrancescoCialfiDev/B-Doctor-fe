@@ -1,12 +1,25 @@
 .carouel_scroll {
-    width: auto;
-    overflow-x: scroll;
-    margin-bottom: 10px;
+  width: auto;
+  overflow-x: scroll;
+  margin-bottom: 10px;
+}
 
+.carouel_scroll::-webkit-scrollbar {
+  height: 8px; /* Altezza della scrollbar orizzontale */
+}
+
+.carouel_scroll::-webkit-scrollbar-thumb {
+  background-color: #308acb; /* Colore azzurino */
+  border-radius: 20px; /* Rende la scrollbar a forma di pillola */
+  border: 4px solid #308acb; /* Colore di bordo per effetto pillola */
+}
+
+.carouel_scroll::-webkit-scrollbar-track {
+  background-color: transparent; /* Nessun colore di sfondo per la traccia */
 }
 
 .carouel_row {
-    display: flex;
-    width: auto;
-    gap: 10px
+  display: flex;
+  width: auto;
+  gap: 10px;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+
 import styles from "../unique/CarouselSpecialization.module.css";
 import { Link } from "react-router-dom";
 
@@ -13,8 +13,8 @@ const ProfileCard = ({ name, icon, id_spec }) => {
                         className={styles.image}
                     />
                 </div>
-                <p className={styles.specialization}>{name}</p>
             </div>
+            <p className={styles.specialization}>{name.slice(0, 10) + "..."}</p>
         </Link >
 
     );

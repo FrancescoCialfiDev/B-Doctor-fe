@@ -1,16 +1,25 @@
 .textSmall {
-    font-size: 0.6em;
+  font-size: 0.9em;
+  color: rgba(228, 228, 228, 0.61);
 }
 
 .img {
-    height: 150px;
+  height: 150px;
 }
 
 .cardBackground {
-    width: 100%;
-    border-radius: 25px;
-    background-image: url("https://img.freepik.com/vetores-premium/abstrato-base-medico-com-padrao-de-hexagonos_120542-355.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 25px;
+  background-image: linear-gradient(
+      to right,
+      rgba(10, 105, 139, 0.425),
+      rgba(10, 105, 139, 0.425)
+    ),
+    url('../public/bgLogo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
+  -moz-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
+  box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
 }

@@ -2,6 +2,8 @@ import style from "./CarouselTopFiveDoc.module.css";
 import { Link } from "react-router-dom";
 export default function CarouselTopFiveDoc({ id, name, surname, specialization, image, vote }) {
 
+    vote = Math.round(vote / 2)
+
     return (
         <div className={style.cardContainer} key={id}>
             <Link className={style.links}>
@@ -18,12 +20,12 @@ export default function CarouselTopFiveDoc({ id, name, surname, specialization, 
                         <h5 className={style.cardTitle}>Dr: {name} {surname}</h5>
                         <h6 className={style.cardSpecialization}>{specialization}</h6>
                         <div className="d-flex justify-content-between">
-                            <p className={style.cardVote}><strong>⭐{vote}</strong></p>
+                            <p className={style.cardVote}><strong>⭐{vote}/5</strong></p>
                             {/* <p className={style.reviews}><strong>{reviws}</strong></p> */}
                         </div>
 
                         <div className="d-flex align-items-center justify-content-center">
-                            <button className={style.detailsButton}>Details</button>
+                            <Link to={`http://localhost:5173/doctors/${id}`} className={style.detailsButton}>Details</Link>
                         </div>
 
                     </div>

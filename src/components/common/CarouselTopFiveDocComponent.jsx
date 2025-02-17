@@ -1,8 +1,8 @@
-import { GlobalProvider, GlobalContext } from "../../contexts/GlobalContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 import { useContext } from "react";
 import CarouselTopFiveDoc from "../unique/CarouselTopFiveDoc";
 
-export default function CarouselTopFiveDocComponent({ }) {
+export default function CarouselTopFiveDocComponent() {
     const { doctors } = useContext(GlobalContext)
 
 
@@ -19,7 +19,7 @@ export default function CarouselTopFiveDocComponent({ }) {
 
     return (
         <>
-            <h2 className="mb-4">Raccomanded Doctors</h2>
+            <h2 className="mb-4 mt-4">Raccomanded Doctors</h2>
             <div className="overflow-auto">
                 <div className="d-flex w-100">
                     {topFiveDoc.map((doctor) => {

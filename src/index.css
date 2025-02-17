@@ -1,70 +1,70 @@
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    background-color: white !important;
-
+header {
+  max-height: 100px; /* Usa solo height, non min-height/max-height */
 }
 
 main {
-    background-color: white;
-}
-
-section {
-    padding: 70px 10px;
-}
-
-.content {
-    flex: 1;
-    padding-top: 60px;
-    /* Per evitare che il contenuto venga coperto dalla navbar */
+  max-height: calc(100dvh - 150px);
+  min-height: calc(100dvh - 150px); /* Prende lo spazio rimanente */
+  background-color: white;
+  overflow-y: auto; /* Per avere la scrollbar verticale solo quando necessario */
 }
 
 .navbar {
-    font-size: 20px;
-    background: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+  max-height: 100px;
+  min-height: 100px;
+  font-size: 20px;
+  background: white;
+  width: 100%;
+  box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
 }
 
 .navbar a {
-    color: rgb(37, 153, 191);
-    text-decoration: none;
+  color: rgb(37, 153, 191);
+  text-decoration: none;
 }
 
 .navbar a:hover {
-    text-decoration: none;
-    color: rgb(169, 216, 255);
+  text-decoration: none;
+  color: rgb(169, 216, 255);
 }
 
-.footer {
-    background: white;
-    color: black;
-    text-align: center;
-    padding: 10px 0;
-    bottom: 0;
-    width: 100%;
+footer {
+  max-height: 50px;
+  min-height: 50px; /* Usa solo height, non min-height/max-height */
+  background: rgba(9, 99, 172, 0.733);
+  color: black;
+  text-align: center;
+  width: 100%;
 }
 
 .footer a {
-    color: black;
-    text-decoration: none;
-    margin: 0 10px;
+  color: black;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
 .footer a:hover {
-    text-decoration: none;
-    color: rgb(61, 167, 253);
+  text-decoration: none;
+  color: rgb(61, 167, 253);
 }
 
 .form-label {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 form {
-    padding: 20px;
-    background-color: #f5fbfc;
+  padding: 20px;
+  background-color: #f5fbfc;
+}
+
+@media (max-width: 767px) {
+  footer {
+    display: none;
+  }
+  main {
+    max-height: calc(100dvh - 80px);
+    min-height: calc(100dvh - 80px); /* Prende lo spazio rimanente */
+    background-color: white;
+    overflow-y: auto; /* Per avere la scrollbar verticale solo quando necessario */
+  }
 }
