@@ -46,8 +46,9 @@ export default function FormDoctorPage({ overlay }) {
     }
 
     return (
-        <div className=" d-flex flex-column m-5">
+        <div className="m-5">
             <h1 className="mb-5 d-flex justify-content-center">Registration Precess</h1>
+                       
             <form onSubmit={handleSubmit} className="bg-light rounded-3">
 
                 {/* name */}
@@ -144,7 +145,7 @@ export default function FormDoctorPage({ overlay }) {
                     <button type="submit " className="btn btn-primary mt-4 ">Submit</button>
                 </div>
             </form>
-        </div >
+        </div >      
 
     );
 }
