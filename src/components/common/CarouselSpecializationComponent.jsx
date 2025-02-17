@@ -10,9 +10,9 @@ export default function CarouselSpecializationComponent() {
     if (!specializations || specializations.length === 0) {
         return <p>No specialization available</p>;
     }
-    console.log(specializations)
+    //console.log(specializations)
     return (<>
-        <h2 className="mb-3 mt-4">Specialists</h2>
+        <h2 className="mb-3 mt-4">Specializzations</h2>
 
         <div className={style.carouel_scroll}>
             <div className={style.carouel_row}>

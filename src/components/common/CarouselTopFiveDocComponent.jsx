@@ -19,7 +19,7 @@ export default function CarouselTopFiveDocComponent() {
 
     return (
         <>
-            <h2 className="mb-4 mt-4">Raccomanded Doctors</h2>
+            <h2 className="mb-4 mt-4">Top 5 Doctors</h2>
             <div className="overflow-auto">
                 <div className="d-flex w-100">
                     {topFiveDoc.map((doctor) => {

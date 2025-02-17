@@ -19,7 +19,7 @@ export default function FormDoctorPage({ overlay }) {
     const { id } = useParams();
 
     function sendData() {
-        axios.post(`http://localhost:3000/doctors/${id}`, newDoctor)
+        axios.post(`http://localhost:3000/doctors`, newDoctor)
             .then((res) => {
                 console.log(res.data);
                 setNewDoctor([...doctors, newDoctor]);
@@ -34,6 +34,7 @@ export default function FormDoctorPage({ overlay }) {
         sendData();
         setNewDoctor(initialDoctor);
         window.location.reload();
+        //aggiungere pop un ponferma o il ritorno alla pagina dei doctors
     }
 
     function handleChange(e) {
@@ -49,7 +50,7 @@ export default function FormDoctorPage({ overlay }) {
         <div className="bg-white d-flex justify-content-center flex-column align-items-center" >
             <h1>Registration Precess</h1>
             <form onSubmit={handleSubmit} className="bg-light rounded-3">
-
+                {/* sistemare i placeholder */}
                 {/* name */}
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Insert your <strong>Name</strong></label>
@@ -82,13 +83,10 @@ export default function FormDoctorPage({ overlay }) {
                     <label htmlFor="vote" className="form-label">Insert your <strong>Email Address</strong></label>
                     <input
                         type="email"
-                        min="0"
-                        max="5"
-                        step="1"
                         className="form-control "
                         id="email"
                         name="email"
-                        placeholder="jhon@doe.com"
+                        placeholder="es. jhon@doe.com"
                         value={newDoctor.email}
                         onChange={handleChange}
                     />
