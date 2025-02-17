@@ -29,7 +29,7 @@ export default function DoctorsPage() {
             </div>
             <div className="d-flex justify-content-center">
                 <Link to="/formDoctor" className="btn btn-primary m-3">
-                    Se sei un dottore? puoi registrarti qui
+                    Sei un dottore? puoi registrarti qui
                 </Link>
             </div>
 
