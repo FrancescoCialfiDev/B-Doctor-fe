@@ -54,7 +54,9 @@ footer {
 
 form {
   padding: 20px;
-  background-color: #f5fbfc;
+  background-color: #600808;
+  max-width: 800px;
+  margin:  0 auto;
 }
 
 @media (max-width: 767px) {
