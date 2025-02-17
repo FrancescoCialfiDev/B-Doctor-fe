@@ -33,6 +33,7 @@ export default function CarouselTopFiveDocComponent() {
                                 specialization={doctor?.specializations}
                                 // image={doctor.img}
                                 vote={doctor?.vote_average}
+                                image={doctor?.img_url}
                             />
                         );
                     })}

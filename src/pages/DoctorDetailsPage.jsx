@@ -45,20 +45,6 @@ export default function DoctorDetailsPage() {
                             </div>
                         </div>
                     </div>
-                    <h1>Reviews</h1>
-
-                    {
-                        detailsDoc.reviews.map((review) => {
-                            return (
-
-                                <div key={review.id} className={style.review_card}>
-                                    <h1>{review.name_patient}</h1>
-                                    <p>{review.description}</p>
-                                    <p>{review.vote}</p>
-                                </div>
-                            )
-                        })
-                    }
 
                 </>
 
