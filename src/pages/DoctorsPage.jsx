@@ -1,15 +1,14 @@
 import { GlobalContext } from "../contexts/GlobalContext.jsx";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import StarsComponent from "../components/common/starsComponent.jsx";
+import StarsComponent from "../components/common/StarsComponent.jsx";
 import style from "../css/DoctorsPage.module.css";
 
 export default function DoctorsPage() {
     const { doctors } = useContext(GlobalContext);
 
     return (
-        <>
-            <h1 className="text-center m-3">Doctor List</h1>
+        <><h1 className="text-center m-3">Doctor List</h1>
             <div className={style.container}>
                 {doctors
                     .map((doctor) => (
@@ -29,7 +28,7 @@ export default function DoctorsPage() {
             </div>
             <div className="d-flex justify-content-center">
                 <Link to="/formDoctor" className="btn btn-primary m-3">
-                    Are you a doctor? Join us Now!
+                    Se sei un dottore, puoi registrarti qui
                 </Link>
             </div>
 

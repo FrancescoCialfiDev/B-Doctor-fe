@@ -1,53 +1,190 @@
-.container {
+.badgeContainer {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin: 35px;    
 }
-
-.doctorCard {
-    background-color: #f5fbfc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
+.stars{
+    font-size: 3em;
+}
+.badge {
     width: 100%;
+    background: rgb(238, 238, 238);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
 }
 
-.doctorCard h2 {
-    font-size: 1.5rem;
-    margin: 0;
+
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
 }
 
-.doctorCard p {
-    font-size: 1rem;
-    margin: 8px 0;
+.profileContainer {
+    position: absolute;
+    top: 25px;
+    left: 20%;
+    transform: translateX(-50%);
 }
 
-.image {
-    max-width: 400px;
-}
-
-.nameSurname {
+.vote{
     display: flex;
     justify-content: center;
-    gap: 10px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    align-items: center;
+    margin: 5px;
 }
 
-.details {
-    text-align: left;
+.profileImage {
+    width: 20%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    background: #007bff;
+}
+
+.infoSection {
     margin-top: 20px;
 }
 
-.review_card {
-    padding: 10px;
-    margin: 20px 0;
-    border-radius: 10px;
-    background-color: #f5fbfc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+.doctorName {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.specialization {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.detailsSection {
+    margin: 15px 0;
+    padding: 0 20px;
+    padding-top: 55px;
+    
+}
+
+.detailsSection p {
+    font-size: 16px;
+}
+.signatureSection{
+    padding-top: 35px;
+}
+
+.signature {
+    width: 120px;
+    height: 30px;
+    border-bottom: 2px solid black;
+    margin-left: auto;
+}
+
+.barcode {
+    width: 100px;
+    height: 30px;
+    background: repeating-linear-gradient(90deg, black 0px, black 2px, white 2px, white 4px);
+}
+
+@media (max-width: 992px) {
+    .profileImage {
+        width: 25%;
+    }
+
+    .profileContainer {
+        position: absolute;
+        top: 35px;
+        left: 20%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+    .header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        font-size: 1.3em;
+        font-weight: bold;
+        border-radius: 8px 8px 0 0;
+        padding-left: 35px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .badge {
+        width: 350px;
+    }
+
+    .profileImage {
+        width: 30%;
+    }
+
+    .profileContainer {
+        position: absolute;
+        top: 35px;
+        left: 20%;
+        transform: translateX(-50%);
+    }
+    .infoSection {
+        margin-top: 10px;
+        padding-left: 25px;
+    }
+
+    .doctorName {
+        font-size: 18px;
+    }
+
+    .detailsSection {
+        display: flex;
+        text-align: left;
+        padding-top: 0px;
+    }
+    .header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        font-size: 1.3em;
+        font-weight: bold;
+        border-radius: 8px 8px 0 0;
+        padding-left: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .badge {
+        width: 320px;
+    }
+
+    .profileImage {
+        width: 30%;
+    }
+    .profileContainer {
+        position: absolute;
+        top: 30px;
+        left: 20%;
+        transform: translateX(-50%);
+    }
+
+    .doctorName {
+        font-size: 16px;
+    }
+
+    .detailsSection p {
+        font-size: 11px;
+    }
+    .header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 8px 8px 0 0;
+    }
 }
