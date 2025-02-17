@@ -15,7 +15,7 @@ export default function AllSpecialistsPage() {
             .then((res) => {
                 console.log("dottori presi dalla showSpecializations")
                 console.log(res.data.doctors)
-                setSpecialization(res?.data);
+                setSpecialization(res.data.doctors);
                 console.log(specialization)
             })
             .catch((err) => {

@@ -144,6 +144,7 @@ export default function FormDoctorPage({ overlay }) {
                     <div className="d-flex justify-content-center">
                         <button type="submit " className="btn btn-primary mt-4 ">Submit</button>
                     </div>
+                </div>
             </form>
         </div >
 
