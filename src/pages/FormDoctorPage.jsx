@@ -1,8 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import { GlobalProvider, GlobalContext } from "../contexts/GlobalContext";
-import { useContext } from "react";
 
 const initialDoctor = {
     name: "",
@@ -11,18 +8,17 @@ const initialDoctor = {
     phone: "",
     office_addres: "",
     serial_number: "",
+    sex: ""
 };
 
-export default function FormDoctorPage({ overlay }) {
-    const { doctors, setDoctors } = useContext(GlobalContext);
+export default function FormDoctorPage() {
+
     const [newDoctor, setNewDoctor] = useState(initialDoctor);
-    const { id } = useParams();
 
     function sendData() {
-        axios.post(`http://localhost:3000/doctors`, newDoctor)
+        axios.post(`http://localhost:3000/`, newDoctor)
             .then((res) => {
                 console.log(res.data);
-                setNewDoctor([...doctors, newDoctor]);
             })
             .catch((err) => console.log(err))
             .finally(() => {
@@ -34,16 +30,15 @@ export default function FormDoctorPage({ overlay }) {
         sendData();
         setNewDoctor(initialDoctor);
         window.location.reload();
+        console.log(newDoctor)
         //aggiungere pop un ponferma o il ritorno alla pagina dei doctors
     }
 
     function handleChange(e) {
         const { name, value } = e.target;
-        //console.log(`Updating ${name} to ${value}`);
-        setNewDoctor({
-            ...newDoctor,
-            [name]: value,
-        });
+        console.log(`Updating ${name} to ${value}`);
+        setNewDoctor({ ...newDoctor, [name]: value, });
+        console.log(newDoctor)
     }
 
     return (
@@ -142,7 +137,7 @@ export default function FormDoctorPage({ overlay }) {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <button type="submit " className="btn btn-primary mt-4 ">Submit</button>
+                        <button type="submit" className="btn btn-primary mt-4 ">Submit</button>
                     </div>
                 </div>
             </form>
