@@ -1,7 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { GlobalProvider, GlobalContext } from "../contexts/GlobalContext";
-import { useContext } from "react";
 
 const initialDoctor = {
     name: "",
@@ -14,7 +12,7 @@ const initialDoctor = {
 };
 
 export default function FormDoctorPage() {
-    const { doctors, setDoctors } = useContext(GlobalContext);
+
     const [newDoctor, setNewDoctor] = useState(initialDoctor);
 
     function sendData() {
