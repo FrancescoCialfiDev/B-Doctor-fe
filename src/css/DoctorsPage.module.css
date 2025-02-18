@@ -1,147 +1,36 @@
-.badgeContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 35px;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
 .badge {
-    width: 500px;
-    background: rgb(238, 238, 238);
+    width: 100%;
+    max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    position: relative;
-    margin: 10px;
-}
-.doctorName{
-    padding-left: 85px;
-}
-
-.header {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    font-size: 1.5em;
-    font-weight: bold;
-    border-radius: 8px 8px 0 0;
-}
-
-.profileContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -45px;
-    margin-left: -310px;
+    margin-bottom: 15px;
 }
 
 .profileImage {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
     border: 3px solid white;
     background: #007bff;
+    position: absolute;
+    top: -40px;
+    left: 10px;
 }
 
-.vote {
-    display: flex;
-    justify-content: center;
-    margin-top: -40px;
-    margin-bottom: 45px;
-}
-
-.detailsSection {
-    height: 40px;
-    padding: 10px;
-}
-
-.detailsSection p {
-    font-size: 16px;
-}
-
-.signatureSection {
-    margin-top: 20px;
-}
-
-.viewProfileLink {
-    font-weight: bold;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.viewProfileLink:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 992px) {
-    .badge {
-        width: 300px;
-    }
-
-    .profileImage {
-        width: 80px;
-        height: 80px;
-    }
-
-    .header {
-        font-size: 1.3em;
-    }
-
-    .detailsSection p {
-        font-size: 14px;
-    }
-}
-@media (max-width: 992px) {
-    .badge {
-        width: 300px;
-    }
-
-    .profileImage {
-        width: 70%;
-    }
-    .vote {
-        display: flex;
-        justify-content: center;
-        margin-top: -20px;
-        margin-bottom: 45px;
-    }
-}
-
-@media (max-width: 768px) {
-    .badge {
-        width: 270px;
-    }
-
-    .profileImage {
-        width: 70%;
-    }
-    .vote {
-        display: flex;
-        justify-content: center;
-        margin-top: -20px;
-        margin-bottom: 45px;
-    }
-}
 
 @media (max-width: 576px) {
-    .badge {
-        width: 220px;
-    }
-
     .profileImage {
-        width: 60%;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+        background: #007bff;
+        position: absolute;
+        top: -30px;
+        left: 10px;
     }
-
-    .header {
-        font-size: 1em;
-    }
-
-    .detailsSection p {
-        font-size: 12px;
+    .title{
+        padding-left: 30px;
     }
 }
