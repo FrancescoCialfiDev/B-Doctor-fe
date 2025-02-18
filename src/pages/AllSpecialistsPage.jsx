@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import style from "../css/DoctorsPage.module.css"
 
 export default function AllSpecialistsPage() {
-    const [specialization, setSpecialization] = useState([]);
+    const [specialists, setSpecialists] = useState([]);
     const { id } = useParams();
     console.log(id)
     function getSpecialization() {
@@ -15,8 +15,8 @@ export default function AllSpecialistsPage() {
             .then((res) => {
                 console.log("dottori presi dalla showSpecializations")
                 console.log(res.data.doctors)
-                setSpecialization(res.data.doctors);
-                console.log(specialization)
+                setSpecialists(res.data.doctors);
+                console.log(specialists)
             })
             .catch((err) => {
                 console.log(err);
@@ -29,12 +29,12 @@ export default function AllSpecialistsPage() {
     useEffect(() => {
         getSpecialization();
     }, []);
-
+    //console.log(specialists[0].specializations)
     return (
         <>
-            <h1 className="text-center m-3">specialization Specialists</h1>
+            <h1 className="text-center m-3"> specialists</h1>
             <div className={`row justify-content-center${style.container}`}>
-                {specialization
+                {specialists
                     .map((doctor) => (
                         <div key={doctor.id} className="col-lg-6 col-12 d-flex justify-content-center">
                             <div className={`card p-3 shadow-lg ${style.badge}`}>
@@ -48,7 +48,7 @@ export default function AllSpecialistsPage() {
                                     <StarsComponent vote={doctor.vote_average} />
                                 </div>
                                 <div className="card-body text-center ">
-                                    <p><strong>Specializations:</strong> {doctor.specializations}</p>
+                                    <p><strong>Specializations:</strong> {doctor.specializations} and more!</p>
                                 </div>
                                 <div className="text-center">
                                     <Link to={`/doctors/${doctor.id}`} className="btn btn-primary">View Profile</Link>
