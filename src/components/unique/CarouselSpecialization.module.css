@@ -53,3 +53,13 @@
 .links {
   text-decoration: none;
 }
+
+@media (max-width: 576px) {
+  .title_doctors{
+      font-size: 1.5em;
+  }
+  .search{
+    width: 45%;
+  }
+  
+}

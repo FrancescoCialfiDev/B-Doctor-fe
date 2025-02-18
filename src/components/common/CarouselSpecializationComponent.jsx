@@ -10,9 +10,18 @@ export default function CarouselSpecializationComponent() {
     if (!specializations || specializations.length === 0) {
         return <p>No specialization available</p>;
     }
-    //console.log(specializations)
     return (<>
-        <h2 className="mb-3 mt-4">Specializzations</h2>
+        <nav className="mt-5 mb-4 d-flex justify-content-between w-100 align-items-center">
+            <h2 className={`mb-0 ${styles.title_doctors}`}>Specializations</h2>
+            <div className={`d-flex ${styles.search}`} role="search">
+                <input
+                    className="form-control"
+                    type="search"
+                    placeholder="Search specializations..."
+                    aria-label="Search"
+                />
+            </div>
+        </nav>
 
         <div className={style.carouel_scroll}>
             <div className={style.carouel_row}>
