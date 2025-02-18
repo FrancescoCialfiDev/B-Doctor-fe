@@ -1,6 +1,8 @@
 header {
   max-height: 100px;
   /* Usa solo height, non min-height/max-height */
+  max-height: 100px;
+  /* Usa solo height, non min-height/max-height */
 }
 
 main {
@@ -38,6 +40,8 @@ footer {
   max-height: 50px;
   min-height: 50px;
   /* Usa solo height, non min-height/max-height */
+  min-height: 50px;
+  /* Usa solo height, non min-height/max-height */
   background: rgba(9, 99, 172, 0.733);
   color: black;
   text-align: center;
@@ -71,11 +75,16 @@ form {
     display: none;
   }
 
+
   main {
     max-height: calc(100dvh - 80px);
     min-height: calc(100dvh - 80px);
     /* Prende lo spazio rimanente */
+    min-height: calc(100dvh - 80px);
+    /* Prende lo spazio rimanente */
     background-color: white;
+    overflow-y: auto;
+    /* Per avere la scrollbar verticale solo quando necessario */
     overflow-y: auto;
     /* Per avere la scrollbar verticale solo quando necessario */
   }
