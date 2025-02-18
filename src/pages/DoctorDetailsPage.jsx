@@ -10,7 +10,7 @@ export default function DoctorDetailsPage() {
     const [detailsDoc, setDetailsDoc] = useState(null);
     const { id } = useParams();
     const urlReviews = `${window.location.pathname}`
-    let button
+    let buttonReviews
 
     function getDetailsDoc() {
         axios.get(`http://localhost:3000/doctors/${id}`)
@@ -30,11 +30,11 @@ export default function DoctorDetailsPage() {
     }, []);
 
     if (urlReviews === `/doctors/${detailsDoc?.id}/reviews`) {
-        button = <div className="text-center">
+        buttonReviews = <div className="text-center">
             <Link to={`/doctors/${detailsDoc?.id}`} className="btn btn-primary">Close Reviews</Link>
         </div>
     } else {
-        button = <div className="text-center">
+        buttonReviews = <div className="text-center">
             <Link to={`/doctors/${detailsDoc?.id}/reviews`} className="btn btn-primary">Show Reviews</Link>
         </div>
     }
@@ -62,7 +62,12 @@ export default function DoctorDetailsPage() {
                             <div className={style.detailsSection}>
                                 <p><strong>specializzazioni:</strong> {detailsDoc?.specializations}</p>
                             </div>
-                            {button}
+                        </div>
+                        <div className="d-flex align-items-center justify-content-center">
+                            {buttonReviews}
+                            <div className="text-center ms-3">
+                                <Link to={`/doctors/${detailsDoc?.id}/form`} className="btn btn-primary">Add new review</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
