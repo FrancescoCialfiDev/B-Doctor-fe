@@ -7,9 +7,8 @@ import style from "../css/DoctorsPage.module.css";
 export default function DoctorsPage() {
     const { doctors } = useContext(GlobalContext);
 
-    return (
-        <>
-            <h1 className="text-center m-3">Doctor List</h1>
+    return (        <>
+            <h1 className="text-center m-3">Doctor List ({doctors.length} doctors)</h1>
             <div className="container">
                 <div className="row justify-content-center">
                     {doctors.map((doctor) => (
