@@ -17,8 +17,8 @@ export default function HeaderComponent() {
                     </div>
 
                     <div className='d-flex'>
-                        <div className="ms-auto me-4">
-                            <Link to="/formDoctor" className="nav-link">Sing In</Link>
+                        <div id="sing-in-wrapper" className="ms-auto me-4">
+                            <Link to="/formDoctor" className="nav-link my-auto py-1 px-3 btn btn-outline-primary">Sing In</Link>
                         </div>
                         <div className="ms-auto d-flex align-items-center m-4 gap-3">
                             <GiHamburgerMenu />

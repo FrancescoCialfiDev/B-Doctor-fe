@@ -19,6 +19,7 @@
   -webkit-box-shadow: 10px 10px 14px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 14px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 14px -5px rgba(0, 0, 0, 0.75);
+  background-color: white;
 }
 
 .cardBody {
@@ -64,12 +65,9 @@
 
 .detailsButton {
   text-decoration: none;
-  padding: 5px 30px;
-  background-color: rgba(0, 0, 0, 0.06);
-  color: #337eb4;
+  padding: 5px 30px;   
   font-size: 1.1em;
-  font-weight: bold;
-  border: none;
+  font-weight: bold;  
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);

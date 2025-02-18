@@ -56,9 +56,9 @@ export default function FormDoctorPage() {
             <h1 className="mb-5 d-flex justify-content-center">Registration Precess</h1>
             <p className="form-waring">Champs that starts whit<strong> "*" </strong>are required (you can't leave them empty)</p>
 
-            <form onSubmit={handleSubmit} className="bg-light rounded-3">
+            <form onSubmit={handleSubmit} className="px-3 pb-5 bg-light rounded-3">
                 {/* name */}
-                <div className="gap-5 justify-content-center">
+                <div className="justify-content-center">
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">*Insert your <strong>Name</strong></label>
                         <input
@@ -66,7 +66,7 @@ export default function FormDoctorPage() {
                             className="form-control"
                             id="name"
                             name="name"
-                            placeholder="Jhon"
+                            placeholder="EX. Jhon"
                             value={newDoctor.name}
                             onChange={handleChange}
                             required
@@ -80,7 +80,7 @@ export default function FormDoctorPage() {
                             className="form-control"
                             id="surname"
                             name="surname"
-                            placeholder="Doe"
+                            placeholder="EX. Doe"
                             value={newDoctor.surname}
                             onChange={handleChange}
                             required
@@ -98,7 +98,7 @@ export default function FormDoctorPage() {
                             className="form-control "
                             id="email"
                             name="email"
-                            placeholder="jhon@doe.com"
+                            placeholder="EX. jhon@doe.com"
                             value={newDoctor.email}
                             onChange={handleChange}
                             required
@@ -113,7 +113,7 @@ export default function FormDoctorPage() {
                             className="form-control"
                             id="phone"
                             name="phone"
-                            placeholder="1234567890"
+                            placeholder="EX. 1234567890"
                             value={newDoctor.phone}
                             onChange={handleChange}
                             required
@@ -128,7 +128,7 @@ export default function FormDoctorPage() {
                             className="form-control"
                             id="office_addres"
                             name="office_addres"
-                            placeholder="OfficeAddres ST. 1500"
+                            placeholder="EX. OfficeAddres ST. 1500"
                             value={newDoctor.office_addres}
                             onChange={handleChange}
                             required
@@ -145,7 +145,7 @@ export default function FormDoctorPage() {
                             className="form-control"
                             id="serial_number"
                             name="serial_number"
-                            placeholder="SN123456"
+                            placeholder="EX. SN123456"
                             value={newDoctor.serial_number}
                             onChange={handleChange}
                             required
@@ -166,8 +166,6 @@ export default function FormDoctorPage() {
                                     id="m-sex"
                                     checked="man"
                                     onChange={handleChange}
-                                    required
-
                                 />
                                 <label className="form-check-label" htmlFor="flexRadioDefault1">
                                     Male
@@ -183,7 +181,7 @@ export default function FormDoctorPage() {
                                     id="f-sex"
                                     checked="woman"
                                     onChange={handleChange}
-                                    required
+
                                 />
                                 <label className="form-check-label" htmlFor="flexRadioDefault2">
                                     Female
@@ -194,7 +192,7 @@ export default function FormDoctorPage() {
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <button type="submit" className="btn btn-primary mt-4 ">Submit</button>
+                    <button type="submit" className="btn btn-outline-primary mt-4 ">Submit</button>
                 </div>
             </form>
         </div >
