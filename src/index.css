@@ -24,6 +24,7 @@ main {
   background: white;
   width: 100%;
   box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
+  z-index: 1;
 }
 
 #sing-in-wrapper {
@@ -31,13 +32,13 @@ main {
 }
 
 .navbar a {
-  color: rgb(37, 153, 191);
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
 .navbar a:hover {
   text-decoration: none;
-  color: rgb(169, 216, 255);
+  color: rgb(65, 64, 64);
 }
 
 footer {
@@ -72,6 +73,10 @@ form {
   background-color: #600808;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.form-waring {
+  text-align: center;
 }
 
 @media (max-width: 767px) {
