@@ -34,7 +34,7 @@ export default function DoctorsPage() {
                                 <img className={style.profileImage} src={doctor.img_url} alt={`${doctor.name} ${doctor.surname}`} />
                             </div>
                             <div className="text-center mt-2">
-                                <StarsComponent vote={doctor.vote} />
+                                <StarsComponent vote={doctor.vote_average} />
                             </div>
                             <div className="card-body text-center ">
                                 <p><strong>Specializations:</strong> {doctor.specializations}</p>
