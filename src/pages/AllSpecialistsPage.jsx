@@ -43,7 +43,7 @@ export default function AllSpecialistsPage() {
                                 <p className={style.stars}><StarsComponent vote={specialist?.vote_average} /></p>
                                 <div className={style.specializations}>
                                     <h4>{specialist?.specializations}</h4>
-                                    <Link to={`/doctors/${doctor.id}`}>View Profile</Link>
+                                    <Link to={`/doctors/${specialist?.id}`}>View Profile</Link>
                                 </div>
                             </div>
                         </div>

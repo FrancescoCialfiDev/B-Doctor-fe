@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ProfileCard = ({ name, icon, id_spec }) => {
 
     return (
-        <Link className={styles.links} key={id_spec} to="/specializations">
+        <Link className={styles.links} key={id_spec} to={`/specializations/${id_spec}`} >
             <div className={styles.card}>
                 <div className={styles.imageContainer}>
                     <img

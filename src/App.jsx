@@ -16,8 +16,8 @@ export default function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/specializations" element={<AllSpecialistsPage />} />
             <Route path="/specializations/:id" element={<AllSpecialistsPage />} />
-
 
             <Route path="/formDoctor" element={<FormDoctorPage />} />
 
