@@ -21,6 +21,10 @@ main {
   box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
 }
 
+#sing-in-wrapper {
+  display: flex;
+}
+
 .navbar a {
   color: rgb(37, 153, 191);
   text-decoration: none;
