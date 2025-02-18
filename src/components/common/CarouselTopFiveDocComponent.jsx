@@ -3,11 +3,7 @@ import { useContext } from "react";
 import CarouselTopFiveDoc from "../unique/CarouselTopFiveDoc";
 
 export default function CarouselTopFiveDocComponent() {
-    const { doctors } = useContext(GlobalContext)
-
-
-
-
+    const { doctors } = useContext(GlobalContext);
 
     if (!doctors || doctors.length === 0) {
         return <p>No doctors available</p>;
@@ -15,33 +11,23 @@ export default function CarouselTopFiveDocComponent() {
 
     let topFiveDoc = doctors.slice(0, 5);
 
-
-
     return (
         <>
             <h2 className="mb-4 mt-4">Top 5 Doctors</h2>
-            <div className="overflow-auto">
-                <div className="d-flex w-100">
-                    {topFiveDoc.map((doctor) => {
-                        console.log(doctor?.id)
-                        return (
-                            <CarouselTopFiveDoc
-                                key={doctor?.id}
-                                id={doctor?.id}
-                                name={doctor?.name}
-                                surname={doctor?.surname}
-                                specialization={doctor?.specializations}
-                                // image={doctor.img}
-                                vote={doctor?.vote_average}
-                                image={doctor?.img_url}
-                            />
-                        );
-                    })}
-                </div>
+            <div >
+                {topFiveDoc.map((doctor) => (
+                    <div key={doctor?.id}> 
+                        <CarouselTopFiveDoc
+                            id={doctor?.id}
+                            name={doctor?.name}
+                            surname={doctor?.surname}
+                            specialization={doctor?.specializations} 
+                            vote={doctor?.vote_average}
+                            image={doctor?.img_url}
+                        />
+                    </div>
+                ))}
             </div>
         </>
     );
 }
-
-
-
