@@ -164,7 +164,8 @@ export default function FormDoctorPage() {
                                     type="radio"
                                     name="sex"
                                     id="m-sex"
-                                    checked="man"
+                                    value="man"
+                                    checked={newDoctor.sex === "man"}
                                     onChange={handleChange}
                                 />
                                 <label className="form-check-label" htmlFor="flexRadioDefault1">
@@ -179,7 +180,8 @@ export default function FormDoctorPage() {
                                     type="radio"
                                     name="sex"
                                     id="f-sex"
-                                    checked="woman"
+                                    value="woman"
+                                    checked={newDoctor.sex === "woman"}
                                     onChange={handleChange}
 
                                 />
