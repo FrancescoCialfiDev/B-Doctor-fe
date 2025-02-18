@@ -5,7 +5,7 @@
     margin-bottom: 15px;
 }
 
-form{
+form {
     background-color: white !important;
     padding: 0px !important;
 }
@@ -35,13 +35,16 @@ form{
         top: -30px;
         left: 10px;
     }
-    .title{
+
+    .title {
         padding-left: 30px;
     }
-    .search{
+
+    .search {
         width: 45%;
     }
-    .title_doctors{
+
+    .title_doctors {
         font-size: 1.5em;
     }
 }
