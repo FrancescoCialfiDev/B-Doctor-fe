@@ -5,6 +5,11 @@
     margin-bottom: 15px;
 }
 
+form{
+    background-color: white !important;
+    padding: 0px !important;
+}
+
 .profileImage {
     width: 80px;
     height: 80px;
@@ -32,5 +37,11 @@
     }
     .title{
         padding-left: 30px;
+    }
+    .search{
+        width: 45%;
+    }
+    .title_doctors{
+        font-size: 1.5em;
     }
 }
