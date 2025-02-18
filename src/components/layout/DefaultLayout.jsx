@@ -7,7 +7,7 @@ export default function DefaultLayout() {
         <>
             <HeaderComponent />
             <main>
-                <section className="container">
+                <section className="container mb-5">
                     <Outlet />
                 </section>
             </main>

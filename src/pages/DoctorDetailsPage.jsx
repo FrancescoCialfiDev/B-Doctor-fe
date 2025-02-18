@@ -2,12 +2,15 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import style from "../css/DoctorDetailsPage.module.css";
 import StarsComponent from "../components/common/StarsComponent";
 
 export default function DoctorDetailsPage() {
     const [detailsDoc, setDetailsDoc] = useState(null);
     const { id } = useParams();
+    const urlReviews = `${window.location.pathname}`
+    let buttonReviews
 
     function getDetailsDoc() {
         axios.get(`http://localhost:3000/doctors/${id}`)
@@ -26,6 +29,16 @@ export default function DoctorDetailsPage() {
         getDetailsDoc();
     }, []);
 
+    if (urlReviews === `/doctors/${detailsDoc?.id}/reviews`) {
+        buttonReviews = <div className="text-center">
+            <Link to={`/doctors/${detailsDoc?.id}`} className="btn btn-primary">Close Reviews</Link>
+        </div>
+    } else {
+        buttonReviews = <div className="text-center">
+            <Link to={`/doctors/${detailsDoc?.id}/reviews`} className="btn btn-primary">Show Reviews</Link>
+        </div>
+    }
+
     return (
         <>
             {detailsDoc ? (
@@ -42,12 +55,18 @@ export default function DoctorDetailsPage() {
                         </div>
 
                         <div className={style.vote}>
-                            <div className={style.stars}><StarsComponent vote={detailsDoc?.vote_average}/></div>
+                            <div className={style.stars}><StarsComponent vote={detailsDoc?.vote_average} /></div>
                         </div>
 
                         <div>
-                            <div className={style.detailsSection}>                               
+                            <div className={style.detailsSection}>
                                 <p><strong>specializzazioni:</strong> {detailsDoc?.specializations}</p>
+                            </div>
+                        </div>
+                        <div className="d-flex align-items-center justify-content-center">
+                            {buttonReviews}
+                            <div className="text-center ms-3">
+                                <Link to={`/doctors/${detailsDoc?.id}/form`} className="btn btn-primary">Add new review</Link>
                             </div>
                         </div>
                     </div>
