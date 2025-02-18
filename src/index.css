@@ -1,15 +1,20 @@
 header {
   max-height: 100px;
   /* Usa solo height, non min-height/max-height */
+  max-height: 100px;
+  /* Usa solo height, non min-height/max-height */
 }
 
 main {
   max-height: calc(100dvh - 150px);
   min-height: calc(100dvh - 150px);
-  /* Prende lo spazio rimanente */
-  background-color: white;
+  background-image: url('https://media.istockphoto.com/id/1392070271/it/foto/sfondo-sfumato-blu-chiaro.jpg?s=612x612&w=0&k=20&c=jtdN5Q4dSL2WRu5vmcHnN-bA5l_VEMrKeYVt4tDrGqw=');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
   overflow-y: auto;
-  /* Per avere la scrollbar verticale solo quando necessario */
 }
 
 .navbar {
@@ -37,6 +42,8 @@ main {
 
 footer {
   max-height: 50px;
+  min-height: 50px;
+  /* Usa solo height, non min-height/max-height */
   min-height: 50px;
   /* Usa solo height, non min-height/max-height */
   background: rgba(9, 99, 172, 0.733);
@@ -67,21 +74,21 @@ form {
   margin: 0 auto;
 }
 
-.form-waring {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 @media (max-width: 767px) {
   footer {
     display: none;
   }
 
+
   main {
     max-height: calc(100dvh - 80px);
     min-height: calc(100dvh - 80px);
     /* Prende lo spazio rimanente */
+    min-height: calc(100dvh - 80px);
+    /* Prende lo spazio rimanente */
     background-color: white;
+    overflow-y: auto;
+    /* Per avere la scrollbar verticale solo quando necessario */
     overflow-y: auto;
     /* Per avere la scrollbar verticale solo quando necessario */
   }

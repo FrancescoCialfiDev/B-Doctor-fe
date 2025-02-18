@@ -6,7 +6,6 @@ import DoctorDetailsPage from "./pages/DoctorDetailsPage.jsx"
 import ReviewsComponent from "./components/common/reviews/ReviewsComponent.jsx"
 import FormDoctorPage from "./pages/FormDoctorPage.jsx"
 import AllSpecialistsPage from "./pages/AllSpecialistsPage.jsx"
-import ContactsComponent from "./components/common/ContactsComponent.jsx"
 import { GlobalProvider } from "./contexts/GlobalContext.jsx"
 
 export default function App() {
@@ -26,7 +25,6 @@ export default function App() {
 
               <Route path=":id" element={<DoctorDetailsPage />}>
                 <Route path="reviews" element={<ReviewsComponent />} />
-                <Route path="contacts" element={<ContactsComponent />} />
               </Route>
             </Route>
             <Route path="/formDoctor" element={<FormDoctorPage />} />

@@ -25,7 +25,7 @@ export default function CarouselTopFiveDoc({ id, name, surname, specialization, 
                     </div>
 
                     <div className="d-flex align-items-center justify-content-center">
-                        <Link to={`http://localhost:5173/doctors/${id}`} className={style.detailsButton}>Details</Link>
+                        <Link to={`http://localhost:5173/doctors/${id}`} className={`btn btn-outline-primary ${style.detailsButton}`}>Details</Link>
                     </div>
 
                 </div>
