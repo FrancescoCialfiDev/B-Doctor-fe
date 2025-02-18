@@ -155,7 +155,7 @@ export default function FormDoctorPage() {
                     {/* sex */}
                     <div className="mb-3">
                         <label htmlFor="sex" className="form-label">*Choose your <strong>Gender</strong> </label>
-                        <div id="sex">
+                        <div id="sex" className="ms-2 d-flex">
 
                             {/* male */}
                             <div className="form-check">
@@ -174,9 +174,9 @@ export default function FormDoctorPage() {
                             </div>
 
                             {/* female */}
-                            <div className="form-check">
+                            <div className="form-check ms-3">
                                 <input
-                                    className="form-check-input"
+                                    className="form-check-input pl-1"
                                     type="radio"
                                     name="sex"
                                     id="f-sex"
