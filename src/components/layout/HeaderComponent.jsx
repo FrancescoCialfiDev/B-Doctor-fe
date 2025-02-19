@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState, useEffect } from 'react';
 
@@ -7,12 +7,16 @@ export default function HeaderComponent() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [specializations, setSpecializations] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [isDropdownClicked, setIsDropdownClicked] = useState(false);
+    const navigate = useNavigate(); // Usa useNavigate per navigare programmaticamente
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const toggleDropdown = () => {
+    const toggleDropdown = (e) => {
+        e.preventDefault();
+        setIsDropdownClicked(!isDropdownClicked);
         setDropdownOpen(!dropdownOpen);
     };
 
@@ -20,6 +24,19 @@ export default function HeaderComponent() {
         setIsMenuOpen(false);
     };
 
+    const closeDropdown = () => {
+        setDropdownOpen(false);
+        setIsDropdownClicked(false);
+    };
+
+    const handleClickOutside = (event) => {
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        if (dropdownMenu && !dropdownMenu.contains(event.target) && !event.target.closest('.nav-item')) {
+            closeDropdown();
+        }
+    };
+
+    // Effettua una nuova richiesta ogni volta che la pagina si carica
     useEffect(() => {
         fetch('http://localhost:3000/specializations')
             .then(response => response.json())
@@ -36,7 +53,19 @@ export default function HeaderComponent() {
                 console.error('Errore nel recupero delle specializzazioni:', error);
                 setLoading(false);
             });
-    }, []);
+
+        // Aggiungere un event listener per i clic fuori dal menu
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []); // Effettua la richiesta una sola volta
+
+    const handleSpecializationClick = (id) => {
+        // Usa navigate per andare alla pagina della specializzazione
+        navigate(`/specializations/${id}`);
+    };
 
     return (
         <header>
@@ -80,26 +109,23 @@ export default function HeaderComponent() {
                                 <Link
                                     className="nav-link"
                                     to="#"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        toggleDropdown();
-                                    }}
+                                    onClick={toggleDropdown} // Open or close dropdown
                                 >
-                                    <img
-                                        src="https://cdn-icons-png.flaticon.com/256/219/219970.png"
-                                        alt="Logo"
-                                        width="30"
-                                        height="30"
-                                    />
                                     Specializations
                                 </Link>
-                                <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+                                <ul
+                                    className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}
+                                >
                                     {loading ? (
                                         <li>Loading...</li>
                                     ) : (
                                         specializations.map(specialization => (
                                             <li key={specialization.id}>
-                                                <Link to={`/specializations/${specialization.id}`} className="dropdown-item" onClick={closeMenu}>
+                                                <Link
+                                                    to={`/specializations/${specialization.id}`}
+                                                    className="dropdown-item"
+                                                    onClick={() => handleSpecializationClick(specialization.id)} // Naviga senza ricaricare
+                                                >
                                                     {specialization.name}
                                                 </Link>
                                             </li>
