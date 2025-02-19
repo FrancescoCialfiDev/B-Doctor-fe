@@ -61,20 +61,40 @@ export default function DoctorDetailsPage() {
 
                         <div id={style.info_wrapper}>
                             <div className={`text-center align-items-start ${style.detailsSection}`}>
-                                <p>
-                                    <strong>SPECIALIZATIONS</strong> {detailsDoc?.specializations}
-                                </p>
-                                <p>
-                                    <strong>YOU CAN VISIT ME AT</strong> {detailsDoc?.office_address}
-                                </p>
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>SPECIALIZATIONS</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.specializations}
+                                    </p>
+                                </div>
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>YOU CAN VISIT ME AT</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.office_address}
+                                    </p>
+                                </div>
                             </div>
                             <div className={`text-center align-items-start ${style.detailsSection}`}>
-                                <p>
-                                    <strong>MAIL</strong> {detailsDoc?.email}
-                                </p>
-                                <p>
-                                    <strong>TELEPHONE NUMBER</strong> {detailsDoc?.phone}
-                                </p>
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>MAIL</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.email}
+                                    </p>
+                                </div>
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>TELEPHONE NUMBER</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.phone}
+                                    </p>
+                                </div>
 
                             </div>
                         </div>
