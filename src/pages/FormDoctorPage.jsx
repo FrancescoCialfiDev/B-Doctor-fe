@@ -6,9 +6,10 @@ const initialDoctor = {
     surname: "",
     email: "",
     phone: "",
-    office_addres: "",
+    office_address: "",
     serial_number: "",
-    sex: ""
+    sex: "",
+    img_url: NULL
 };
 
 export default function FormDoctorPage() {
@@ -17,20 +18,16 @@ export default function FormDoctorPage() {
     //const [isChecked, setIsChecked] = useState(false)
 
     function sendData() {
-        axios.post(`http://localhost:3000/`, newDoctor)
-            .then((res) => {
-                console.log(res.data);
-            })
-            .catch((err) => console.log(err))
-            .finally(() => {
-            });
+        axios.post(`http://localhost:3000/doctors`, newDoctor)
+            .then((res) => console.log("Success:", res.data))
+            .catch((err) => console.error("Error:", err));
     }
 
     function handleSubmit(e) {
         e.preventDefault();
         sendData();
         setNewDoctor(initialDoctor);
-        window.location.reload();
+        //window.location.reload();
         console.log(newDoctor)
         //aggiungere pop un ponferma o il ritorno alla pagina dei doctors
     }
@@ -122,14 +119,14 @@ export default function FormDoctorPage() {
 
                     {/* office_addres */}
                     <div className="mb-3">
-                        <label htmlFor="office_addres" className="form-label">*Insert your <strong>Office Addres</strong></label>
+                        <label htmlFor="office_address" className="form-label">*Insert your <strong>Office Address</strong></label>
                         <input
                             type="text"
                             className="form-control"
-                            id="office_addres"
-                            name="office_addres"
+                            id="office_address"
+                            name="office_address"
                             placeholder="EX. OfficeAddres ST. 1500"
-                            value={newDoctor.office_addres}
+                            value={newDoctor.office_address}
                             onChange={handleChange}
                             required
                         />
