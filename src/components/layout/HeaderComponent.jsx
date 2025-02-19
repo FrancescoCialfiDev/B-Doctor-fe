@@ -111,12 +111,6 @@ export default function HeaderComponent() {
                                     to="#"
                                     onClick={toggleDropdown} // Open or close dropdown
                                 >
-                                    <img
-                                        src="https://cdn-icons-png.flaticon.com/256/219/219970.png"
-                                        alt="Logo"
-                                        width="30"
-                                        height="30"
-                                    />
                                     Specializations
                                 </Link>
                                 <ul
