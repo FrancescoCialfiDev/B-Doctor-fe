@@ -23,7 +23,8 @@ export default function FormReviewComponent() {
         e.preventDefault();
         sendData();
         setNewReview(initialReview);
-        window.location.reload();
+        window.location.href = `http://localhost:5173/doctors/${id}/reviews`
+        alert("Success! Your review has being added succesfully")
     }
 
     function handleChange(e) {

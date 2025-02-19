@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 
+
+
 const initialDoctor = {
     name: "",
     surname: "",
@@ -9,7 +11,7 @@ const initialDoctor = {
     office_address: "",
     serial_number: "",
     sex: "",
-    img_url: NULL
+    img_url: null
 };
 
 export default function FormDoctorPage() {
@@ -26,8 +28,8 @@ export default function FormDoctorPage() {
     function handleSubmit(e) {
         e.preventDefault();
         sendData();
-        setNewDoctor(initialDoctor);
-        //window.location.reload();
+        window.location.href = "http://localhost:5173/doctors"
+        alert("Success! Your profile has being added succesfully")
         console.log(newDoctor)
         //aggiungere pop un ponferma o il ritorno alla pagina dei doctors
     }
@@ -46,6 +48,14 @@ export default function FormDoctorPage() {
             setNewDoctor({ ...newDoctor, [name]: value, });
             console.log(newDoctor)
         }
+        if (newDoctor.img_url == null) {
+            if (newDoctor.sex === "man") {
+                newDoctor.img_url = "https://static.vecteezy.com/system/resources/previews/041/408/858/non_2x/ai-generated-a-smiling-doctor-with-glasses-and-a-white-lab-coat-isolated-on-transparent-background-free-png.png"
+            } else {
+                newDoctor.img_url = "https://www.pngmart.com/files/21/Female-Doctor-PNG-Transparent.png"
+            }
+        } else { }
+        console.log(newDoctor)
     }
 
     return (
