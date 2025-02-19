@@ -1,8 +1,7 @@
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { useContext } from "react";
-import CarouselSpecialization from "../unique/CarouselSpecialization";
 import style from "./CarouselSpecializationComponent.module.css"
-import styles from "../unique/CarouselSpecialization.module.css";
+import styles from "./CarouselSpecializationComponent.module.css"
 import { Link } from "react-router-dom";
 
 export default function CarouselSpecializationComponent() {
@@ -10,6 +9,26 @@ export default function CarouselSpecializationComponent() {
     if (!specializations || specializations.length === 0) {
         return <p>No specialization available</p>;
     }
+
+    const ProfileCard = ({ name, icon, id_spec }) => {
+
+        return (
+            <Link className={styles.links} key={id_spec} to={`/specializations/${id_spec}`} >
+                <div className={styles.card}>
+                    <div className={styles.imageContainer}>
+                        <img
+                            src={icon}
+                            alt="profile-img"
+                            className={styles.image}
+                        />
+                    </div>
+                </div>
+                <p className={styles.specialization}>{name.slice(0, 10) + "..."}</p>
+            </Link >
+
+        );
+    };
+
     return (<>
         <nav className="mt-5 mb-4 d-flex justify-content-between w-100 align-items-center">
             <h2 className={`mb-0 ${styles.title_doctors}`}>Specializations</h2>
@@ -39,7 +58,7 @@ export default function CarouselSpecializationComponent() {
                     <p className={styles.specialization}>All Doctors</p>
                 </Link >
                 {specializations.map((specialization) => {
-                    return <CarouselSpecialization
+                    return <ProfileCard
                         key={specialization?.id}
                         id_spec={specialization?.id}
                         name={specialization?.name}
