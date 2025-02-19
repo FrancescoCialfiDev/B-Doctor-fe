@@ -59,14 +59,23 @@ export default function DoctorDetailsPage() {
                             <div className={style.stars}><StarsComponent vote={detailsDoc?.vote_average} /></div>
                         </div>
 
-                        <div className="d-flex justify-content-evenly my-3">
-                            <div className={`text-start align-items-start ${style.detailsSection}`}>
-                                <p><strong>SPECIALIZATIONS</strong><br /> {detailsDoc?.specializations}</p>
+                        <div id={style.info_wrapper}>
+                            <div className={`text-center align-items-start ${style.detailsSection}`}>
+                                <p>
+                                    <strong>SPECIALIZATIONS</strong> {detailsDoc?.specializations}
+                                </p>
+                                <p>
+                                    <strong>YOU CAN VISIT ME AT</strong> {detailsDoc?.office_address}
+                                </p>
                             </div>
-                            <div className="text-start">
-                                <p><strong>MAIL</strong> {detailsDoc?.email}</p>
-                                <p><strong>TELEPHONE NUMBER</strong> {detailsDoc?.phone}</p>
-                                <p><strong>YOU CAN VISIT ME AT</strong> {detailsDoc?.office_address}</p>
+                            <div className={`text-center align-items-start ${style.detailsSection}`}>
+                                <p>
+                                    <strong>MAIL</strong> {detailsDoc?.email}
+                                </p>
+                                <p>
+                                    <strong>TELEPHONE NUMBER</strong> {detailsDoc?.phone}
+                                </p>
+
                             </div>
                         </div>
                         <div className="d-flex align-items-center justify-content-center">
