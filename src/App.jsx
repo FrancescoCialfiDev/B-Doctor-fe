@@ -20,6 +20,7 @@ export default function App() {
             <Route path="/specializations" element={<AllSpecialistsPage />} />
             <Route path="/specializations/:id" element={<AllSpecialistsPage />} />
 
+
             <Route path="/formDoctor" element={<FormDoctorPage />} />
 
             <Route path="/doctors">
