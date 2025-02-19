@@ -1,12 +1,15 @@
 .badgeContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 35px;    
+    margin: 35px;
 }
-.stars{
+
+.stars {
     font-size: 3em;
 }
+
 .badge {
     width: 100%;
     background: rgb(238, 238, 238);
@@ -35,11 +38,16 @@
     transform: translateX(-50%);
 }
 
-.vote{
+.vote {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px;
+}
+
+#big_image {
+    width: 50%;
+
 }
 
 .profileImage {
@@ -69,13 +77,14 @@
     margin: 15px 0;
     padding: 0 20px;
     padding-top: 55px;
-    
+
 }
 
 .detailsSection p {
     font-size: 16px;
 }
-.signatureSection{
+
+.signatureSection {
     padding-top: 35px;
 }
 
@@ -97,6 +106,11 @@
         width: 25%;
     }
 
+    #big_image {
+        width: 70%;
+
+    }
+
     .profileContainer {
         position: absolute;
         top: 35px;
@@ -105,6 +119,7 @@
         display: flex;
         justify-content: center;
     }
+
     .header {
         background-color: #007bff;
         color: white;
@@ -126,12 +141,19 @@
         width: 30%;
     }
 
+    #big_image {
+
+        width: 70%;
+
+    }
+
     .profileContainer {
         position: absolute;
         top: 35px;
         left: 20%;
         transform: translateX(-50%);
     }
+
     .infoSection {
         margin-top: 10px;
         padding-left: 25px;
@@ -146,6 +168,7 @@
         text-align: left;
         padding-top: 0px;
     }
+
     .header {
         background-color: #007bff;
         color: white;
@@ -165,6 +188,13 @@
     .profileImage {
         width: 30%;
     }
+
+    #big_image {
+
+        width: 90%;
+
+    }
+
     .profileContainer {
         position: absolute;
         top: 30px;
@@ -179,6 +209,7 @@
     .detailsSection p {
         font-size: 11px;
     }
+
     .header {
         background-color: #007bff;
         color: white;

@@ -43,6 +43,9 @@ export default function DoctorDetailsPage() {
         <>
             {detailsDoc ? (
                 <div className={style.badgeContainer}>
+
+                    <img id={style.big_image} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
+
                     <div className={style.badge}>
                         <div className={style.clip}></div>
                         <div className={style.header}>
