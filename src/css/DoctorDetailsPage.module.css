@@ -2,15 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 35px;    
+    margin: 35px;
 }
-.stars{
-    font-size: 3em;
-}
+
 .badge {
     width: 100%;
-    background: rgb(238, 238, 238);
+    max-width: 100%;
     border-radius: 10px;
+    margin-bottom: 15px;
+    background: rgb(238, 238, 238);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 20px;
@@ -18,6 +18,16 @@
     position: relative;
 }
 
+.profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    background: #007bff;
+    position: absolute;
+    transform: translateX(-50%);
+}
 
 .header {
     background-color: #007bff;
@@ -30,28 +40,15 @@
 
 .profileContainer {
     position: absolute;
-    top: 25px;
-    left: 20%;
-    transform: translateX(-50%);
+    top: 15%;
+    left: 10%;
 }
 
-.vote{
+.vote {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-}
-
-.profileImage {
-    width: 20%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid white;
-    background: #007bff;
-}
-
-.infoSection {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .doctorName {
@@ -69,13 +66,13 @@
     margin: 15px 0;
     padding: 0 20px;
     padding-top: 55px;
-    
 }
 
 .detailsSection p {
     font-size: 16px;
 }
-.signatureSection{
+
+.signatureSection {
     padding-top: 35px;
 }
 
@@ -92,29 +89,34 @@
     background: repeating-linear-gradient(90deg, black 0px, black 2px, white 2px, white 4px);
 }
 
+.d-flex.justify-content-between {
+    margin-top: 20px;
+}
+
 @media (max-width: 992px) {
     .profileImage {
-        width: 25%;
+        width: 130px;
+        height: 130px;
     }
 
     .profileContainer {
         position: absolute;
         top: 35px;
-        left: 20%;
+        left: 50%;
         transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
-    }
-    .header {
-        background-color: #007bff;
-        color: white;
-        padding: 15px;
-        font-size: 1.3em;
-        font-weight: bold;
-        border-radius: 8px 8px 0 0;
-        padding-left: 35px;
     }
 
+    .header {
+        font-size: 1.5em;
+    }
+
+    .doctorName {
+        font-size: 1.5em;
+    }
+
+    .specialization {
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -123,18 +125,15 @@
     }
 
     .profileImage {
-        width: 30%;
+        width: 120px;
+        height: 120px;
     }
 
     .profileContainer {
         position: absolute;
         top: 35px;
-        left: 20%;
+        left: 50%;
         transform: translateX(-50%);
-    }
-    .infoSection {
-        margin-top: 10px;
-        padding-left: 25px;
     }
 
     .doctorName {
@@ -146,14 +145,9 @@
         text-align: left;
         padding-top: 0px;
     }
+
     .header {
-        background-color: #007bff;
-        color: white;
-        padding: 15px;
         font-size: 1.3em;
-        font-weight: bold;
-        border-radius: 8px 8px 0 0;
-        padding-left: 35px;
     }
 }
 
@@ -163,12 +157,14 @@
     }
 
     .profileImage {
-        width: 30%;
+        width: 100px;
+        height: 100px;
     }
+
     .profileContainer {
         position: absolute;
         top: 30px;
-        left: 20%;
+        left: 50%;
         transform: translateX(-50%);
     }
 
@@ -179,12 +175,8 @@
     .detailsSection p {
         font-size: 11px;
     }
+
     .header {
-        background-color: #007bff;
-        color: white;
-        padding: 15px;
         font-size: 1em;
-        font-weight: bold;
-        border-radius: 8px 8px 0 0;
     }
 }
