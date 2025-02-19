@@ -1,17 +1,42 @@
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function HeaderComponent() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [specializations, setSpecializations] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
     const closeMenu = () => {
         setIsMenuOpen(false);
     };
+
+    useEffect(() => {
+        fetch('http://localhost:3000/specializations')
+            .then(response => response.json())
+            .then(data => {
+                if (data && Array.isArray(data.specializations)) {
+                    setSpecializations(data.specializations);
+                } else {
+                    console.error("Dati specializzazioni non trovati o non sono un array", data);
+                    setSpecializations([]);
+                }
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Errore nel recupero delle specializzazioni:', error);
+                setLoading(false);
+            });
+    }, []);
 
     return (
         <header>
@@ -50,16 +75,15 @@ export default function HeaderComponent() {
                         id="navbarNav"
                     >
                         <ul className="navbar-nav ms-auto">
-                            {/* Dropdown Menu */}
-                            <li className="nav-item dropdown">
+                            {/* Dropdown Menu per le Specializzazioni */}
+                            <li className="nav-item">
                                 <Link
-                                    className="nav-link dropdown-toggle"
-                                    to="/"
-                                    id="navbarDropdown"
-                                    role="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded={isMenuOpen ? 'true' : 'false'}
-                                    onClick={toggleMenu} // Aggiungi la logica per aprire il menu
+                                    className="nav-link"
+                                    to="#"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        toggleDropdown();
+                                    }}
                                 >
                                     <img
                                         src="https://cdn-icons-png.flaticon.com/256/219/219970.png"
@@ -69,157 +93,18 @@ export default function HeaderComponent() {
                                     />
                                     Specializations
                                 </Link>
-                                <ul className={`dropdown-menu ${isMenuOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Cardiology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Dermatology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Neurology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Orthopedics
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Pediatrics
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Radiology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Psychiatry
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Endocrinology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Gastroenterology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Oncology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Pulmonology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Nephrology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Rheumatology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Ophthalmology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Anesthesiology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Urology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Hematology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Allergy and Immunology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Emergency Medicine
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Plastic Surgery
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            General Surgery
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Infectious Disease
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Geriatrics
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Sports Medicine
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Internal Medicine
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Vascular Surgery
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Obstetrics and Gynecology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Otolaryngology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Pathology
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/specializations" className="dropdown-item" onClick={closeMenu}>
-                                            Family Medicine
-                                        </Link>
-                                    </li>
+                                <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+                                    {loading ? (
+                                        <li>Loading...</li>
+                                    ) : (
+                                        specializations.map(specialization => (
+                                            <li key={specialization.id}>
+                                                <Link to={`/specializations/${specialization.id}`} className="dropdown-item" onClick={closeMenu}>
+                                                    {specialization.name}
+                                                </Link>
+                                            </li>
+                                        ))
+                                    )}
                                 </ul>
                             </li>
 

@@ -1,104 +1,60 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const initialReview = {
     name_patient: "",
     vote: "",
     description: "",
-    id_doctor: "",
 };
 
-export default function FormReviewComponent({ id_doctor }) {
+export default function FormReviewComponent() {
+    const { id } = useParams();
 
-    const [newReview, setNewReview] = useState(initialDoctor);
+    const [newReview, setNewReview] = useState(initialReview);
 
     function sendData() {
-        axios.post(`http://localhost:3000/`, newReview)
-            .then((res) => {
-                console.log(res.data);
-            })
-            .catch((err) => console.log(err))
-            .finally(() => {
-            });
+        axios.post(`http://localhost:3000/doctors/${id}/form`, newReview)
+            .then((res) => console.log("Success:", res.data))
+            .catch((err) => console.error("Error:", err));
     }
 
     function handleSubmit(e) {
         e.preventDefault();
         sendData();
-        setNewDoctor(initialReview);
+        setNewReview(initialReview);
         window.location.reload();
-        console.log(newReview)
-        //aggiungere pop un ponferma o il ritorno alla pagina dei doctors
     }
 
     function handleChange(e) {
         const { name, value } = e.target;
-        console.log(`Updating ${name} to ${value}`);
-        setNewDoctor({ ...newReview, [name]: value, });
-        console.log(newReview)
+        setNewReview(prev => ({ ...prev, [name]: value }));
     }
 
     return (
         <div className="m-5">
-            <h1 className="mb-5 d-flex justify-content-center">Registration Precess</h1>
-            <p className="form-waring">Champs that starts whit <strong>"*"</strong> are required (you can't leave them empty)</p>
             <form onSubmit={handleSubmit} className="bg-light rounded-3">
-
-                {/* name */}
-                <div className="gap-5 justify-content-center">
-                    <div className="mb-3">
-                        <label htmlFor="name" className="form-label">*Insert your <strong>Name</strong></label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="name"
-                            name="name"
-                            placeholder="Jhon"
-                            value={newDoctor.name}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    {/* content */}
-                    <div className="mb-3">
-                        <label htmlFor="surname" className="form-label">*Insert your <strong>Surname</strong></label>
-                        <input
-                            className="form-control"
-                            id="surname"
-                            name="surname"
-                            placeholder="Doe"
-                            value={newDoctor.surname}
-                            onChange={handleChange}
-                            required
-                        ></input>
-                    </div>
-
-                    {/* vote */}
-                    <div className="mb-3">
-                        <label htmlFor="phone" className="form-label">*Write your <strong> vote</strong></label>
-                        <input
-                            min="0"
-                            max="10"
-                            step="1"
-                            type="number"
-                            pattern="[0-9]{3}[0-9]{7}"
-                            className="form-control"
-                            id="phone"
-                            name="phone"
-                            placeholder="write a number bwtween 1 and 10"
-                            value={newDoctor.phone}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-
-                </div>
-                <div className="d-flex justify-content-center">
-                    <button type="submit" className="btn btn-primary mt-4 ">Submit</button>
+                <h1 className="mb-5 d-flex justify-content-center">Add new review:</h1>
+                {/* Name */}
+                <div className="mb-3">
+                    <label htmlFor="name_patient" className="form-label">*Insert your <strong>Name</strong></label>
+                    <input type="text" className="form-control" id="name_patient" name="name_patient" value={newReview.name_patient} onChange={handleChange} />
                 </div>
 
-            </form >
-        </div >
+                {/* Description */}
+                <div className="mb-3">
+                    <label htmlFor="description" className="form-label">*Insert your <strong>Comment</strong></label>
+                    <input className="form-control" id="description" name="description" value={newReview.description} onChange={handleChange} required />
+                </div>
 
+                {/* Vote */}
+                <div className="mb-3">
+                    <label htmlFor="vote" className="form-label">*Write your <strong>Vote</strong></label>
+                    <input type="number" min="1" max="10" className="form-control" id="vote" name="vote" value={newReview.vote} onChange={handleChange} required />
+                </div>
+
+                <button type="submit" className="btn btn-primary mt-4">Submit</button>
+            </form>
+        </div>
     );
 }
