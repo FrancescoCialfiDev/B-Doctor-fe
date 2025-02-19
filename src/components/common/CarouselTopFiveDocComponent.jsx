@@ -15,29 +15,27 @@ export default function CarouselTopFiveDocComponent() {
 
     function CarouselTopFiveDoc({ id, name, surname, specialization, image, vote }) {
         return (
-            <div className={style.cardContainer} key={id}>
-                <div className={style.card}>
-                    <div className={style.imageWrapper}>
-                        <img
-                            src={image || "https://static.vecteezy.com/system/resources/previews/041/408/858/non_2x/ai-generated-a-smiling-doctor-with-glasses-and-a-white-lab-coat-isolated-on-transparent-background-free-png.png"}
-                            alt="doctor"
-                            className={style.cardImage}
-                        />
+
+            <div className="col-12 d-flex justify-content-center" key={id}>
+                <div className={`card p-3 shadow-lg ${style.badge}`}>
+                    <div className="card-header text-white text-center bg-primary">
+                        <h3 className={`mb-0 ${style.title}`}>{name} {surname}</h3>
                     </div>
-                    <div className={style.cardBody}>
-                        <h5 className={style.cardTitle}>Dr: {name} {surname}</h5>
-                        <h6 className={style.cardSpecialization}>{specialization}</h6>
-                        <div>
-                            <StarsComponent vote={vote} />
-                        </div>
-                        <div className="d-flex align-items-center justify-content-center">
-                            <Link to={`http://localhost:5173/doctors/${id}`} className={`btn btn-outline-primary ${style.detailsButton}`}>
-                                Details
-                            </Link>
-                        </div>
+                    <div className="d-flex justify-content-center position-relative">
+                        <img className={style.profileImage} src={image} alt={`${name} ${surname}`} />
                     </div>
-                </div>
-            </div>
+                    <div className="text-center mt-2">
+                        <StarsComponent vote={vote} />
+                    </div>
+                    <div className="card-body text-center">
+                        <p><strong>Specializations:</strong> {specialization}</p>
+                    </div>
+                    <div className="text-center">
+                        <Link to={`/doctors/${id}`} className="btn btn-primary">View Profile</Link>
+                    </div >
+                </div >
+            </div >
+
         );
     }
 
