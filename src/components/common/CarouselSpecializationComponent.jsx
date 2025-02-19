@@ -31,7 +31,7 @@ export default function CarouselSpecializationComponent() {
 
     return (<>
         <nav className="mt-5 mb-4 d-flex justify-content-between w-100 align-items-center">
-            <h2 className={`mb-0 ${styles.title_doctors}`}>Specializations</h2>
+            <h2 className={`mb-0 ${styles.title_doctors}`}>Specializations ({specializations.length}) </h2>
             <div className={`d-flex ${styles.search}`} role="search">
                 <input
                     className="form-control"

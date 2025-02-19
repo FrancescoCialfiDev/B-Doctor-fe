@@ -33,7 +33,7 @@ export default function AllSpecialistsPage() {
 
     return (
         <>
-            <h1 className="text-center m-3">{specialists[0]?.specializations} specialists</h1>
+            <h1 className="text-center m-3">{specialists[0]?.specializations} specialists ({specialists.length})</h1>
             <div className={`row justify-content-center ${style.container}`}>
                 {specialists.length === 0 ? (
                     <p>No specialists found for this specialization.</p>
