@@ -50,8 +50,6 @@ export default function DoctorDetailsPage() {
                         <div className={style.clip}></div>
                         <div className={style.header}>
                             <h3 className={style.doctorName}>Dr. {detailsDoc?.name} {detailsDoc?.surname}</h3>
-
-                            <p className={style.specialization}>{detailsDoc?.specialization}</p>
                         </div>
                         <div className={style.profileContainer}>
                             <img className={style.profileImage} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />

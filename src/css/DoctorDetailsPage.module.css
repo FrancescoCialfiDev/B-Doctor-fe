@@ -23,9 +23,12 @@
 
 
 .header {
+    display: flex;
+    justify-content: end;
     background-color: #007bff;
     color: white;
     padding: 15px;
+    padding-right: 70px;
     font-size: 2em;
     font-weight: bold;
     border-radius: 8px 8px 0 0;
@@ -63,6 +66,7 @@
 }
 
 .doctorName {
+
     font-size: 2em;
     font-weight: bold;
 }
@@ -114,7 +118,7 @@
     .profileContainer {
         position: absolute;
         top: 35px;
-        left: 20%;
+        left: 16%;
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
@@ -150,7 +154,7 @@
     .profileContainer {
         position: absolute;
         top: 35px;
-        left: 20%;
+        left: 23%;
         transform: translateX(-50%);
     }
 
@@ -198,7 +202,7 @@
     .profileContainer {
         position: absolute;
         top: 30px;
-        left: 20%;
+        left: 22%;
         transform: translateX(-50%);
     }
 
