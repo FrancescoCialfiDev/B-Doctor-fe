@@ -73,7 +73,7 @@ export default function HeaderComponent() {
                 <div className="container-fluid">
                     <div className="logos">
                         <div className="logo d-flex">
-                            <Link to="/" className="navbar-brand">
+                            <Link to="/" className="navbar-brand ms-0">
                                 <img
                                     src="https://cdn-icons-png.flaticon.com/256/219/219970.png"
                                     alt="Logo"
@@ -83,7 +83,7 @@ export default function HeaderComponent() {
                             </Link>
                             <h5 className="fw-bold align-items-end d-flex">Hi, User</h5>
                         </div>
-                        <p className="fs-6 m-0 text-body-tertiary">Hope u have a great day!</p>
+                        <p className="fs-6 m-0 text-body-tertiary">Hope you have a great day!</p>
                     </div>
 
                     <button

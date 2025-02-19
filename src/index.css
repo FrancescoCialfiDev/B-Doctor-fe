@@ -34,11 +34,12 @@ main {
 .navbar a {
   color: rgb(0, 0, 0);
   text-decoration: none;
+  margin-left: 20px
 }
 
 .navbar a:hover {
-  text-decoration: none;
-  color: rgb(65, 64, 64);
+  text-decoration: underline;
+  color: #007bff;
 }
 
 footer {
