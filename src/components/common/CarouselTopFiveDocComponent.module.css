@@ -62,3 +62,43 @@
     height: 100%;
     object-fit: cover;
 }
+
+.badge {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.profileImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    background: #007bff;
+    position: absolute;
+    top: -40px;
+    left: 10px;
+}
+
+@media (max-width: 576px) {
+    .profileImage {
+        width: 60px;
+        height: 60px;
+        top: -30px;
+        left: 10px;
+    }
+
+    .title {
+        padding-left: 30px;
+    }
+
+    .search {
+        width: 45%;
+    }
+
+    .title_doctors {
+        font-size: 1.5em;
+    }
+}
