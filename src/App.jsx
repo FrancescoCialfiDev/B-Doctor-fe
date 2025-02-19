@@ -9,6 +9,7 @@ import FormDoctorPage from "./pages/FormDoctorPage.jsx"
 import AllSpecialistsPage from "./pages/AllSpecialistsPage.jsx"
 import { GlobalProvider } from "./contexts/GlobalContext.jsx"
 
+
 export default function App() {
   return (
     <GlobalProvider>
