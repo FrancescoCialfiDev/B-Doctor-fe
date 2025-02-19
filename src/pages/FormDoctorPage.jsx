@@ -52,7 +52,7 @@ export default function FormDoctorPage() {
             if (newDoctor.sex === "man") {
                 newDoctor.img_url = "https://static.vecteezy.com/system/resources/previews/041/408/858/non_2x/ai-generated-a-smiling-doctor-with-glasses-and-a-white-lab-coat-isolated-on-transparent-background-free-png.png"
             } else {
-                newDoctor.img_url = "https://www.pngmart.com/files/21/Female-Doctor-PNG-Transparent.png"
+                newDoctor.img_url = "https://static.vecteezy.com/system/resources/previews/041/409/060/non_2x/ai-generated-a-female-doctor-with-a-stethoscope-isolated-on-transparent-background-free-png.png"
             }
         } else { }
         console.log(newDoctor)
