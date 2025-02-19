@@ -61,9 +61,14 @@ export default function DoctorDetailsPage() {
                             <div className={style.stars}><StarsComponent vote={detailsDoc?.vote_average} /></div>
                         </div>
 
-                        <div>
-                            <div className={style.detailsSection}>
-                                <p><strong>specializzazioni:</strong> {detailsDoc?.specializations}</p>
+                        <div className="d-flex justify-content-evenly my-3">
+                            <div className={`text-start align-items-start ${style.detailsSection}`}>
+                                <p><strong>SPECIALIZATIONS</strong><br /> {detailsDoc?.specializations}</p>
+                            </div>
+                            <div className="text-start">
+                                <p><strong>MAIL</strong> {detailsDoc?.email}</p>
+                                <p><strong>TELEPHONE NUMBER</strong> {detailsDoc?.phone}</p>
+                                <p><strong>YOU CAN VISIT ME AT</strong> {detailsDoc?.office_address}</p>
                             </div>
                         </div>
                         <div className="d-flex align-items-center justify-content-center">
@@ -73,10 +78,11 @@ export default function DoctorDetailsPage() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             ) : (
                 <p>Loading...</p>
-            )}
+            )
+            }
             <Outlet />
         </>
     );

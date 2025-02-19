@@ -44,7 +44,7 @@ export default function CarouselSpecializationComponent() {
 
         <div className={style.carouel_scroll}>
             <div className={style.carouel_row}>
-                <Link className={styles.links} to="/doctors">
+                {/* <Link className={styles.links} to="/doctors">
                     <div className={styles.card}>
                         <div className={styles.imageContainer}>
                             <img
@@ -56,7 +56,7 @@ export default function CarouselSpecializationComponent() {
                         </div>
                     </div>
                     <p className={styles.specialization}>All Doctors</p>
-                </Link >
+                </Link > */}
                 {specializations.map((specialization) => {
                     return <ProfileCard
                         key={specialization?.id}

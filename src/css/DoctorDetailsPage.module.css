@@ -33,8 +33,8 @@
 
 .profileContainer {
     position: absolute;
-    top: 25px;
-    left: 20%;
+    top: 30px;
+    left: 11%;
     transform: translateX(-50%);
 }
 
@@ -76,7 +76,7 @@
 .detailsSection {
     margin: 15px 0;
     padding: 0 20px;
-    padding-top: 55px;
+
 
 }
 
