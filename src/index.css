@@ -46,6 +46,27 @@ main {
   background-color: white;
 }
 
+.nav-item {
+  width: 200px;
+}
+
+.nav-link {
+  background-color: #f8f9fa;
+  width: 300px;
+}
+
+.dropdown-menu {
+  background-color: #f8f9fa;
+  width: 300px;
+  margin-left: 20px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.dropdown-item {
+  width: 250px;
+}
+
 footer {
   max-height: 50px;
   min-height: 50px;
