@@ -46,7 +46,7 @@ export default function DoctorDetailsPage() {
             {detailsDoc ? (
                 <div className={style.badgeContainer}>
 
-                    <img id={`d-none ${style.big_image}`} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
+                    <img id={`${style.big_image}`} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
 
                     <div className={style.badge}>
                         <div className={style.clip}></div>
@@ -62,9 +62,9 @@ export default function DoctorDetailsPage() {
                         </div>
 
                         <div id={style.info_wrapper}>
-                            <div className={`text-center align-items-start ${style.detailsSection}`}>
-                                <div className={style.one_info}>
-                                    <p>
+                            <div className={`text-center ${style.detailsSection}`}>
+                                <div id={style.one_info_badge}>
+                                    <p className="pb-2">
                                         <strong>SPECIALIZATIONS</strong>
                                     </p>
                                     <ul className={style.spec_badge_wrapper} >
@@ -80,7 +80,7 @@ export default function DoctorDetailsPage() {
                                 </div>
 
                             </div>
-                            <div className={`text-center align-items-start ${style.detailsSection}`}>
+                            <div className={`text-center ${style.detailsSection}`}>
                                 <div className={style.one_info}>
                                     <p>
                                         <strong>MAIL</strong>
