@@ -28,7 +28,7 @@ export const SearchBar = ({ data, setData }) => {
         <div className={`d-flex ${styles.search}`}>
             <form id="form" className="d-flex" role="search" onSubmit={submitPrevent}>
                 <input
-                    className="form-control me-2"
+                    className="form-control some-shadow me-2"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"

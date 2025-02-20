@@ -43,7 +43,7 @@ export default function DoctorsPage() {
             </div>
 
             <div className="d-flex mt-3 justify-content-center">
-                <Link to="/formDoctor" className="btn btn-primary m-3">
+                <Link to="/formDoctor" className="btn some-shadow btn-primary m-3">
                     Are you a doctor? you can sing in here!
                 </Link>
             </div>
