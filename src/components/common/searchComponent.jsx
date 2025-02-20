@@ -26,7 +26,7 @@ export const SearchBar = ({ data, setData }) => {
     return (
 
         <div className={`d-flex ${styles.search}`}>
-            <form className="d-flex" role="search" onSubmit={submitPrevent}>
+            <form id="form" className="d-flex" role="search" onSubmit={submitPrevent}>
                 <input
                     className="form-control me-2"
                     type="search"
@@ -34,7 +34,9 @@ export const SearchBar = ({ data, setData }) => {
                     aria-label="Search"
                     onChange={handlechange}
                 />
-                <button className="btn btn-outline-primary" type="submit">Search</button>
+                <button className="button" type="submit">
+                    Search
+                </button>
             </form>
         </div>
 
