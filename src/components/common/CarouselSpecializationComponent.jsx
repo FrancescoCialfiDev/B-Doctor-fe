@@ -21,7 +21,7 @@ export default function CarouselSpecializationComponent() {
                 <div className={styles.carouel_row}>
 
                     {/* All doctors Specializations */}
-                    {/* <Link className={styles.links} to="/doctors">
+                    <Link className={styles.links} to="/doctors">
                         <div className={styles.card}>
                             <div className={styles.imageContainer}>
                                 <img
@@ -33,7 +33,7 @@ export default function CarouselSpecializationComponent() {
                             </div>
                         </div>
                         <p className={styles.specialization}>All Doctors</p>
-                    </Link > */}
+                    </Link >
 
                     {/*Single Specialization*/}
                     {specializations != null ?
@@ -50,7 +50,7 @@ export default function CarouselSpecializationComponent() {
                                 </div>
                                 <p className={styles.specialization}>{specialization.name.slice(0, 10) + "..."}</p>
                             </Link >
-                        }) : (<h3 className="w-100 d-flex align-items-center justify-content-center text-white">No specializations Available...</h3>)}
+                        }) : (<h3 className="w-100 d-flex align-items-center justify-content-center">No specializations Available...</h3>)}
 
                 </div>
             </div>

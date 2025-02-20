@@ -8,7 +8,7 @@ header {
 main {
   max-height: calc(100dvh - 150px);
   min-height: calc(100dvh - 150px);
-  background: linear-gradient(90deg, rgba(0, 212, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 212, 255, 0.2) 100%);
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,7 +34,7 @@ main {
 .navbar a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  margin-left: 20px
+  margin-left: 20px;
 }
 
 .navbar a:hover {
@@ -89,7 +89,6 @@ form {
   footer {
     display: none;
   }
-
 
   main {
     max-height: calc(100dvh - 80px);

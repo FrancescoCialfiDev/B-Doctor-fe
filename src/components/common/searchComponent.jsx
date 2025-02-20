@@ -40,7 +40,7 @@ export const SearchBar = () => {
                     aria-label="Search"
                     onChange={handlechange}
                 />
-                <button className="btn btn-outline-success" type="submit">Search</button>
+                <button className="btn btn-outline-primary" type="submit">Search</button>
             </form>
         </div>
 
