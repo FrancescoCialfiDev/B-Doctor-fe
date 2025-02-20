@@ -1,9 +1,7 @@
 import { GlobalContext } from "../contexts/GlobalContext.jsx";
-import { useContext } from "react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import style from "../css/FormDoctorPage.module.css";
-
 
 const initialDoctor = {
     name: "",
@@ -13,14 +11,13 @@ const initialDoctor = {
     office_address: "",
     serial_number: "",
     sex: "",
-    img_url: null
+    img_url: null,
+    specializations: [] // Aggiungi specializations qui
 };
 
 export default function FormDoctorPage() {
-
     const { specializations } = useContext(GlobalContext);
     const [newDoctor, setNewDoctor] = useState(initialDoctor);
-    //const [isChecked, setIsChecked] = useState(false)
 
     function sendData() {
         axios.post(`http://localhost:3000/doctors`, newDoctor)
@@ -38,27 +35,23 @@ export default function FormDoctorPage() {
             }
         }
         sendData();
-        window.location.href = "http://localhost:5173/doctors"
-        alert("Success! Your profile has being added succesfully")
-        console.log(newDoctor)
-        //aggiungere pop un ponferma o il ritorno alla pagina dei doctors
+        window.location.href = "http://localhost:5173/doctors";
+        alert("Success! Your profile has being added succesfully");
+        console.log(newDoctor);
     }
 
     function handleChange(e) {
-        if ("checked" in e.target) {
-            //setIsChecked(!isChecked)
-            const { name, checked } = e.target;
-            console.log(`Updating ${name} to ${checked}`);
-            setNewDoctor({ ...newDoctor, [name]: checked, });
-            console.log(newDoctor)
+        const { name, value, checked, type } = e.target;
+        if (type === "checkbox") {
+            setNewDoctor((prevDoctor) => {
+                const newSpecializations = checked
+                    ? [...prevDoctor.specializations, value]
+                    : prevDoctor.specializations.filter((spec) => spec !== value);
+                return { ...prevDoctor, specializations: newSpecializations };
+            });
+        } else {
+            setNewDoctor({ ...newDoctor, [name]: value });
         }
-        if ("value" in e.target) {
-            const { name, value } = e.target;
-            console.log(`Updating ${name} to ${value}`);
-            setNewDoctor({ ...newDoctor, [name]: value, });
-            console.log(newDoctor)
-        }
-        console.log(newDoctor)
     }
 
     return (
@@ -67,8 +60,8 @@ export default function FormDoctorPage() {
                 <h1 className={`p-3 d-flex justify-content-center ${style.headerForm}`}>Registration</h1>
                 <p className="form-waring mb-2 d-flex justify-content-center">Champs that starts whit <strong> "*" </strong> are required (you can't leave them empty)</p>
 
-                {/* name */}
                 <div className="px-5">
+                    {/* name */}
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">*Insert your <strong>Name</strong></label>
                         <input
@@ -107,8 +100,9 @@ export default function FormDoctorPage() {
                                         <input
                                             className="form-check-input"
                                             type="checkbox"
-                                            name="specialization"
+                                            name="specializations"
                                             id={`specialization-${index}`}
+                                            value={specialization.id}
                                             onChange={handleChange}
                                         />
                                         <label className="form-check-label" htmlFor={`specialization-${index}`}>
@@ -189,7 +183,6 @@ export default function FormDoctorPage() {
                     <div className="mb-3 d-flex flex-column align-items-center">
                         <label htmlFor="sex" className="form-label">*Choose your <strong>Gender</strong> </label>
                         <div id="sex" className="ms-2 d-flex">
-
                             {/* male */}
                             <div className="form-check">
                                 <input
@@ -216,21 +209,18 @@ export default function FormDoctorPage() {
                                     value="woman"
                                     checked={newDoctor.sex === "woman"}
                                     onChange={handleChange}
-
                                 />
                                 <label className="form-check-label" htmlFor="flexRadioDefault2">
                                     Female
                                 </label>
                             </div>
-
                         </div>
                     </div>
-                </div >
+                </div>
                 <div className="d-flex justify-content-center">
                     <button type="submit" className="btn btn-outline-primary mt-4 ">Submit</button>
                 </div>
-            </form >
-        </div >
-
+            </form>
+        </div>
     );
 }
