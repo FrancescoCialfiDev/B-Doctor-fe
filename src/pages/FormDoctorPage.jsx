@@ -63,12 +63,12 @@ export default function FormDoctorPage() {
 
     return (
         <div className="m-5">
-            <h1 className="mb-5 d-flex justify-content-center">Registration Precess</h1>
-            <p className="form-waring">Champs that starts whit<strong> "*" </strong>are required (you can't leave them empty)</p>
+            <form onSubmit={handleSubmit} className={`mt-2 pb-5 bg-light rounded-3 ${style.badge}`}>
+                <h1 className={`p-3 d-flex justify-content-center ${style.headerForm}`}>Registration</h1>
+                <p className="form-waring mb-2 d-flex justify-content-center">Champs that starts whit <strong> "*" </strong> are required (you can't leave them empty)</p>
 
-            <form onSubmit={handleSubmit} className="px-3 pb-5 bg-light rounded-3">
                 {/* name */}
-                <div className="justify-content-center">
+                <div className="px-5">
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">*Insert your <strong>Name</strong></label>
                         <input
@@ -98,24 +98,26 @@ export default function FormDoctorPage() {
                     </div>
 
                     {/* specializations */}
-                    <label htmlFor="specializations" className="form-label">*Choose your <strong>Specializations</strong></label>
-                    <div className={`row + ${style.specializationsList}`}>
-                        {specializations.map((specialization, index) => (
-                            <div key={index} className="col-md-4 mb-2">
-                                <div className="form-check">
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        name="specialization"
-                                        id={`specialization-${index}`}
-                                        onChange={handleChange}
-                                    />
-                                    <label className="form-check-label" htmlFor={`specialization-${index}`}>
-                                        {specialization.name}
-                                    </label>
+                    <div className="mb-3">
+                        <label htmlFor="specializations" className="form-label">*Choose your <strong>Specializations</strong></label>
+                        <div className={`row + ${style.specializationsList}`}>
+                            {specializations.map((specialization, index) => (
+                                <div key={index} className="col-lg-4 col-md-6 mb-2">
+                                    <div className="form-check">
+                                        <input
+                                            className="form-check-input"
+                                            type="checkbox"
+                                            name="specialization"
+                                            id={`specialization-${index}`}
+                                            onChange={handleChange}
+                                        />
+                                        <label className="form-check-label" htmlFor={`specialization-${index}`}>
+                                            {specialization.name}
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
 
                     {/* email */}
@@ -184,7 +186,7 @@ export default function FormDoctorPage() {
                     </div>
 
                     {/* sex */}
-                    <div className="mb-3">
+                    <div className="mb-3 d-flex flex-column align-items-center">
                         <label htmlFor="sex" className="form-label">*Choose your <strong>Gender</strong> </label>
                         <div id="sex" className="ms-2 d-flex">
 
