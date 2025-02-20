@@ -6,6 +6,7 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
 
     const [doctors, setDoctors] = useState([]);
+    const [doctorsCopy, setDoctorsCopy] = useState([]);
     const [specializations, setSpecializations] = useState([]);
     const [specializationsCopy, setSpecializationsCopy] = useState([]);
 
@@ -14,6 +15,18 @@ const GlobalProvider = ({ children }) => {
             .get("http://localhost:3000/doctors")
             .then((response) => {
                 setDoctors(response.data.doctors)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally("Data fetch completed!")
+    }
+
+    function getDoctorsCopy() {
+        axios
+            .get("http://localhost:3000/doctors")
+            .then((response) => {
+                setDoctorsCopy(response.data.doctors)
             })
             .catch((err) => {
                 console.log(err)
@@ -48,10 +61,10 @@ const GlobalProvider = ({ children }) => {
 
 
 
-    useEffect(() => { getDoctors(), getSpecializations(), getSpecializationsCopy() }, [])
+    useEffect(() => { getDoctors(), getSpecializations(), getSpecializationsCopy(), getDoctorsCopy() }, [])
 
     return (
-        <GlobalContext.Provider value={{ doctors, setDoctors, specializations, setSpecializations, specializationsCopy, setSpecializationsCopy }}>
+        <GlobalContext.Provider value={{ doctors, setDoctors, specializations, setSpecializations, specializationsCopy, setSpecializationsCopy, doctorsCopy, setDoctorsCopy }}>
             {children}
         </GlobalContext.Provider >
     )
