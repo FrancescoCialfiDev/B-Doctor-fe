@@ -1,0 +1,11 @@
+.specializationsList {
+    background-color: white;
+    border: solid 1px #dadada;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 5px 15px 5px;
+}
+
+li {
+    list-style-type: none;
+}

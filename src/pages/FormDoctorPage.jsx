@@ -1,6 +1,8 @@
+import { GlobalContext } from "../contexts/GlobalContext.jsx";
+import { useContext } from "react";
 import { useState } from "react";
 import axios from "axios";
-
+import style from "../css/FormDoctorPage.module.css";
 
 
 const initialDoctor = {
@@ -16,6 +18,7 @@ const initialDoctor = {
 
 export default function FormDoctorPage() {
 
+    const { specializations } = useContext(GlobalContext);
     const [newDoctor, setNewDoctor] = useState(initialDoctor);
     //const [isChecked, setIsChecked] = useState(false)
 
@@ -92,6 +95,27 @@ export default function FormDoctorPage() {
                             onChange={handleChange}
                             required
                         ></input>
+                    </div>
+
+                    {/* specializations */}
+                    <label htmlFor="specializations" className="form-label">*Choose your <strong>Specializations</strong></label>
+                    <div className={`row + ${style.specializationsList}`}>
+                        {specializations.map((specialization, index) => (
+                            <div key={index} className="col-md-4 mb-2">
+                                <div className="form-check">
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        name="specialization"
+                                        id={`specialization-${index}`}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="form-check-label" htmlFor={`specialization-${index}`}>
+                                        {specialization.name}
+                                    </label>
+                                </div>
+                            </div>
+                        ))}
                     </div>
 
                     {/* email */}
@@ -199,11 +223,11 @@ export default function FormDoctorPage() {
 
                         </div>
                     </div>
-                </div>
+                </div >
                 <div className="d-flex justify-content-center">
                     <button type="submit" className="btn btn-outline-primary mt-4 ">Submit</button>
                 </div>
-            </form>
+            </form >
         </div >
 
     );
