@@ -6,7 +6,7 @@ import { SearchBar } from "./searchComponent";
 
 export default function CarouselSpecializationComponent() {
 
-    const { specializations } = useContext(GlobalContext)
+    const { specializations, setSpecializations, specializationsCopy } = useContext(GlobalContext)
 
 
     return (
@@ -14,7 +14,7 @@ export default function CarouselSpecializationComponent() {
         <>
             <nav className="mt-5 mb-4 d-flex justify-content-between w-100 align-items-center">
                 <h2 className={`mb-0 ${styles.title_doctors}`}>Specializations</h2>
-                <SearchBar />
+                <SearchBar setData={setSpecializations} data={specializationsCopy} />
             </nav>
 
             <div className={styles.carouel_scroll}>

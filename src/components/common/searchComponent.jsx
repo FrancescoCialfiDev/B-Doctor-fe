@@ -1,14 +1,8 @@
 import styles from "./CarouselSpecializationComponent.module.css" // Importiamo un modulo di stile custom per la nostra searchbar
 import { useState } from "react" // Importiamo lo useState che ci permette di creare variabili di stato
-import { useContext } from "react" // Importiamo lo useContext che ci permette di consumare dei dati provenienti da un contesto "x"
-import { GlobalContext } from "../../contexts/GlobalContext" // Importiamo il contesto da consumare
 
+export const SearchBar = ({ data, setData }) => {
 
-export const SearchBar = () => {
-
-
-
-    const { setSpecializations, specializationsCopy } = useContext(GlobalContext) // Otteniamo dal contesto globale tutte le specializzazioni
     const [searchValue, setSearchValue] = useState("") // Creiamo una variabile di stato per salvare il valore inserito nel campo di input
 
     function handlechange(event) {
@@ -17,13 +11,13 @@ export const SearchBar = () => {
 
     function submitPrevent(event) {
         event.preventDefault()
-        let filteredArray = specializationsCopy.filter((element) => { return element.name.toLowerCase().includes(searchValue.toLowerCase()) })
+        let filteredArray = data.filter((element) => { return element.name.toLowerCase().includes(searchValue.toLowerCase()) })
         if (filteredArray.length != 0 && searchValue.trim().length != 0) {
-            setSpecializations(filteredArray)
+            setData(filteredArray)
         } else if (searchValue.trim().length == 0) {
-            setSpecializations(specializationsCopy)
+            setData(data)
         } else if (filteredArray.length == 0) {
-            setSpecializations(null)
+            setData(null)
         }
     }
 
