@@ -163,9 +163,31 @@
 }
 
 @media (min-width: 1400px) {
-    .big_image {
+    #big_image {
         display: none;
     }
+
+    /*
+    .profileContainer {
+        position: relative;
+        width: 100%;
+    }
+
+    .profileImage {
+        width: 50%;
+        margin-left: 180px;
+        margin-top: 15px;
+    }
+
+    #card_all_info {
+        width: 800px;
+        margin-right: 200px
+    }
+
+    #doc_white_card_part {
+        display: flex;
+    }
+*/
 }
 
 @media (max-width: 1400px) {

@@ -53,64 +53,68 @@ export default function DoctorDetailsPage() {
                         <div className={style.header}>
                             <h3 className={style.doctorName}>Dr. {detailsDoc?.name} {detailsDoc?.surname}</h3>
                         </div>
-                        <div className={style.profileContainer}>
-                            <img className={style.profileImage} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
-                        </div>
-
-                        <div className={style.vote}>
-                            <div className={style.stars}><StarsComponent vote={detailsDoc?.vote_average} /></div>
-                        </div>
-
-                        <div id={style.info_wrapper}>
-                            <div className={`text-center ${style.detailsSection}`}>
-                                <div id={style.one_info_badge}>
-                                    <p className="pb-2">
-                                        <strong>SPECIALIZATIONS</strong>
-                                    </p>
-                                    <ul className={style.spec_badge_wrapper} >
-                                        {detailsDoc?.specializations.map((specialization) => {
-                                            return <Link className={style.spec_badge_link} key={specialization?.id} to={`/specializations/${specialization?.id}`} >
-                                                <li key={specialization?.id} className={style.spec_badge} style={{
-                                                    color: `${specialization.color}`,
-                                                    border: `3px solid ${specialization.color}`,
-                                                }}>{specialization.name}</li>
-                                            </Link>
-                                        })}
-                                    </ul>
-                                </div>
-
+                        <div id={style.doc_white_card_part}>
+                            <div className={style.profileContainer}>
+                                <img className={style.profileImage} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
                             </div>
-                            <div className={`text-center ${style.detailsSection}`}>
-                                <div className={style.one_info}>
-                                    <p>
-                                        <strong>MAIL</strong>
-                                    </p>
-                                    <p>
-                                        {detailsDoc?.email}
-                                    </p>
+                            <div id={style.card_all_info}>
+
+                                <div className={style.vote}>
+                                    <div className={style.stars}><StarsComponent vote={detailsDoc?.vote_average} /></div>
                                 </div>
-                                <div className={style.one_info}>
-                                    <p>
-                                        <strong>TELEPHONE NUMBER</strong>
-                                    </p>
-                                    <p>
-                                        {detailsDoc?.phone}
-                                    </p>
+                                <div id={style.info_wrapper}>
+                                    <div className={`text-center ${style.detailsSection}`}>
+                                        <div id={style.one_info_badge}>
+                                            <p className="pb-2">
+                                                <strong>SPECIALIZATIONS</strong>
+                                            </p>
+                                            <ul className={style.spec_badge_wrapper} >
+                                                {detailsDoc?.specializations.map((specialization) => {
+                                                    return <Link className={style.spec_badge_link} key={specialization?.id} to={`/specializations/${specialization?.id}`} >
+                                                        <li key={specialization?.id} className={style.spec_badge} style={{
+                                                            color: `${specialization.color}`,
+                                                            border: `3px solid ${specialization.color}`,
+                                                        }}>{specialization.name}</li>
+                                                    </Link>
+                                                })}
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div className={`text-center ${style.detailsSection}`}>
+                                        <div className={style.one_info}>
+                                            <p>
+                                                <strong>MAIL</strong>
+                                            </p>
+                                            <p>
+                                                {detailsDoc?.email}
+                                            </p>
+                                        </div>
+                                        <div className={style.one_info}>
+                                            <p>
+                                                <strong>TELEPHONE NUMBER</strong>
+                                            </p>
+                                            <p>
+                                                {detailsDoc?.phone}
+                                            </p>
+                                        </div>
+                                        <div className={style.one_info}>
+                                            <p>
+                                                <strong>YOU CAN VISIT ME AT</strong>
+                                            </p>
+                                            <p>
+                                                {detailsDoc?.office_address}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className={style.one_info}>
-                                    <p>
-                                        <strong>YOU CAN VISIT ME AT</strong>
-                                    </p>
-                                    <p>
-                                        {detailsDoc?.office_address}
-                                    </p>
+
+                                <div className="d-flex align-items-center justify-content-center">
+                                    {buttonReviews}
+                                    <div className="text-center ms-3">
+                                        <Link to={`/doctors/${detailsDoc?.id}/form`} className="btn btn-primary">Add new review</Link>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="d-flex align-items-center justify-content-center">
-                            {buttonReviews}
-                            <div className="text-center ms-3">
-                                <Link to={`/doctors/${detailsDoc?.id}/form`} className="btn btn-primary">Add new review</Link>
                             </div>
                         </div>
                     </div>
