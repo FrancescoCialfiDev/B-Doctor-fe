@@ -101,7 +101,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    gap: 15px;
+    gap: 20px;
 }
 
 .signatureSection {
@@ -139,6 +139,11 @@
         left: 13%;
         transform: translateX(-50%);
         display: flex;
+        justify-content: center;
+    }
+
+    .one_info {
+
         justify-content: center;
     }
 
@@ -216,7 +221,8 @@
     }
 
     .one_info {
-        display: block;
+        flex-direction: column;
+        gap: 0;
     }
 
     .doctorName {

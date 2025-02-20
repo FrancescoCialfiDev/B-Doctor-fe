@@ -3,40 +3,51 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState, useEffect } from 'react';
 
 export default function HeaderComponent() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Stato per il menu hamburger
+    const [dropdownOpen, setDropdownOpen] = useState(false); // Stato per il dropdown delle specializzazioni
     const [specializations, setSpecializations] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [isDropdownClicked, setIsDropdownClicked] = useState(false);
-    const navigate = useNavigate(); // Usa useNavigate per navigare programmaticamente
+    const [isDropdownClicked, setIsDropdownClicked] = useState(false); // Traccia il clic nel dropdown
+    const navigate = useNavigate();
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen(!isMenuOpen); // Apre/chiude il menu hamburger
     };
 
     const toggleDropdown = (e) => {
         e.preventDefault();
-        setIsDropdownClicked(!isDropdownClicked);
-        setDropdownOpen(!dropdownOpen);
+        setIsDropdownClicked(true);
+        setDropdownOpen(!dropdownOpen); // Apre/chiude il dropdown delle specializzazioni
     };
 
     const closeMenu = () => {
-        setIsMenuOpen(false);
+        setIsMenuOpen(false); // Chiude il menu hamburger
     };
 
     const closeDropdown = () => {
-        setDropdownOpen(false);
+        setDropdownOpen(false); // Chiude il dropdown delle specializzazioni
         setIsDropdownClicked(false);
     };
 
     const handleClickOutside = (event) => {
         const dropdownMenu = document.querySelector('.dropdown-menu');
-        if (dropdownMenu && !dropdownMenu.contains(event.target) && !event.target.closest('.nav-item')) {
-            closeDropdown();
+        const menuButton = document.querySelector('.navbar-toggler');
+        const navbarNav = document.querySelector('#navbarNav');
+
+        // Controlla se il clic è fuori dal menu hamburger e fuori dal dropdown
+        if (
+            (dropdownMenu && !dropdownMenu.contains(event.target) && !event.target.closest('.nav-item')) ||
+            (menuButton && !menuButton.contains(event.target) && !navbarNav.contains(event.target))
+        ) {
+            closeDropdown(); // Chiude il dropdown se il clic è fuori dal dropdown
+        }
+
+        // Chiude il menu hamburger se clicchi fuori dal menu
+        if (menuButton && !menuButton.contains(event.target) && !navbarNav.contains(event.target)) {
+            closeMenu(); // Chiude il menu hamburger se il clic è fuori
         }
     };
 
-    // Effettua una nuova richiesta ogni volta che la pagina si carica
     useEffect(() => {
         fetch('http://localhost:3000/specializations')
             .then(response => response.json())
@@ -54,7 +65,7 @@ export default function HeaderComponent() {
                 setLoading(false);
             });
 
-        // Aggiungere un event listener per i clic fuori dal menu
+        // Aggiungi l'event listener per i clic fuori dal menu
         document.addEventListener('click', handleClickOutside);
 
         return () => {
@@ -63,7 +74,6 @@ export default function HeaderComponent() {
     }, []); // Effettua la richiesta una sola volta
 
     const handleSpecializationClick = (id) => {
-        // Usa navigate per andare alla pagina della specializzazione
         navigate(`/specializations/${id}`);
     };
 
@@ -75,7 +85,7 @@ export default function HeaderComponent() {
                         <div className="logo d-flex">
                             <Link to="/" className="navbar-brand ms-0">
                                 <img
-                                    src="https://cdn-icons-png.flaticon.com/256/219/219970.png"
+                                    src="https://banner2.cleanpng.com/20181215/gag/kisspng-clip-art-vector-graphics-computer-icons-stethoscop-medical-stethoscope-svg-png-icon-free-download-1-1713909590626.webp"
                                     alt="Logo"
                                     width="40"
                                     height="40"
@@ -109,7 +119,7 @@ export default function HeaderComponent() {
                                 <Link
                                     className="nav-link"
                                     to="#"
-                                    onClick={toggleDropdown} // Open or close dropdown
+                                    onClick={toggleDropdown} // Apre/chiude il dropdown
                                 >
                                     Specializations
                                 </Link>
@@ -135,12 +145,16 @@ export default function HeaderComponent() {
                             </li>
 
                             <li className="nav-item">
-                                <Link to="/formDoctor" className="nav-link">
+                                <Link to="/formDoctor" className="nav-link"
+                                    onClick={() => closeDropdown()} // Chiude il dropdown quando clicchi su "Register as a Doctor"
+                                >
                                     Register as a Doctor
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/doctors" className="nav-link">
+                                <Link to="/doctors" className="nav-link"
+                                    onClick={() => closeDropdown()} // Chiude il dropdown quando clicchi su "List All Doctors"
+                                >
                                     List All Doctors
                                 </Link>
                             </li>
