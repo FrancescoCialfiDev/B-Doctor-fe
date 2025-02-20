@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState, useEffect } from 'react';
-
+import logo from "../../public/logo.png"
 export default function HeaderComponent() {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // Stato per il menu hamburger
     const [dropdownOpen, setDropdownOpen] = useState(false); // Stato per il dropdown delle specializzazioni
@@ -81,20 +81,20 @@ export default function HeaderComponent() {
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <div className="logos">
-                        <div className="logo d-flex">
-                            <Link to="/" className="navbar-brand ms-0">
-                                <img
-                                    src="https://banner2.cleanpng.com/20181215/gag/kisspng-clip-art-vector-graphics-computer-icons-stethoscop-medical-stethoscope-svg-png-icon-free-download-1-1713909590626.webp"
-                                    alt="Logo"
-                                    width="40"
-                                    height="40"
-                                />
-                            </Link>
-                            <h5 className="fw-bold align-items-end d-flex">Hi, User</h5>
-                        </div>
-                        <p className="fs-6 m-0 text-body-tertiary">Hope you have a great day!</p>
-                    </div>
+
+
+                    <Link to="/" className="navbar-brand ms-3">
+                        <img
+                            src={logo}
+                            alt="Logo"
+
+                            height="40"
+                        />
+                    </Link>
+
+
+
+
 
                     <button
                         className="navbar-toggler"
