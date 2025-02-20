@@ -11,6 +11,8 @@ export default function DoctorDetailsPage() {
     const { id } = useParams();
     const urlReviews = `${window.location.pathname}`
     let buttonReviews
+    const backgrownd_color = "background-color"
+
 
     function getDetailsDoc() {
         axios.get(`http://localhost:3000/doctors/${id}`)
@@ -44,7 +46,7 @@ export default function DoctorDetailsPage() {
             {detailsDoc ? (
                 <div className={style.badgeContainer}>
 
-                    <img id={style.big_image} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
+                    <img id={`d-none ${style.big_image}`} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
 
                     <div className={style.badge}>
                         <div className={style.clip}></div>
@@ -65,18 +67,18 @@ export default function DoctorDetailsPage() {
                                     <p>
                                         <strong>SPECIALIZATIONS</strong>
                                     </p>
-                                    <p>
-                                        {detailsDoc?.specializations}
-                                    </p>
+                                    <ul className={style.spec_badge_wrapper} >
+                                        {detailsDoc?.specializations.map((specialization) => {
+                                            return <Link className={style.spec_badge_link} key={specialization?.id} to={`/specializations/${specialization?.id}`} >
+                                                <li key={specialization?.id} className={style.spec_badge} style={{
+                                                    color: `${specialization.color}`,
+                                                    border: `3px solid ${specialization.color}`,
+                                                }}>{specialization.name}</li>
+                                            </Link>
+                                        })}
+                                    </ul>
                                 </div>
-                                <div className={style.one_info}>
-                                    <p>
-                                        <strong>YOU CAN VISIT ME AT</strong>
-                                    </p>
-                                    <p>
-                                        {detailsDoc?.office_address}
-                                    </p>
-                                </div>
+
                             </div>
                             <div className={`text-center align-items-start ${style.detailsSection}`}>
                                 <div className={style.one_info}>
@@ -95,7 +97,14 @@ export default function DoctorDetailsPage() {
                                         {detailsDoc?.phone}
                                     </p>
                                 </div>
-
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>YOU CAN VISIT ME AT</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.office_address}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <div className="d-flex align-items-center justify-content-center">
