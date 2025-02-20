@@ -7,6 +7,7 @@ const initialReview = {
     name_patient: "",
     vote: "",
     description: "",
+    creation_date: ""
 };
 
 export default function FormReviewComponent() {
@@ -21,6 +22,13 @@ export default function FormReviewComponent() {
     }
 
     function handleSubmit(e) {
+        const today = new Date();
+        const year = today.getFullYear();
+        const day = today.getDate();
+        const month = today.getMonth() + 1;
+        const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        newReview.creation_date = formattedDate;
+        console.log(newReview);
         e.preventDefault();
         sendData();
         setNewReview(initialReview);
