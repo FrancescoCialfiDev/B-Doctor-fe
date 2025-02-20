@@ -1,20 +1,9 @@
 header {
   max-height: 100px;
-  /* Usa solo height, non min-height/max-height */
-  max-height: 100px;
-  /* Usa solo height, non min-height/max-height */
 }
 
 main {
-  max-height: calc(100dvh - 150px);
-  min-height: calc(100dvh - 150px);
   background: linear-gradient(90deg, rgba(0, 213, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 212, 255, 0.1) 100%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-  overflow-y: auto;
 }
 
 .navbar {
@@ -49,9 +38,6 @@ main {
 footer {
   max-height: 50px;
   min-height: 50px;
-  /* Usa solo height, non min-height/max-height */
-  min-height: 50px;
-  /* Usa solo height, non min-height/max-height */
   background: rgba(9, 99, 172, 0.733);
   color: black;
   text-align: center;
@@ -83,23 +69,4 @@ form {
 .form-waring {
   max-width: 800px;
   margin: 0 auto;
-}
-
-@media (max-width: 767px) {
-  footer {
-    display: none;
-  }
-
-  main {
-    max-height: calc(100dvh - 80px);
-    min-height: calc(100dvh - 80px);
-    /* Prende lo spazio rimanente */
-    min-height: calc(100dvh - 80px);
-    /* Prende lo spazio rimanente */
-    background-color: white;
-    overflow-y: auto;
-    /* Per avere la scrollbar verticale solo quando necessario */
-    overflow-y: auto;
-    /* Per avere la scrollbar verticale solo quando necessario */
-  }
 }

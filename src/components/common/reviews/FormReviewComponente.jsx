@@ -36,26 +36,28 @@ export default function FormReviewComponent() {
     return (
         <div className="m-5" >
             <form onSubmit={handleSubmit} className={`${style.badge} bg-light rounded-3`}>
-                <h1 className={`${style.header} mb-5 d-flex align-items-center justify-content-center`}>Add new review:</h1>
+                <h1 className={`${style.header} d-flex align-items-center justify-content-center`}>Add new review:</h1>
                 {/* Name */}
-                <div className="mb-3">
-                    <label htmlFor="name_patient" className="form-label">*Insert your <strong>Name</strong></label>
-                    <input type="text" className="form-control" id="name_patient" name="name_patient" value={newReview.name_patient} onChange={handleChange} />
-                </div>
+                <div className="p-3">
+                    <div className="mb-3">
+                        <label htmlFor="name_patient" className="form-label">Insert your <strong>Name</strong></label>
+                        <input type="text" className="form-control" id="name_patient" name="name_patient" value={newReview.name_patient} onChange={handleChange} />
+                    </div>
 
-                {/* Description */}
-                <div className="mb-3">
-                    <label htmlFor="description" className="form-label">*Insert your <strong>Comment</strong></label>
-                    <input className="form-control" id="description" name="description" value={newReview.description} onChange={handleChange} required />
-                </div>
+                    {/* Description */}
+                    <div className="mb-3">
+                        <label htmlFor="description" className="form-label">Insert your <strong>Comment</strong></label>
+                        <textarea className="form-control" id="description" name="description" value={newReview.description} onChange={handleChange} />
+                    </div>
 
-                {/* Vote */}
-                <div className="mb-3">
-                    <label htmlFor="vote" className="form-label">*Write your <strong>Vote</strong></label>
-                    <input type="number" min="1" max="10" className="form-control" id="vote" name="vote" value={newReview.vote} onChange={handleChange} required />
-                </div>
+                    {/* Vote */}
+                    <div className="d-flex justify-content-center align-items-center flex-column mb-3">
+                        <label htmlFor="vote" className="form-label">*Write your <strong>Vote</strong></label>
+                        <input type="number" min="1" max="10" step="1" className={`${style.voteArea} form-control`} id="vote" name="vote" value={newReview.vote} onChange={handleChange} required />
+                    </div>
 
-                <button type="submit" className="btn btn-primary mt-4">Submit</button>
+                    <button type="submit" className="btn btn-primary mt-4">Submit</button>
+                </div>
             </form>
         </div >
     );
