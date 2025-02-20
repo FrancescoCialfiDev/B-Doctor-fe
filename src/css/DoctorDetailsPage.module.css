@@ -1,12 +1,15 @@
 .badgeContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 35px;    
+    margin: 35px;
 }
-.stars{
+
+.stars {
     font-size: 3em;
 }
+
 .badge {
     width: 100%;
     background: rgb(238, 238, 238);
@@ -20,9 +23,12 @@
 
 
 .header {
+    display: flex;
+    justify-content: end;
     background-color: #007bff;
     color: white;
     padding: 15px;
+    padding-right: 70px;
     font-size: 2em;
     font-weight: bold;
     border-radius: 8px 8px 0 0;
@@ -30,16 +36,21 @@
 
 .profileContainer {
     position: absolute;
-    top: 25px;
-    left: 20%;
+    top: 30px;
+    left: 11%;
     transform: translateX(-50%);
 }
 
-.vote{
+.vote {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px;
+}
+
+#big_image {
+    width: 50%;
+
 }
 
 .profileImage {
@@ -54,7 +65,15 @@
     margin-top: 20px;
 }
 
+#info_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
 .doctorName {
+
     font-size: 2em;
     font-weight: bold;
 }
@@ -66,16 +85,26 @@
 }
 
 .detailsSection {
-    margin: 15px 0;
+
     padding: 0 20px;
-    padding-top: 55px;
-    
+    flex-wrap: nowrap;
+
+
 }
 
-.detailsSection p {
+.detailsSection div p {
     font-size: 16px;
+    margin-bottom: 0;
 }
-.signatureSection{
+
+.one_info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.signatureSection {
     padding-top: 35px;
 }
 
@@ -92,19 +121,61 @@
     background: repeating-linear-gradient(90deg, black 0px, black 2px, white 2px, white 4px);
 }
 
+@media (max-width: 1400px) {
+    .profileContainer {
+        position: absolute;
+        top: 35px;
+        left: 12%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .profileContainer {
+        position: absolute;
+        top: 35px;
+        left: 13%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+
+    .doctorName {
+        font-size: 150%;
+    }
+}
+
+
 @media (max-width: 992px) {
     .profileImage {
         width: 25%;
     }
 
+    #big_image {
+        width: 70%;
+
+    }
+
+    .doctorName {
+        font-size: 180%;
+
+    }
+
+    .one_info {
+        justify-content: center;
+    }
+
     .profileContainer {
         position: absolute;
         top: 35px;
-        left: 20%;
+        left: 16%;
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
     }
+
     .header {
         background-color: #007bff;
         color: white;
@@ -119,33 +190,45 @@
 
 @media (max-width: 768px) {
     .badge {
-        width: 350px;
+        width: 500px;
     }
 
     .profileImage {
         width: 30%;
     }
 
+    #big_image {
+
+        width: 60%;
+
+    }
+
     .profileContainer {
         position: absolute;
         top: 35px;
-        left: 20%;
+        left: 19%;
         transform: translateX(-50%);
     }
+
     .infoSection {
         margin-top: 10px;
         padding-left: 25px;
     }
 
+    .one_info {
+        display: block;
+    }
+
     .doctorName {
-        font-size: 18px;
+        font-size: 140%;
     }
 
     .detailsSection {
-        display: flex;
+
         text-align: left;
         padding-top: 0px;
     }
+
     .header {
         background-color: #007bff;
         color: white;
@@ -165,10 +248,17 @@
     .profileImage {
         width: 30%;
     }
+
+    #big_image {
+
+        width: 90%;
+
+    }
+
     .profileContainer {
         position: absolute;
         top: 30px;
-        left: 20%;
+        left: 22%;
         transform: translateX(-50%);
     }
 
@@ -176,9 +266,12 @@
         font-size: 16px;
     }
 
-    .detailsSection p {
+    .detailsSection div p {
         font-size: 11px;
     }
+
+
+
     .header {
         background-color: #007bff;
         color: white;

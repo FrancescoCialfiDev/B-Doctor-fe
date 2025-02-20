@@ -43,12 +43,13 @@ export default function DoctorDetailsPage() {
         <>
             {detailsDoc ? (
                 <div className={style.badgeContainer}>
+
+                    <img id={style.big_image} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
+
                     <div className={style.badge}>
                         <div className={style.clip}></div>
                         <div className={style.header}>
                             <h3 className={style.doctorName}>Dr. {detailsDoc?.name} {detailsDoc?.surname}</h3>
-
-                            <p className={style.specialization}>{detailsDoc?.specialization}</p>
                         </div>
                         <div className={style.profileContainer}>
                             <img className={style.profileImage} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
@@ -58,9 +59,43 @@ export default function DoctorDetailsPage() {
                             <div className={style.stars}><StarsComponent vote={detailsDoc?.vote_average} /></div>
                         </div>
 
-                        <div>
-                            <div className={style.detailsSection}>
-                                <p><strong>specializzazioni:</strong> {detailsDoc?.specializations}</p>
+                        <div id={style.info_wrapper}>
+                            <div className={`text-center align-items-start ${style.detailsSection}`}>
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>SPECIALIZATIONS</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.specializations}
+                                    </p>
+                                </div>
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>YOU CAN VISIT ME AT</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.office_address}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={`text-center align-items-start ${style.detailsSection}`}>
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>MAIL</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.email}
+                                    </p>
+                                </div>
+                                <div className={style.one_info}>
+                                    <p>
+                                        <strong>TELEPHONE NUMBER</strong>
+                                    </p>
+                                    <p>
+                                        {detailsDoc?.phone}
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
                         <div className="d-flex align-items-center justify-content-center">
@@ -70,10 +105,11 @@ export default function DoctorDetailsPage() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             ) : (
                 <p>Loading...</p>
-            )}
+            )
+            }
             <Outlet />
         </>
     );
