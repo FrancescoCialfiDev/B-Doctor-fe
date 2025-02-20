@@ -1,5 +1,5 @@
 import HeaderComponent from "./HeaderComponent"
-import FooterComponent from "./footerComponent";
+import FooterComponent from "./FooterComponent";
 import { Outlet } from "react-router-dom";
 
 export default function DefaultLayout() {
@@ -7,7 +7,7 @@ export default function DefaultLayout() {
         <>
             <HeaderComponent />
             <main>
-                <section className="container mb-5">
+                <section className="container">
                     <Outlet />
                 </section>
             </main>

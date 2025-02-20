@@ -12,7 +12,7 @@
 
 .badge {
     width: 100%;
-    background: rgb(238, 238, 238);
+    background-color: rgb(238, 238, 238);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -101,7 +101,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    gap: 15px;
+    gap: 20px;
 }
 
 .signatureSection {
@@ -139,6 +139,11 @@
         left: 13%;
         transform: translateX(-50%);
         display: flex;
+        justify-content: center;
+    }
+
+    .one_info {
+
         justify-content: center;
     }
 
@@ -216,7 +221,8 @@
     }
 
     .one_info {
-        display: block;
+        flex-direction: column;
+        gap: 0;
     }
 
     .doctorName {

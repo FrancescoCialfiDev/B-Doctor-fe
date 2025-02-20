@@ -42,9 +42,9 @@ export default function DoctorsPage() {
                     )) : (<h3 className="w-100 d-flex align-items-center justify-content-center">No doctors Available...</h3>)}
             </div>
 
-            <div className="d-flex justify-content-center">
+            <div className="d-flex mt-3 justify-content-center">
                 <Link to="/formDoctor" className="btn btn-primary m-3">
-                    Se sei un dottore, puoi registrarti qui
+                    Are you a doctor? you can sing in here!
                 </Link>
             </div>
         </>
