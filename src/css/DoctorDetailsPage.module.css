@@ -142,6 +142,11 @@
         justify-content: center;
     }
 
+    .one_info {
+
+        justify-content: center;
+    }
+
     .doctorName {
         font-size: 150%;
     }
@@ -216,7 +221,8 @@
     }
 
     .one_info {
-        display: block;
+        flex-direction: column;
+        gap: 0;
     }
 
     .doctorName {
