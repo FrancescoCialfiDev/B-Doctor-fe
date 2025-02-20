@@ -13,8 +13,9 @@ export default function ReviewCard({ review }) {
                             <StarsComponent vote={review?.vote} />
                         </span>
                     </div>
-                    <div className={styles.review_body}>
-                        <p>{review?.description}</p>
+                    <div className={`${styles.review_body}` + " d-flex justify-content-between"}>
+                        <div>{review?.description}</div>
+                        <div>{review?.creation_date}</div>
                     </div>
                 </div>
             </div >
