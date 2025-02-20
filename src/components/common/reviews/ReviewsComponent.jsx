@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom"
 import ReviewCard from "./ReviewCard"
+
 export default function ReviewsComponent() {
 
     const [detailsDoctor, setDetailsDoctors] = useState([]);

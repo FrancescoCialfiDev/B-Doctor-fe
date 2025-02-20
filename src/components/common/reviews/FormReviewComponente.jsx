@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import style from "./FormReviewComponente.module.css";
 
 const initialReview = {
     name_patient: "",
@@ -33,9 +34,9 @@ export default function FormReviewComponent() {
     }
 
     return (
-        <div className="m-5">
-            <form onSubmit={handleSubmit} className="bg-light rounded-3">
-                <h1 className="mb-5 d-flex justify-content-center">Add new review:</h1>
+        <div className="m-5" >
+            <form onSubmit={handleSubmit} className={`${style.badge} bg-light rounded-3`}>
+                <h1 className={`${style.header} mb-5 d-flex align-items-center justify-content-center`}>Add new review:</h1>
                 {/* Name */}
                 <div className="mb-3">
                     <label htmlFor="name_patient" className="form-label">*Insert your <strong>Name</strong></label>
@@ -56,6 +57,6 @@ export default function FormReviewComponent() {
 
                 <button type="submit" className="btn btn-primary mt-4">Submit</button>
             </form>
-        </div>
+        </div >
     );
 }
