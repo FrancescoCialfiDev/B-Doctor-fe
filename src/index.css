@@ -5,6 +5,10 @@ header {
   /* Usa solo height, non min-height/max-height */
 }
 
+body {
+  overflow-x: hidden;
+}
+
 main {
   max-height: calc(100dvh - 150px);
   min-height: calc(100dvh - 150px);
@@ -52,7 +56,7 @@ main {
 
 .nav-link {
   background-color: #f8f9fa;
-  width: 300px;
+  width: 200px;
 }
 
 .dropdown-menu {
