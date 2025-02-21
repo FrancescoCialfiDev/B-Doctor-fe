@@ -1,7 +1,15 @@
 .carouel_scroll {
   width: auto;
   overflow-x: scroll;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+
+}
+
+.container {
+  border: 1px solid #dadada;
+  border-radius: 10px;
+  padding-top: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .carouel_scroll::-webkit-scrollbar {

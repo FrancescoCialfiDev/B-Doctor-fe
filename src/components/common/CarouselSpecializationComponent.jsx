@@ -18,12 +18,12 @@ export default function CarouselSpecializationComponent() {
             </nav>
 
 
+            <div className={styles.container}>
+                <div className={styles.carouel_scroll}>
+                    <div className={styles.carouel_row}>
 
-            <div className={styles.carouel_scroll}>
-                <div className={styles.carouel_row}>
-
-                    {/* All doctors Specializations */}
-                    {/* <Link className={styles.links} to="/doctors">
+                        {/* All doctors Specializations */}
+                        {/* <Link className={styles.links} to="/doctors">
                         <div className={styles.card}>
                             <div className={styles.imageContainer}>
                                 <img
@@ -37,23 +37,24 @@ export default function CarouselSpecializationComponent() {
                         <p className={styles.specialization}>All Doctors</p>
                     </Link > */}
 
-                    {/*Single Specialization*/}
-                    {specializations != null ?
-                        specializations.map((specialization) => {
-                            return <Link className={styles.links} key={specialization?.id} to={`/specializations/${specialization?.id}`} >
-                                <div className={styles.card}>
-                                    <div className={styles.imageContainer}>
-                                        <img
-                                            src={specialization?.icon_url}
-                                            alt="profile-img"
-                                            className={styles.image}
-                                        />
+                        {/*Single Specialization*/}
+                        {specializations != null ?
+                            specializations.map((specialization) => {
+                                return <Link className={styles.links} key={specialization?.id} to={`/specializations/${specialization?.id}`} >
+                                    <div className={styles.card}>
+                                        <div className={styles.imageContainer}>
+                                            <img
+                                                src={specialization?.icon_url}
+                                                alt="profile-img"
+                                                className={styles.image}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <p className={styles.specialization}>{specialization.name}</p>
-                            </Link >
-                        }) : (<h3 className="w-100 d-flex align-items-center justify-content-center">No specializations Available...</h3>)}
+                                    <p className={styles.specialization}>{specialization.name}</p>
+                                </Link >
+                            }) : (<h3 className="w-100 d-flex align-items-center justify-content-center">No specializations Available...</h3>)}
 
+                    </div>
                 </div>
             </div>
         </>
