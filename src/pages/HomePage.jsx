@@ -5,25 +5,23 @@ import style from "./HomePage.module.css";
 export default function HomePage() {
     return (
         <>
-            <div className={`mt-4 card ${style.cardBackground}`}>
-                <div className="row align-items-center">
-                    <div className={`col-6 d-flex justify-content-center`}>
-                        <img src="https://pngimg.com/d/doctor_PNG15964.png" className={style.img} alt="..." />
-                    </div>
-
+            <div className={`card ${style.cardBackground}`}>
+                <div id="overlay" className="row h-100 align-items-center justify-content-center text-center">
                     <div className="col-6">
                         <div>
-                            <h2 className="text-white card-title pt-2">Your Health is our Priority</h2>
-                            <h6 className="text-white card-text">Dr: Antony</h6>
-                            <p className={style.textSmall}>Orthopedic | Specialist</p>
+                            <h2 className="text-white card-title pt-2">Your Health, Our Mission – Innovative Care for a Better Tomorrow</h2>
+                            <h6 className="text-white card-text">Combining expertise and technology to ensure the best treatments and faster recovery</h6>
+                            <p className={style.textSmall}>Because every step towards healing starts with the right care and dedication.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <CarouselSpecializationComponent />
 
-            <CarouselTopFiveDocComponent />
+            <CarouselSpecializationComponent />
+            <div className="container">
+                <CarouselTopFiveDocComponent />
+            </div>
 
         </>
 

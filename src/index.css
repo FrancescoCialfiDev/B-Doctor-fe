@@ -24,6 +24,14 @@ main {
   );
 }
 
+#overlay {
+  background: linear-gradient(
+    to right,
+    rgba(10, 105, 139, 0.425),
+    rgba(10, 105, 139, 0.425)
+  ) !important;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
