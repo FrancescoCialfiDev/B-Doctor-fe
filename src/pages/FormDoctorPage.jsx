@@ -57,8 +57,8 @@ export default function FormDoctorPage() {
     return (
         <div className="m-5">
             <form onSubmit={handleSubmit} className={`mt-2 pb-5 bg-light rounded-3 ${style.badge}`}>
-                <h1 className={`p-3 d-flex justify-content-center ${style.headerForm}`}>Registration</h1>
-                <p className="form-waring mb-2 d-flex justify-content-center">Champs that starts whit <strong> "*" </strong> are required (you can't leave them empty)</p>
+                <h1 className={`p-3 d-flex justify-content-center text-white ${style.headerForm}`}>Registration</h1>
+                <p className="form-waring mb-2 d-flex justify-content-center">Champs that starts with <strong> "*" </strong> are required (you can't leave them empty)</p>
 
                 <div className="px-5">
                     {/* name */}
