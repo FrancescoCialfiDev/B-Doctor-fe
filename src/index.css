@@ -11,12 +11,10 @@ main {
   padding-bottom: 50px;
   overflow-y: scroll;
   min-height: calc(100vh - 150px);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 213, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(0, 212, 255, 0.1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 213, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(0, 212, 255, 0.1) 100%);
 }
 
 .navbar {
@@ -153,12 +151,10 @@ form {
   position: absolute;
   width: 100px;
   height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0) 70%
-  );
+  background-image: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%);
   top: 0;
   left: -100px;
   opacity: 0.6;
