@@ -218,8 +218,19 @@ export default function FormDoctorPage() {
                         </div>
                     </div>
                 </div>
-                <div className="d-flex justify-content-center">
-                    <button type="submit" className="btn btn-outline-primary mt-4 ">Send</button>
+                <div className="d-flex flex-column align-items-center justify-content-center">
+                    <div className="d-flex justify-content-center">
+                        <div className="form-check me-1 d-flex ">
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="Terms"
+                                required
+                            />
+                        </div>
+                        <span className="form-check-label">I accept the Terms of Service and Privacy Policy</span>
+                    </div>
+                    <button type="submit" className={`btn btn-outline-primary mt-4 ${style.btn}`}>Send</button>
                 </div>
             </form>
         </div>

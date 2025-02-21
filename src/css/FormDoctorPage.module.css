@@ -6,6 +6,10 @@
     margin: 0 5px 15px 5px;
 }
 
+.btn {
+    width: 20%;
+}
+
 li {
     list-style-type: none;
 }
@@ -25,9 +29,9 @@ li {
         background-color: white;
         border: solid 1px #dadada;
         border-radius: 5px;
-        padding:2px;
+        padding: 2px;
         margin: 0 5px 15px 5px;
-        max-height: 200px;        
-        overflow-y: auto;        
+        max-height: 200px;
+        overflow-y: auto;
     }
 }
