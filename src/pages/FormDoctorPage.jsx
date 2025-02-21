@@ -57,9 +57,9 @@ export default function FormDoctorPage() {
     return (
         <div className="m-5">
             <form onSubmit={handleSubmit} className={`mt-2 pb-5 bg-light rounded-3 ${style.badge}`} autoComplete="off">
-                <h1 className={`p-3 d-flex justify-content-center text-white ${style.headerForm}`}>Registration</h1>
+                <h1 className={`p-3 d-flex justify-content-center text-white ${style.headerForm}`}>Join us</h1>
                 <p className="form-waring mb-2 p-2 text-center">
-                    Champs that starts with <strong> "*" </strong> are required (you can't leave them empty)</p>
+                    Champs that starts with <strong> * </strong> are required (you can't leave them empty)</p>
 
                 <div className="px-3">
                     {/* name */}
@@ -219,7 +219,7 @@ export default function FormDoctorPage() {
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <button type="submit" className="btn btn-outline-primary mt-4 ">Submit</button>
+                    <button type="submit" className="btn btn-outline-primary mt-4 ">Send</button>
                 </div>
             </form>
         </div>
