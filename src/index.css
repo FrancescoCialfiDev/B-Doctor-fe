@@ -9,14 +9,23 @@ body {
 
 main {
   padding-bottom: 50px;
-  overflow-y: scroll;
+  overflow-y: hidden;
   min-height: calc(100vh - 150px);
   background: linear-gradient(
     90deg,
-    rgba(0, 213, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(0, 212, 255, 0.1) 100%
+    rgba(255, 255, 255, 1) 0%,
+    /* Bianco puro */ rgba(200, 230, 230, 1) 20%,
+    /* Una tonalità di bianco molto chiara, con un po' di azzurro/grigio */
+      rgba(150, 200, 220, 1) 40%,
+    /* Un azzurro più intenso */ rgba(50, 150, 200, 1) 60%,
+    /* Un blu chiaro, simile a un azzurro intenso */ rgba(16, 126, 148, 1) 80%,
+    /* Blu-verde più scuro */ rgba(16, 126, 148, 1) 100%
+      /* Blu-verde intenso al 100% */
   );
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .navbar {
@@ -179,5 +188,5 @@ form {
 }
 
 #form {
-  background-color: #ecfbff !important;
+  background-color: #18202300 !important;
 }
