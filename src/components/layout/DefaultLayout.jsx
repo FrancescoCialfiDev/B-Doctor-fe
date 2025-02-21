@@ -8,7 +8,7 @@ export default function DefaultLayout() {
         <>
             <HeaderComponent />
             <main>
-                <RealCarouselComponent />
+
                 <section className="container">
                     <Outlet />
                 </section>

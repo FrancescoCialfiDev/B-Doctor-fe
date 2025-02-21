@@ -1,5 +1,6 @@
 import CarouselTopFiveDocComponent from "../components/common/CarouselTopFiveDocComponent.jsx";
 import CarouselSpecializationComponent from "../components/common/CarouselSpecializationComponent.jsx";
+import RealCarouselComponent from "../components/common/RealCarouselComponent.jsx";
 import style from "./HomePage.module.css";
 import heroImg1 from '../public/jumbo.jpeg'
 import heroImg2 from '../public/jumbo6.jpeg'
@@ -18,11 +19,9 @@ export default function HomePage() {
 
     return (
         <>
-
+            <RealCarouselComponent />
             <CarouselSpecializationComponent />
-
             <CarouselTopFiveDocComponent />
-
         </>
 
     );
