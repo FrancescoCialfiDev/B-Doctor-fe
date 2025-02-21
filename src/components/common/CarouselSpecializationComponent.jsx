@@ -12,13 +12,13 @@ export default function CarouselSpecializationComponent() {
     return (
 
         <>
-            <nav className="mx-5 mt-5 mb-4 d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center text-center ">
+            <nav className="mt-5 mb-4 d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center text-center w-100">
                 <h2 className={`mb-0 ${styles.title_doctors}`}>Specializations</h2>
                 <SearchBar setData={setSpecializations} data={specializationsCopy} />
             </nav>
 
 
-            <div className={`${styles.container} mx-5`}>
+            <div className={styles.container}>
                 <div className={styles.carouel_scroll}>
                     <div className={styles.carouel_row}>
 
@@ -56,9 +56,7 @@ export default function CarouselSpecializationComponent() {
 
                     </div>
                 </div>
-            </div >
+            </div>
         </>
     );
 }
-
-

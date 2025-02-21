@@ -2,21 +2,18 @@
   width: auto;
   overflow-x: scroll;
   margin-bottom: 5px;
+
 }
 
 .container {
-  background-color: rgb(255, 255, 255);
   border: 1px solid #dadada;
   border-radius: 10px;
   padding-top: 15px;
-  -webkit-box-shadow: 0px 0px 17px -3px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 0px 0px 17px -3px rgba(0, 0, 0, 1);
-  box-shadow: 0px 0px 17px -3px rgba(0, 0, 0, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .carouel_scroll::-webkit-scrollbar {
   height: 8px;
-  display: block;
   /* Altezza della scrollbar orizzontale */
 }
 
@@ -32,7 +29,6 @@
 .carouel_scroll::-webkit-scrollbar-track {
   background-color: transparent;
   /* Nessun colore di sfondo per la traccia */
-  margin: 10px 17px;
 }
 
 .carouel_row {
@@ -106,4 +102,5 @@
   .search {
     width: 45%;
   }
+
 }

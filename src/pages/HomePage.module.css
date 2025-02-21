@@ -3,19 +3,27 @@
   color: rgba(228, 228, 228, 0.61);
 }
 
-/* .cardBackground {
+.img {
+  height: 150px;
+}
+
+.cardBackground {
   height: 350px;
   width: 100%;
-  background-image: url('../public/jumbo.jpg');
+  border-radius: 25px;
+  background-image: linear-gradient(to right,
+      rgba(10, 105, 139, 0.425),
+      rgba(10, 105, 139, 0.425)),
+    url('../public/bgLogo.jpg');
   background-size: cover;
-  background-position-y: -150px;
+  background-position: center;
   background-repeat: no-repeat;
   -webkit-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
   -moz-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
   box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
-} */
+}
 
-.cardBackground {
+*/ .cardBackground {
   height: 350px;
   width: 100%;
   -webkit-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
