@@ -1,7 +1,7 @@
 import CarouselTopFiveDocComponent from "../components/common/CarouselTopFiveDocComponent.jsx";
 import CarouselSpecializationComponent from "../components/common/CarouselSpecializationComponent.jsx";
 import style from "./HomePage.module.css";
-import heroImg1 from '../public/jumbo.jpg'
+import heroImg1 from '../public/jumbo.jpeg'
 import heroImg2 from '../public/jumbo6.jpeg'
 import heroImg3 from '../public/jumbo3.jpg'
 import { useEffect } from "react";
@@ -11,24 +11,14 @@ export default function HomePage() {
     useEffect(() => {
         const carouselElement = document.querySelector('#carouselExampleCaptions');
         const carousel = new Carousel(carouselElement, {
-            interval: 10000, // Autoplay interval in milliseconds
+            interval: 10000, // 10000 = 10 secondi
             ride: 'carousel'
         });
     }, []);
 
     return (
         <>
-            <div className={`card ${style.cardBackground}`}>
-                <div id="overlay" className="row h-100 align-items-center justify-content-center text-center">
-                    <div className="col-6">
-                        <div>
-                            <h2 className="text-white card-title pt-2">Your Health is our Priority</h2>
-                            <h6 className="text-white card-text">Dr: Antony</h6>
-                            <p className={style.textSmall}>Orthopedic | Specialist</p>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
+
 
             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">

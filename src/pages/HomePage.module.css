@@ -23,7 +23,7 @@
   box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
 }
 
-*/ .cardBackground {
+.cardBackground {
   height: 350px;
   width: 100%;
   -webkit-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
