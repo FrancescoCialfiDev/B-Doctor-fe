@@ -114,7 +114,7 @@ export default function HeaderComponent() {
                         className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}
                         id="navbarNav"
                     >
-                        <ul className="navbar-nav ms-auto">
+                        <ul className="navbar-nav ms-auto" style={{ alignItems: 'center' }}>
                             {/* Dropdown Menu per le Specializzazioni */}
                             <li className="nav-item">
                                 <Link
@@ -145,18 +145,25 @@ export default function HeaderComponent() {
                                 </ul>
                             </li>
 
-                            <li className="nav-item">
-                                <Link to="/formDoctor" className="nav-link"
-                                    onClick={() => closeDropdown()} // Chiude il dropdown quando clicchi su "Register as a Doctor"
-                                >
-                                    Register as a Doctor
+                            <li>
+                                <Link className="cta" to="/formDoctor"
+                                    onClick={() => closeDropdown()}>
+                                    <span>Register as a doctor</span>
+                                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/doctors" className="nav-link"
-                                    onClick={() => closeDropdown()} // Chiude il dropdown quando clicchi su "List All Doctors"
-                                >
-                                    List All Doctors
+
+                            <li>
+                                <Link className="cta" to="/doctors"
+                                    onClick={() => closeDropdown()}>
+                                    <span>List of All Doctors</span>
+                                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
                                 </Link>
                             </li>
                         </ul>
