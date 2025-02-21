@@ -121,7 +121,7 @@ export default function HeaderComponent() {
                                     to="#"
                                     onClick={toggleDropdown} // Apre/chiude il dropdown
                                 >
-                                    Specializations
+                                    ▼ Specializations
                                 </Link>
                                 <ul
                                     className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}
