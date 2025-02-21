@@ -12,10 +12,12 @@ export default function CarouselSpecializationComponent() {
     return (
 
         <>
-            <nav className="mt-5 mb-4 d-flex justify-content-between w-100 align-items-center">
+            <nav className="mt-5 mb-4 d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center text-center w-100">
                 <h2 className={`mb-0 ${styles.title_doctors}`}>Specializations</h2>
                 <SearchBar setData={setSpecializations} data={specializationsCopy} />
             </nav>
+
+
 
             <div className={styles.carouel_scroll}>
                 <div className={styles.carouel_row}>

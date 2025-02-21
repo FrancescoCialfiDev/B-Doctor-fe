@@ -43,7 +43,7 @@ export default function FormReviewComponent() {
 
     return (
         <div className="m-5" >
-            <form onSubmit={handleSubmit} className={`${style.badge} bg-light rounded-3`}>
+            <form onSubmit={handleSubmit} className={`${style.badge} bg-light rounded-3`} autoComplete="off">
                 <h1 className={`${style.header} d-flex align-items-center justify-content-center`}>Add new review:</h1>
                 {/* Name */}
                 <div className="p-3">

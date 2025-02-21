@@ -25,20 +25,23 @@ export const SearchBar = ({ data, setData }) => {
 
     return (
 
-        <div className={`d-flex ${styles.search}`}>
-            <form id="form" className="d-flex" role="search" onSubmit={submitPrevent}>
-                <input
-                    className="form-control some-shadow me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                    onChange={handlechange}
-                />
-                <button className="button" type="submit">
-                    Search
-                </button>
+        <div className={`pt-3 pt-md-0 d-flex flex-column flex-md-row justify-content-md-between ${styles.search}`}>
+            <form id="form" className="d-flex flex-column flex-md-row align-items-center w-100" role="search" onSubmit={submitPrevent}>
+                <div className="d-flex w-100">
+                    <input
+                        className="form-control some-shadow me-2"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                        onChange={handlechange}
+                    />
+                    <button className="button" type="submit">
+                        Search
+                    </button>
+                </div>
             </form>
         </div>
+
 
     )
 }
