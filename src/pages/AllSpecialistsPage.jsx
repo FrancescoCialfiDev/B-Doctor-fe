@@ -32,7 +32,7 @@ export default function AllSpecialistsPage() {
     }, [id]); // Aggiungiamo `id` come dipendenza per eseguire nuovamente la richiesta quando cambia
 
     return (
-        <>
+        <><div className="container">
             <h1 className="text-center m-3">{specialists[0]?.specializations} specialists ({specialists.length})</h1>
             <div className={`row justify-content-center ${style.container}`}>
                 {specialists.length === 0 ? (
@@ -61,6 +61,7 @@ export default function AllSpecialistsPage() {
                     ))
                 )}
             </div>
+        </div>
         </>
     );
 }

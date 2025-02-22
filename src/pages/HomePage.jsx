@@ -21,7 +21,9 @@ export default function HomePage() {
         <>
             <RealCarouselComponent />
             <CarouselSpecializationComponent />
-            <CarouselTopFiveDocComponent />
+            <div className="container">
+                <CarouselTopFiveDocComponent />
+            </div>
         </>
 
     );

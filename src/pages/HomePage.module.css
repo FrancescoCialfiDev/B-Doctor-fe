@@ -3,18 +3,10 @@
   color: rgba(228, 228, 228, 0.61);
 }
 
-.img {
-  height: 150px;
-}
 
 .cardBackground {
   height: 350px;
   width: 100%;
-  border-radius: 25px;
-  background-image: linear-gradient(to right,
-      rgba(10, 105, 139, 0.425),
-      rgba(10, 105, 139, 0.425)),
-    url('../public/bgLogo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

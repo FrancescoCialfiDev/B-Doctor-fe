@@ -42,7 +42,7 @@ export default function DoctorDetailsPage() {
     }
 
     return (
-        <>
+        <><div className="container">
             {detailsDoc ? (
                 <div className={style.badgeContainer}>
 
@@ -124,6 +124,7 @@ export default function DoctorDetailsPage() {
             )
             }
             <Outlet />
+        </div>
         </>
     );
 }

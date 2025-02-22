@@ -9,7 +9,7 @@ export default function DoctorsPage() {
     const { doctors, setDoctors, doctorsCopy } = useContext(GlobalContext);
 
     return (
-        <>
+        <> <div className="container">
             <nav className="mt-4 mb-4 d-flex justify-content-between w-100 align-items-center">
                 <h1 className={`mb-0 ${style.title_doctors}`}>
                     Doctor List ({doctors && doctors.length})
@@ -47,6 +47,7 @@ export default function DoctorsPage() {
                     Are you a doctor? you can sing in here!
                 </Link>
             </div>
+        </div>
         </>
     );
 }      
