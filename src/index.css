@@ -9,8 +9,6 @@ body {
 
 main {
   padding-bottom: 50px;
-  overflow-y: hidden;
-  overflow-y: scroll;
   min-height: calc(100vh - 150px);
   background: linear-gradient(
     90deg,
@@ -79,10 +77,14 @@ main {
   width: 300px;
   margin-left: 20px;
   max-height: 200px;
-  overflow-y: scroll;
+  right: 20px;
+  position: absolute; /* Assicurati che sia assoluto */
+  z-index: 1050; /* Maggiore di qualsiasi altro elemento sopra */
+  overflow-y: auto; /* Scroll funzionante */
 }
 
 .dropdown-item {
+  padding: 5px 0px;
   width: 250px;
 }
 
@@ -284,6 +286,8 @@ form {
   max-height: 260px !important;
   min-height: 260px !important;
   object-fit: cover;
+  z-index: 0; /* Abbassa la priorità */
+  pointer-events: none;
 }
 
 @media (min-width: 576px) {
@@ -292,5 +296,15 @@ form {
     min-height: 350px !important;
     object-fit: cover;
     object-position: 0px 0px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dropdown-menu {
+    background-color: #f8f9fa;
+    width: 100px;
+    margin-left: 20px;
+    max-height: 200px;
+    overflow-y: scroll;
   }
 }

@@ -7,7 +7,7 @@ export default function HeaderComponent() {
   const [dropdownOpen, setDropdownOpen] = useState(false); // Stato per il dropdown delle specializzazioni
   const [specializations, setSpecializations] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [setIsDropdownClicked] = useState(false); // Traccia il clic nel dropdown
+  const [isDropdownClicked, setIsDropdownClicked] = useState(false); // Traccia il clic nel dropdown
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -119,7 +119,12 @@ export default function HeaderComponent() {
 
               <li>
                 <Link className="cta" to="/formDoctor"
-                  onClick={() => { closeDropdown(); window.location.reload(); }}>
+                  onClick={() => {
+                    closeDropdown(); setInterval(() => {
+                      window.location.reload();
+                    }, 50); // 1000 millisecondi = 1 secondo
+                    ;
+                  }}>
                   <span>Register as a doctor</span>
                   <svg width="15px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5"></path>
@@ -146,7 +151,7 @@ export default function HeaderComponent() {
                   ▼ Specializations
                 </Link>
                 <ul
-                  className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}
+                  className={`bg-white dropdown-menu ${dropdownOpen ? 'show' : ''}`}
                 >
                   {loading ? (
                     <li>Loading...</li>

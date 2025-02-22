@@ -44,7 +44,7 @@ export default function FormDoctorPage() {
 
     function handleChange(e) {
         const { name, value, checked, type } = e.target;
-        let fieldValue = value;
+        //let fieldValue = value;
 
         if (type === "checkbox") {
             setNewDoctor((prevDoctor) => {
@@ -108,11 +108,11 @@ export default function FormDoctorPage() {
 
     return (
         <div className="container">
-            <div className="m-5">
+            <div className="p-5">
                 <form onSubmit={handleSubmit} className={`mt-2 pb-5 bg-light rounded-3 ${style.badge}`} autoComplete="off">
                     <h1 className={`p-3 d-flex justify-content-center text-white ${style.headerForm}`}>Join us</h1>
                     <p className="form-warning mb-2 p-2 text-center">
-                        Fields that start with <strong> * </strong> are required (you can't leave them empty).
+                        Fields that start with <strong> * </strong> are required (you cant leave them empty).
                     </p>
 
                     <div className="px-3">

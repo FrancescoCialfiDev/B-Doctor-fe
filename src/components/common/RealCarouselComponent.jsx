@@ -8,8 +8,8 @@ import style from "../../pages/HomePage.module.css";
 export default function RealCarouselComponent() {
     useEffect(() => {
         const carouselElement = document.querySelector('#carouselExampleCaptions');
-        const carousel = new Carousel(carouselElement, {
-            interval: 10000, // 10000 = 10 secondi prima di scorrere automaticamente sulla prosima immagine
+        new Carousel(carouselElement, {
+            interval: 2000, // 10000 = 10 secondi prima di scorrere automaticamente sulla prosima immagine
             ride: 'carousel'
         });
     }, []);
@@ -49,14 +49,7 @@ export default function RealCarouselComponent() {
                         </div>
                     </div>
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
+
             </div>
             <div id='overlay' className=" position-absolute top-0 h-100 w-100">
             </div>
