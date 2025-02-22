@@ -107,13 +107,13 @@ export default function FormDoctorPage() {
     }
 
     return (
-
         <div className="container">
             <div className="m-5">
                 <form onSubmit={handleSubmit} className={`mt-2 pb-5 bg-light rounded-3 ${style.badge}`} autoComplete="off">
                     <h1 className={`p-3 d-flex justify-content-center text-white ${style.headerForm}`}>Join us</h1>
                     <p className="form-warning mb-2 p-2 text-center">
-                        Fields that start with <strong> * </strong> are required (you can't leave them empty).</p>
+                        Fields that start with <strong> * </strong> are required (you can't leave them empty).
+                    </p>
 
                     <div className="px-3">
                         {/* name */}
@@ -136,6 +136,7 @@ export default function FormDoctorPage() {
                         <div className="mb-3">
                             <label htmlFor="surname" className="form-label">*Insert your <strong>Surname</strong></label>
                             <input
+                                type="text"
                                 className={`form-control ${errors.surname ? "is-invalid" : ""}`}
                                 id="surname"
                                 name="surname"
@@ -240,7 +241,6 @@ export default function FormDoctorPage() {
                         <div className="mb-3 d-flex flex-column align-items-center">
                             <label htmlFor="sex" className="form-label">*Choose your <strong>Gender</strong> </label>
                             <div id="sex" className="ms-2 d-flex">
-
                                 {/* male */}
                                 <div className="form-check">
                                     <input
@@ -276,9 +276,22 @@ export default function FormDoctorPage() {
                             {errors.sex && <div className="invalid-feedback d-block">{errors.sex}</div>}
                         </div>
                     </div>
-
+                    <div className="d-flex flex-column align-items-center justify-content-center">
+                        <div className="d-flex justify-content-center">
+                            <div className="form-check me-1 d-flex ">
+                                <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    name="Terms"
+                                    required
+                                />
+                            </div>
+                            <span className="form-check-label">I accept the Terms of Service and Privacy Policy</span>
+                        </div>
+                        <button type="submit" className={`btn btn-outline-primary mt-4 ${style.btn}`}>Send</button>
+                    </div>
                 </form>
             </div>
-        </div >
+        </div>
     );
 }

@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
 const Loader = () => {
-    return (
-        <StyledWrapper>
-            <div className="content mx-3 mt-2 d-none d-md-block">
-                <div className="pill">
-                    <div className="medicine">
-                        <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
-                    </div>
-                    <div className="side" />
-                    <div className="side" />
-                </div>
-            </div>
-        </StyledWrapper>
-    );
+  return (
+    <StyledWrapper>
+      <div className="content mx-3 mt-2 d-none d-md-block">
+        <div className="pill">
+          <div className="medicine">
+            <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
+          </div>
+          <div className="side" />
+          <div className="side" />
+        </div>
+      </div>
+    </StyledWrapper>
+  );
 }
 
 const StyledWrapper = styled.div`

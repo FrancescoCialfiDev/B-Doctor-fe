@@ -3,173 +3,173 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState, useEffect } from 'react';
 import logo from "../../public/logo.png"
 export default function HeaderComponent() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Stato per il menu hamburger
-    const [dropdownOpen, setDropdownOpen] = useState(false); // Stato per il dropdown delle specializzazioni
-    const [specializations, setSpecializations] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [isDropdownClicked, setIsDropdownClicked] = useState(false); // Traccia il clic nel dropdown
-    const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Stato per il menu hamburger
+  const [dropdownOpen, setDropdownOpen] = useState(false); // Stato per il dropdown delle specializzazioni
+  const [specializations, setSpecializations] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [isDropdownClicked, setIsDropdownClicked] = useState(false); // Traccia il clic nel dropdown
+  const navigate = useNavigate();
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen); // Apre/chiude il menu hamburger
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Apre/chiude il menu hamburger
+  };
 
-    const toggleDropdown = (e) => {
-        e.preventDefault();
-        setIsDropdownClicked(true);
-        setDropdownOpen(!dropdownOpen); // Apre/chiude il dropdown delle specializzazioni
-    };
+  const toggleDropdown = (e) => {
+    e.preventDefault();
+    setIsDropdownClicked(true);
+    setDropdownOpen(!dropdownOpen); // Apre/chiude il dropdown delle specializzazioni
+  };
 
-    const closeMenu = () => {
-        setIsMenuOpen(false); // Chiude il menu hamburger
-    };
+  const closeMenu = () => {
+    setIsMenuOpen(false); // Chiude il menu hamburger
+  };
 
-    const closeDropdown = () => {
-        setDropdownOpen(false); // Chiude il dropdown delle specializzazioni
-        setIsDropdownClicked(false);
-    };
+  const closeDropdown = () => {
+    setDropdownOpen(false); // Chiude il dropdown delle specializzazioni
+    setIsDropdownClicked(false);
+  };
 
-    const handleClickOutside = (event) => {
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-        const menuButton = document.querySelector('.navbar-toggler');
-        const navbarNav = document.querySelector('#navbarNav');
+  const handleClickOutside = (event) => {
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const menuButton = document.querySelector('.navbar-toggler');
+    const navbarNav = document.querySelector('#navbarNav');
 
-        // Controlla se il clic è fuori dal menu hamburger e fuori dal dropdown
-        if (
-            (dropdownMenu && !dropdownMenu.contains(event.target) && !event.target.closest('.nav-item')) ||
-            (menuButton && !menuButton.contains(event.target) && !navbarNav.contains(event.target))
-        ) {
-            closeDropdown(); // Chiude il dropdown se il clic è fuori dal dropdown
+    // Controlla se il clic è fuori dal menu hamburger e fuori dal dropdown
+    if (
+      (dropdownMenu && !dropdownMenu.contains(event.target) && !event.target.closest('.nav-item')) ||
+      (menuButton && !menuButton.contains(event.target) && !navbarNav.contains(event.target))
+    ) {
+      closeDropdown(); // Chiude il dropdown se il clic è fuori dal dropdown
+    }
+
+    // Chiude il menu hamburger se clicchi fuori dal menu
+    if (menuButton && !menuButton.contains(event.target) && !navbarNav.contains(event.target)) {
+      closeMenu(); // Chiude il menu hamburger se il clic è fuori
+    }
+  };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/specializations')
+      .then(response => response.json())
+      .then(data => {
+        if (data && Array.isArray(data.specializations)) {
+          setSpecializations(data.specializations);
+        } else {
+          console.error("Dati specializzazioni non trovati o non sono un array", data);
+          setSpecializations([]);
         }
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Errore nel recupero delle specializzazioni:', error);
+        setLoading(false);
+      });
 
-        // Chiude il menu hamburger se clicchi fuori dal menu
-        if (menuButton && !menuButton.contains(event.target) && !navbarNav.contains(event.target)) {
-            closeMenu(); // Chiude il menu hamburger se il clic è fuori
-        }
+    // Aggiungi l'event listener per i clic fuori dal menu
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
     };
+  }, []); // Effettua la richiesta una sola volta
 
-    useEffect(() => {
-        fetch('http://localhost:3000/specializations')
-            .then(response => response.json())
-            .then(data => {
-                if (data && Array.isArray(data.specializations)) {
-                    setSpecializations(data.specializations);
-                } else {
-                    console.error("Dati specializzazioni non trovati o non sono un array", data);
-                    setSpecializations([]);
-                }
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error('Errore nel recupero delle specializzazioni:', error);
-                setLoading(false);
-            });
+  const handleSpecializationClick = (id) => {
+    navigate(`/specializations/${id}`);
+  };
 
-        // Aggiungi l'event listener per i clic fuori dal menu
-        document.addEventListener('click', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
-    }, []); // Effettua la richiesta una sola volta
-
-    const handleSpecializationClick = (id) => {
-        navigate(`/specializations/${id}`);
-    };
-
-    return (
-        <header>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
+  return (
+    <header>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
 
 
-                    <Link to="/" className="navbar-brand ms-3">
-                        <img
-                            src={logo}
-                            alt="Logo"
+          <Link to="/" className="navbar-brand ms-3">
+            <img
+              src={logo}
+              alt="Logo"
 
-                            height="40"
-                        />
-                    </Link>
-                    <Loader />
+              height="40"
+            />
+          </Link>
+          <Loader className="d-none d-xl-block" />
 
 
 
 
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded={isMenuOpen ? 'true' : 'false'}
-                        aria-label="Toggle navigation"
-                        onClick={toggleMenu}
-                    >
-                        <GiHamburgerMenu />
-                    </button>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded={isMenuOpen ? 'true' : 'false'}
+            aria-label="Toggle navigation"
+            onClick={toggleMenu}
+          >
+            <GiHamburgerMenu />
+          </button>
 
-                    <div
-                        className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}
-                        id="navbarNav"
-                    >
-                        <ul className="navbar-nav ms-auto" style={{ alignItems: 'center' }}>
-                            {/* Dropdown Menu per le Specializzazioni */}
-                            <li className="nav-item">
-                                <Link
-                                    className="nav-link"
-                                    to="#"
-                                    onClick={toggleDropdown} // Apre/chiude il dropdown
-                                >
-                                    ▼ Specializations
-                                </Link>
-                                <ul
-                                    className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}
-                                >
-                                    {loading ? (
-                                        <li>Loading...</li>
-                                    ) : (
-                                        specializations.map(specialization => (
-                                            <li key={specialization.id}>
-                                                <Link
-                                                    to={`/specializations/${specialization.id}`}
-                                                    className="dropdown-item"
-                                                    onClick={() => handleSpecializationClick(specialization.id)} // Naviga senza ricaricare
-                                                >
-                                                    {specialization.name}
-                                                </Link>
-                                            </li>
-                                        ))
-                                    )}
-                                </ul>
-                            </li>
+          <div
+            className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}
+            id="navbarNav"
+          >
+            <ul className="navbar-nav ms-auto" style={{ alignItems: 'center' }}>
+              {/* Dropdown Menu per le Specializzazioni */}
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="#"
+                  onClick={toggleDropdown} // Apre/chiude il dropdown
+                >
+                  ▼ Specializations
+                </Link>
+                <ul
+                  className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}
+                >
+                  {loading ? (
+                    <li>Loading...</li>
+                  ) : (
+                    specializations.map(specialization => (
+                      <li key={specialization.id}>
+                        <Link
+                          to={`/specializations/${specialization.id}`}
+                          className="dropdown-item"
+                          onClick={() => handleSpecializationClick(specialization.id)} // Naviga senza ricaricare
+                        >
+                          {specialization.name}
+                        </Link>
+                      </li>
+                    ))
+                  )}
+                </ul>
+              </li>
 
-                            <li>
-                                <Link className="cta" to="/formDoctor"
-                                    onClick={() => closeDropdown()}>
-                                    <span>Register as a doctor</span>
-                                    <svg width="15px" height="10px" viewBox="0 0 13 10">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className="cta" to="/doctors"
-                                    onClick={() => closeDropdown()}>
-                                    <span>List of All Doctors</span>
-                                    <svg width="15px" height="10px" viewBox="0 0 13 10">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    );
+              <li>
+                <Link className="cta" to="/formDoctor"
+                  onClick={() => closeDropdown()}>
+                  <span>Register as a doctor</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+                </Link>
+              </li>
+              <li>
+                <Link className="cta" to="/doctors"
+                  onClick={() => closeDropdown()}>
+                  <span>List of All Doctors</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
 }
 
 
@@ -177,19 +177,19 @@ export default function HeaderComponent() {
 import styled from 'styled-components';
 
 const Loader = () => {
-    return (
-        <StyledWrapper>
-            <div className="content mx-3 mt-2 d-none d-md-block">
-                <div className="pill">
-                    <div className="medicine">
-                        <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
-                    </div>
-                    <div className="side" />
-                    <div className="side" />
-                </div>
-            </div>
-        </StyledWrapper>
-    );
+  return (
+    <StyledWrapper >
+      <div className="content mx-3 mt-2 d-none d-xl-block">
+        <div className="pill">
+          <div className="medicine">
+            <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
+          </div>
+          <div className="side" />
+          <div className="side" />
+        </div>
+      </div>
+    </StyledWrapper >
+  );
 }
 
 const StyledWrapper = styled.div`
