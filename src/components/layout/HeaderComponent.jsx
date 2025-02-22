@@ -115,6 +115,28 @@ export default function HeaderComponent() {
           >
             <ul className="navbar-nav ms-auto" style={{ alignItems: 'center' }}>
               {/* Dropdown Menu per le Specializzazioni */}
+
+
+              <li>
+                <Link className="cta" to="/formDoctor"
+                  onClick={() => closeDropdown()}>
+                  <span>Register as a doctor</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+                </Link>
+              </li>
+              <li>
+                <Link className="cta" to="/doctors"
+                  onClick={() => closeDropdown()}>
+                  <span>List of All Doctors</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link
                   className="nav-link"
@@ -142,27 +164,6 @@ export default function HeaderComponent() {
                     ))
                   )}
                 </ul>
-              </li>
-
-              <li>
-                <Link className="cta" to="/formDoctor"
-                  onClick={() => closeDropdown()}>
-                  <span>Register as a doctor</span>
-                  <svg width="15px" height="10px" viewBox="0 0 13 10">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                  </svg>
-                </Link>
-              </li>
-              <li>
-                <Link className="cta" to="/doctors"
-                  onClick={() => closeDropdown()}>
-                  <span>List of All Doctors</span>
-                  <svg width="15px" height="10px" viewBox="0 0 13 10">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                  </svg>
-                </Link>
               </li>
             </ul>
           </div>
