@@ -7,7 +7,7 @@ export default function HeaderComponent() {
   const [dropdownOpen, setDropdownOpen] = useState(false); // Stato per il dropdown delle specializzazioni
   const [specializations, setSpecializations] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isDropdownClicked, setIsDropdownClicked] = useState(false); // Traccia il clic nel dropdown
+  const [setIsDropdownClicked] = useState(false); // Traccia il clic nel dropdown
   const navigate = useNavigate();
 
   const toggleMenu = () => {
