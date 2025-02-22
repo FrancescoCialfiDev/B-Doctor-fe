@@ -288,7 +288,7 @@ export default function FormDoctorPage() {
                             </div>
                             <span className="form-check-label">I accept the Terms of Service and Privacy Policy</span>
                         </div>
-                        <button type="submit" className={`btn btn-outline-primary mt-4 ${style.btn}`}>Send</button>
+                        <button type="submit" className={`btn btn-primary custom mt-4 ${style.btn}`}>Send</button>
                     </div>
                 </form>
             </div>
