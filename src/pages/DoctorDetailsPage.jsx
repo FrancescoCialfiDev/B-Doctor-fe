@@ -50,12 +50,12 @@ export default function DoctorDetailsPage() {
 
                     <div className={style.badge}>
                         <div className={style.clip}></div>
-                        <div className={style.header}>
+                        <div className={`${style.header} custom`}>
                             <h3 className={style.doctorName}>Dr. {detailsDoc?.name} {detailsDoc?.surname}</h3>
                         </div>
                         <div id={style.doc_white_card_part}>
                             <div className={style.profileContainer}>
-                                <img className={style.profileImage} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
+                                <img className={`${style.profileImage} custom`} src={detailsDoc?.img_url} alt={`${detailsDoc?.name} ${detailsDoc?.surname}`} />
                             </div>
                             <div id={style.card_all_info}>
 
@@ -70,7 +70,7 @@ export default function DoctorDetailsPage() {
                                             </p>
                                             <ul className={style.spec_badge_wrapper} >
                                                 {detailsDoc?.specializations.map((specialization) => {
-                                                    return <Link className={style.spec_badge_link} key={specialization?.id} to={`/specializations/${specialization?.id}`} >
+                                                    return <Link id="notcustom" className={style.spec_badge_link} key={specialization?.id} to={`/specializations/${specialization?.id}`} >
                                                         <li key={specialization?.id} className={style.spec_badge} style={{
                                                             color: `${specialization.color}`,
                                                             border: `3px solid ${specialization.color}`,

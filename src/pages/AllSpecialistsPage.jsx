@@ -41,7 +41,7 @@ export default function AllSpecialistsPage() {
                     specialists.map((doctor) => (
                         <div key={doctor.id} className="col-lg-6 col-12 d-flex justify-content-center">
                             <div className={`card p-3 shadow-lg ${style.badge}`}>
-                                <div className="card-header text-white text-center bg-primary">
+                                <div className="custom  card-header text-white text-center">
                                     <h3 className={`mb-0 ${style.title}`}>{doctor.name} {doctor.surname}</h3>
                                 </div>
                                 <div className="d-flex justify-content-center position-relative">

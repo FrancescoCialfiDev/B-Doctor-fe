@@ -6,8 +6,8 @@ export default function ReviewCard({ review }) {
     return (
         <>
             < div className="container mt-4 d-flex justify-content-center">
-                <div className={styles.review_card}>
-                    <div className={styles.review_header}>
+                <div className={`${styles.review_card}`}>
+                    <div className={`${styles.review_header} custom`}>
                         <span>{review?.name_patient}</span>
                         <span className={styles.stars}>
                             <StarsComponent vote={review?.vote} />

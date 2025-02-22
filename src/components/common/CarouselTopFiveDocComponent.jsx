@@ -18,7 +18,7 @@ export default function CarouselTopFiveDocComponent() {
 
             <div className="col-12 d-flex justify-content-center" key={id}>
                 <div className={`card p-3 shadow-lg ${style.badge}`}>
-                    <div className="card-header text-white text-center bg-primary">
+                    <div className={`${style.custom} card-header text-white text-center`}>
                         <h3 className={`mb-0 ${style.title}`}>{name} {surname}</h3>
                     </div>
                     <div className="d-flex justify-content-center position-relative">

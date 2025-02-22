@@ -110,7 +110,7 @@ export default function FormDoctorPage() {
         <div className="container">
             <div className="p-5">
                 <form onSubmit={handleSubmit} className={`mt-2 pb-5 bg-light rounded-3 ${style.badge}`} autoComplete="off">
-                    <h1 className={`p-3 d-flex justify-content-center text-white ${style.headerForm}`}>Join us</h1>
+                    <h1 className={`p-3 d-flex custom justify-content-center text-white ${style.headerForm}`}>Join us</h1>
                     <p className="form-warning mb-2 p-2 text-center">
                         Fields that start with <strong> * </strong> are required (you cant leave them empty).
                     </p>

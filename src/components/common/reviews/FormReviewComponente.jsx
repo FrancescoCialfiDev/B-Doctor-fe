@@ -44,7 +44,7 @@ export default function FormReviewComponent() {
     return (
         <div className="m-5" >
             <form onSubmit={handleSubmit} className={`${style.badge} bg-light rounded-3`} autoComplete="off">
-                <h1 className={`${style.header} d-flex align-items-center justify-content-center`}>Add new review:</h1>
+                <h1 className={`${style.header} custom d-flex align-items-center justify-content-center`}>Add new review:</h1>
                 {/* Name */}
                 <div className="p-3">
                     <div className="mb-3">
@@ -64,7 +64,7 @@ export default function FormReviewComponent() {
                         <input type="number" min="1" max="10" step="1" className={`${style.voteArea} form-control`} id="vote" name="vote" value={newReview.vote} onChange={handleChange} required />
                     </div>
 
-                    <button type="submit" className="btn btn-primary mt-4">Submit</button>
+                    <button type="submit" className="custom text-white btn mt-4">Submit</button>
                 </div>
             </form>
         </div >
