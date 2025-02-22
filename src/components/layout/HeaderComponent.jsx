@@ -119,7 +119,7 @@ export default function HeaderComponent() {
 
               <li>
                 <Link className="cta" to="/formDoctor"
-                  onClick={() => closeDropdown()}>
+                  onClick={() => { closeDropdown(); window.location.reload(); }}>
                   <span>Register as a doctor</span>
                   <svg width="15px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5"></path>
