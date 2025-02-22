@@ -3,24 +3,8 @@
   color: rgba(228, 228, 228, 0.61);
 }
 
-
 .cardBackground {
-  height: 350px;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   -webkit-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
   -moz-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
   box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
 }
-
-.cardBackground {
-  height: 350px;
-  width: 100%;
-  -webkit-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
-  -moz-box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
-  box-shadow: 0px 6px 9px -4px rgba(22, 74, 130, 1);
-}
-
-.jumbImg {}

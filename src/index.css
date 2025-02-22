@@ -12,26 +12,25 @@ main {
   overflow-y: hidden;
   overflow-y: scroll;
   min-height: calc(100vh - 150px);
-  background: linear-gradient(90deg,
-      rgba(255, 255, 255, 1) 0%,
-      /* Bianco puro */
-      rgba(200, 230, 230, 1) 20%,
-      /* Una tonalità di bianco molto chiara, con un po' di azzurro/grigio */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    /* Bianco puro */ rgba(200, 230, 230, 1) 20%,
+    /* Una tonalità di bianco molto chiara, con un po' di azzurro/grigio */
       rgba(150, 200, 220, 1) 40%,
-      /* Un azzurro più intenso */
-      rgba(50, 150, 200, 1) 60%,
-      /* Un blu chiaro, simile a un azzurro intenso */
-      rgba(16, 126, 148, 1) 80%,
-      /* Blu-verde più scuro */
-      rgba(16, 126, 148, 1) 100%
+    /* Un azzurro più intenso */ rgba(50, 150, 200, 1) 60%,
+    /* Un blu chiaro, simile a un azzurro intenso */ rgba(16, 126, 148, 1) 80%,
+    /* Blu-verde più scuro */ rgba(16, 126, 148, 1) 100%
       /* Blu-verde intenso al 100% */
-    );
+  );
 }
 
 #overlay {
-  background: linear-gradient(to right,
-      rgba(10, 105, 139, 0.425),
-      rgba(10, 105, 139, 0.425)) !important;
+  background: linear-gradient(
+    to right,
+    rgba(10, 105, 139, 0.425),
+    rgba(10, 105, 139, 0.425)
+  ) !important;
 }
 
 ::-webkit-scrollbar {
@@ -172,10 +171,12 @@ form {
   position: absolute;
   width: 100px;
   height: 100%;
-  background-image: linear-gradient(120deg,
-      rgba(255, 255, 255, 0) 30%,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0) 70%);
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
   top: 0;
   left: -100px;
   opacity: 0.6;
@@ -266,5 +267,30 @@ form {
   gap: 20px;
   background-color: #f7f9fa;
   padding: 15px 0;
+}
 
+#overlay {
+  background-color: #007bff73;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.jumboImg {
+  max-height: 260px !important;
+  min-height: 260px !important;
+  object-fit: cover;
+}
+
+@media (min-width: 576px) {
+  .jumboImg {
+    max-height: 350px !important;
+    min-height: 350px !important;
+    object-fit: cover;
+    object-position: 0px 0px;
+  }
 }
