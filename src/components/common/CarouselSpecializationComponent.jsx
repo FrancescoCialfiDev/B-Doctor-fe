@@ -52,7 +52,7 @@ export default function CarouselSpecializationComponent() {
                                     </div>
                                     <p className={styles.specialization}>{specialization.name}</p>
                                 </Link >
-                            }) : (<h3 className="w-100 d-flex align-items-center justify-content-center">No specializations Available...</h3>)}
+                            }) : (<h3 className="w-100 d-flex align-items-center justify-content-center text-center">No specializations Available...</h3>)}
 
                     </div>
                 </div>
