@@ -304,6 +304,19 @@ form {
     max-height: 200px;
     overflow-y: scroll;
   }
+
+  .w-100 {
+    width: 150% !important;
+  }
+
+  #formContainer {
+    margin-right: 60px;
+  }
+
+  #nav #formContainer {
+    width: 100px !important;
+    margin-left: 100px;
+  }
 }
 
 .text-center a:not(#notcustom) {

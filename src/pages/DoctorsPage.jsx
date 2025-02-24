@@ -10,7 +10,7 @@ export default function DoctorsPage() {
 
     return (
         <> <div className="container">
-            <nav className="pt-4 mb-4 d-flex justify-content-between w-100 align-items-center">
+            <nav id="nav" className="pt-4 mb-4 d-sm-block d-md-flex justify-content-between w-100 align-items-center">
                 <h1 className={`mb-0 ${style.title_doctors}`}>
                     Doctor List ({doctors && doctors.length})
                 </h1>

@@ -26,7 +26,7 @@ export default function RealCarouselComponent() {
                 <div className="carousel-inner ">
                     <div className={`carousel-item active ${style.cardBackground}`}>
                         <img src={heroImg1} className="jumboImg d-block w-100" alt="First slide" />
-                        <div className="carousel-caption d-none d-md-block z-1 position-absolute">
+                        <div className="carousel-caption d-none d-lg-block z-1 position-absolute">
                             <h2 className="text-white card-title pt-2">Your Health, Our Mission – Innovative Care for a Better Tomorrow</h2>
                             <h6 className="text-white card-text">Combining expertise and technology to ensure the best treatments and faster recovery</h6>
                             <p className={style.textSmall}>Because every step towards healing starts with the right care and dedication.</p>
@@ -34,7 +34,7 @@ export default function RealCarouselComponent() {
                     </div>
                     <div className={`carousel-item ${style.cardBackground}`}>
                         <img src={heroImg3} className={`jumboImg d-block w-100`} alt="Second slide" />
-                        <div className="carousel-caption d-none d-md-block z-1">
+                        <div className="carousel-caption d-none d-lg-block z-1">
                             <h2 className="text-white card-title pt-2">Your Health, Our Mission – Innovative Care for a Better Tomorrow</h2>
                             <h6 className="text-white card-text">Combining expertise and technology to ensure the best treatments and faster recovery</h6>
                             <p className={style.textSmall}>Because every step towards healing starts with the right care and dedication.</p>
@@ -42,7 +42,7 @@ export default function RealCarouselComponent() {
                     </div>
                     <div className={`carousel-item ${style.cardBackground}`}>
                         <img src={heroImg2} className="  jumboImg d-block w-100" alt="Third slide" />
-                        <div className="carousel-caption d-none d-md-block z-1">
+                        <div className="carousel-caption d-none d-lg-block z-1">
                             <h2 className="text-white card-title pt-2">Your Health, Our Mission – Innovative Care for a Better Tomorrow</h2>
                             <h6 className="text-white card-text">Combining expertise and technology to ensure the best treatments and faster recovery</h6>
                             <p className={style.textSmall}>Because every step towards healing starts with the right care and dedication.</p>
