@@ -60,7 +60,7 @@ export default function FormReviewComponent() {
 
                     {/* Vote */}
                     <div className="d-flex justify-content-center align-items-center flex-column mb-3">
-                        <label htmlFor="vote" className="form-label">*Write your <strong>Vote</strong></label>
+                        <label htmlFor="vote" className="form-label">*Write your <strong>Vote ( 1 to 10 )</strong></label>
                         <input type="number" min="1" max="10" step="1" className={`${style.voteArea} form-control`} id="vote" name="vote" value={newReview.vote} onChange={handleChange} required />
                     </div>
 
