@@ -4,8 +4,7 @@ export default function FooterComponent() {
             <div className="text-white">&copy; 2025 BDoctors. All rights reserved.</div>
             <div>
                 <a className="px-1 text-white" href="#">Privacy Policy</a> <span className="text-white">|</span>
-                <a className="px-1 text-white" href="#">Terms of Service</a> <span className="text-white">|</span>
-                <a className="px-1 text-white" href="#">Contacts</a>
+                <a className="px-1 text-white" href="#">Terms of Service</a> <span className="text-white"></span>
             </div>
         </footer>
     )
